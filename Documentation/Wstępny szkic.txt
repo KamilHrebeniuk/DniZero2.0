@@ -1,0 +1,43 @@
+Rejestracja uczestnika
+Wejœcie do autokaru
+Gra terenowa
+Harmonogram
+Opiekun
+Zapisy
+Informacje o punkcie programu
+Strona g³ówna
+System powiadomieñ
+Moje konto
+
+
+Pasek dolny:
+1. Strona g³ówna
+2. Harmonogram
+3. Moje konto
+
+Strona g³ówna:
+Aktualne punkty programu
+Aktualne powiadomienia
+
+Harmonogram:
+Lista punktów programu
+
+Moje konto:
+Mój opiekun
+Moje dru¿yny
+Moja historia akcji
+Lista kontaktów
+
+Punkt programu:
+Opis programu
+Zapis do grupy
+Formularz zapisowy dru¿yny
+
+
+
+
+
+Admin
+
+
+Klient
