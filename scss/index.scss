@@ -1,0 +1,24 @@
+//Global values
+@import "colors";
+@import "resolutions";
+@import "fonts";
+
+//Components
+//TO DO
+
+//Pages
+@import "homepage";
+@import "timetable";
+@import "my_account";
+
+//Demo
+//@import "demo/breakpoints";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font_face_primary;
+  font-size: $font_size_m;
+}

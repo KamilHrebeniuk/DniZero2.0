@@ -1,0 +1,42 @@
+//********************* Default *********************//
+
+
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+  body {
+    background-color: #e0385f;
+  }
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+  body {
+    background-color: #385ce0;
+  }
+}
+
+//******************* Large Tablet ******************//
+@include resTo($res_l) {
+  body {
+    background-color: #099905;
+  }
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+  body {
+    background-color: #d900ff;
+  }
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+  body {
+    background-color: aqua;
+  }
+}
+
+
+
+
