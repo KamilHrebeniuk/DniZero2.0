@@ -1,6 +1,6 @@
 import React from "react";
 
-export function MyAccount() {
+export default function MyAccount() {
     return (
         <h1>MyAccount</h1>
     )
