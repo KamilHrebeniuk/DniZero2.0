@@ -1,0 +1,78 @@
+//********************* Default *********************//
+.agenda_item_text,
+.agenda_item_text_image {
+  width: 100%;
+  border: solid 1px $color_secondary;
+  background-color: $color_primary;
+
+  &-header {
+    font-size: $font_size_l;
+    line-height: 20px;
+    margin-bottom: 6px;
+  }
+
+  &-content {
+    font-size: $font_size_s;
+  }
+}
+
+.agenda_item_text {
+  padding: 10px;
+}
+
+.agenda_item_text_image {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 10px 0 10px;
+
+  &-header,
+  &-content {
+    width: calc(100% - 82px);
+  }
+
+  &-content {
+    padding-bottom: 10px;
+  }
+
+  &-image {
+    width: 72px;
+    height: 72px;
+    margin-left: 10px;
+    position: relative;
+    top: -16px;
+  }
+}
+
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+  .agenda_item_text,
+  .agenda_item_text_image {
+    margin-right: 20px;
+    min-width: 400px;
+    width: 400px;
+  }
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+  .agenda_item_text,
+  .agenda_item_text_image {
+    margin-bottom: 20px;
+  }
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+
+}

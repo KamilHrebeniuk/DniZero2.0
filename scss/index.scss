@@ -4,7 +4,8 @@
 @import "fonts";
 
 //Components
-//TO DO
+@import "menu";
+@import "agenda_items";
 
 //Pages
 @import "homepage";
@@ -21,4 +22,6 @@
 body {
   font-family: $font_face_primary;
   font-size: $font_size_m;
+  color: $color_primary_text;
+  margin: 0;
 }

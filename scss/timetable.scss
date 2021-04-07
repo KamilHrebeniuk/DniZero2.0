@@ -2,6 +2,11 @@
 
 
 
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+
+}
+
 //********************* Desktop *********************//
 @include resFrom($res_l) {
 
@@ -9,11 +14,6 @@
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-
-}
-
-//******************* Large Tablet ******************//
-@include resTo($res_l) {
 
 }
 

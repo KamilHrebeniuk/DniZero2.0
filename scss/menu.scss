@@ -1,24 +1,31 @@
 //********************* Default *********************//
-.home {
-  width: 100%;
+.navigation {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  background-color: $color_primary;
 
-  &-content {
-    display: flex;
+  &-element {
+    flex-basis: 33.33%;
+    text-align: center;
+    padding: 8px 0 4px;
+  }
+
+  &-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
-  .home {
-    padding: 15px;
-
-    &-content {
-      width: 100%;
-      flex-direction: row;
-      overflow-x: auto;
-      margin-top: 720px;  //TMP
-    }
+  .navigation {
+    top: 0;
+    right: 0;
+    width: 300px;
+    border-bottom: solid 1px $color_secondary;
+    border-left: solid 1px $color_secondary;
   }
 }
 
@@ -34,14 +41,10 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
-  .home {
-    padding: 15px 15px 42px 15px;
-
-    &-content {
-      margin: auto;
-      max-width: 480px;
-      flex-direction: column;
-    }
+  .navigation {
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1px $color_secondary;
   }
 }
 
