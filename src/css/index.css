@@ -195,7 +195,6 @@
   padding-top: 100px;
   z-index: 1;
   position: fixed;
-  background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .account-content {
