@@ -6,7 +6,8 @@ import { Provider } from "react-redux"
 import { BrowserRouter, NavLink, Route } from "react-router-dom";
 import { store } from "./store"
 
-import HomePage from "./components/HomePage/homePage";
+import PopUp from "./components/PopUp/popUp"
+// import HomePage from "./components/HomePage/homePage";
 import TimeTable from "./components/TimeTable/timeTable";
 import MyAccount from "./components/MyAccount/myAccount";
 
@@ -23,7 +24,8 @@ export function App() {
     return (
         <BrowserRouter>
             <Route exact path="/">
-                <HomePage/>
+                {/*<HomePage/>*/}
+                <PopUp/>
             </Route>
             <Route path="/TimeTable">
                 <TimeTable/>
