@@ -284,6 +284,31 @@
     width: 100%;
   }
 }
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: #e0385f;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  body {
+    background-color: #385ce0;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  body {
+    background-color: #099905;
+  }
+}
+@media only screen and (max-width: 767px) {
+  body {
+    background-color: #d900ff;
+  }
+}
+@media only screen and (max-width: 479px) {
+  body {
+    background-color: aqua;
+  }
+}
 * {
   box-sizing: border-box;
 }
