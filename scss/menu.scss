@@ -4,6 +4,7 @@
   flex-direction: row;
   position: fixed;
   background-color: $color_primary;
+  z-index: 10;
 
 
   &-element {
