@@ -1,41 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux"
+import { useHistory } from "react-router-dom";
 import popUpActions from "../../actions/PopUp";
+import PopUpTypes from "../PopUp/types"
+
+import TimeTable from "../TimeTable/timeTable";
+import MyAccount from "../MyAccount/myAccount";
 
 
-function PopUp ({popUpState, openPopUp, closePopUp, openDoublePopUp, closeDoublePopUp}) {
-    console.log()
+function PopUp ({popUpState, openPopUp, closePopUp, openDoublePopUp, closeDoublePopUp, popUpWidth, popUpContentType}) {
 
-    const clickHandler1 = () => {
+    useEffect(() => {
         openPopUp()
-        console.log(popUpState)
-    }
+        document.getElementsByClassName("popup-overlay")[0].classList.add("popup-overlay-active");
+        document.getElementsByClassName("popup-content")[0].classList.add("popup-content-active");
+    }, [openPopUp]);
 
-    const clickHandler2 = () => {
+    const history = useHistory();
+
+    const closePopUpHandler = () => {
         closePopUp()
         console.log(popUpState)
+        document.getElementsByClassName("popup-overlay")[0].classList.remove("popup-overlay-active");
+        document.getElementsByClassName("popup-content")[0].classList.remove("popup-content-active");
+        setTimeout(function() {
+            history.push('/')
+        }, 500)
     }
 
-    const clickHandler3 = () => {
-        openDoublePopUp()
-        console.log(popUpState)
+    const renderInnerComponent = () => {
+        switch (popUpContentType) {
+            case PopUpTypes.popUpTimeTable:
+                return (<TimeTable/>)
+            case PopUpTypes.popUpMyAccount:
+                return (<MyAccount/>)
+            default:
+                return undefined
+        }
     }
-
-    const clickHandler4 = () => {
-        closeDoublePopUp()
-        console.log(popUpState)
-    }
-
 
     return (
-        <div className="POPUP">
-            <button onClick={clickHandler1}>Open</button>
-            <button onClick={clickHandler2}>Close</button>
-            <button onClick={clickHandler3}>Open Double</button>
-            <button onClick={clickHandler4}>Close Double</button>
-
-            <h1>{ popUpState }</h1>
+        <div className="popup">
+            <div className="popup-overlay" onClick={closePopUpHandler}/>
+            <div className="popup-content" style={{width: popUpWidth}}>
+                { renderInnerComponent() }
+            </div>
         </div>
     )
 }
@@ -51,8 +61,6 @@ const putActionsToProps = (dispatch) => {
 }
 
 const putStateToProps = (state) => {
-    console.log("State")
-    console.log(state)
     return {
         popUpState: state.popUp.popUpState
     }

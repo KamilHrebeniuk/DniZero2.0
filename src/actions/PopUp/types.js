@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     popUpClose:         "POP_UP_CLOSE",
     popUpOpen:          "POP_UP_OPEN",

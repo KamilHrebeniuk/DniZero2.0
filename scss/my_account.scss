@@ -1,26 +1,13 @@
 //********************* Default *********************//
 .account{
-  display: none;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  padding-top: 100px;
-  z-index: 1;
-  position: fixed;
   background-color: rgba(0,0,0,0.4);
 
   &-content{
     position: relative;
     background-color: #fefefe;
-    margin: auto;
     padding: 20px;
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
   }
 
   &-menu {
@@ -42,15 +29,6 @@
   }
 }
 
-@keyframes animatetop {
-  from {top:-300px;opacity: 0}
-  to {top: 0;opacity: 1}
-}
-
-@-webkit-keyframes animatetop {
-  from {top:-300px;opacity: 0}
-  to {top: 0;opacity: 1}
-}
 .guardian-picture{
   width: 200px;
   height: 200px;
@@ -73,13 +51,9 @@
 //********************** Tablet *********************//
 @include resTo($res_m) {
 .account{
-  display: none;
   padding-top: 0;
 
   &-content{
-    position: fixed;
-    width: 100%;
-    height: 100%;
     overflow: scroll;
   }
 
