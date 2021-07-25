@@ -7,32 +7,100 @@
   &-content{
     position: relative;
     background-color: #fefefe;
-    padding: 20px;
+    border-left: 1px solid lightgray;
+    float:right;
+    width: 70%;
+    height: 100%;
+    text-align: center;
   }
 
   &-menu {
     display: flex;
-    width: 100%;
-    flex-direction: row;
+    width: 30%;
+    height: 100%;
+    background: white;
+    flex-direction: column;
     justify-content: center;
-  }
-
-  &-close_button{
-    display: none;
   }
 
   &-button{
     display: block;
-    width: 33.3%;
-    padding: 5px;
-    margin: 10px;
+    width: 100%;
+    padding: 17px;
+    margin: 0px;
+    height: 60px;
+    background-color: white;
+    font-size: 17px;
+    text-align: left;
+    border: 1px solid lightgray;
   }
-}
+  &-button:focus{
+    background-color: lightgray;
+    border: 1px solid gray;
+  }
+  &-button:hover{
+    background-color: lightgray;
+    border: 1px solid gray;
+    transition: all 0.25s;
+  }
+  &-button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.25s;
+  }
+  &-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -7px;
+    right: -50px;
+    transition: 0.25s;
+    font-size:25px;
+  }
+  &-button:hover span {
+    padding-right: 40px;
+  }
+  &-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  &-footer{
+    bottom: 5px;
+    left: 31%;
+    position: absolute;
+    color: #BEBEBE;
+  }
+  &-number{
+    position: absolute;
+    bottom: 5px;
+  }
+  &-contact{
+    display: flex;
+    flex-flow: row wrap;
+    clear:both;
+  }
+  .contact{
+    flex-grow: 1;
+    flex-basis: 50%;
+  }
 
+}
+#close{
+    display: none;
+}
 .guardian-picture{
   width: 200px;
   height: 200px;
+  float: left;
+  margin-left: 50px;
 }
+.qr-code{
+  width: 207px;
+  height: 207px;
+  margin: 2px;
+}
+
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
 
@@ -73,16 +141,19 @@
     align-items: center;
     margin: 5px;
     padding: 10px;
+    text-align: center;
   }
-  &-close_button{
-    display: block;
-    align-items: center;
-    margin: 5px;
-    padding: 10px;
-    width: 100%;
+  &-button span:after{
+    content: '\25bd';
+    font-size: 20px;
+    top:-3px;
   }
-}
 
+
+}
+#close{
+  display: block;
+}
 }
 
 //********************** Mobile *********************//

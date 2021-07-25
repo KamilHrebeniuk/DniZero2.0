@@ -1,4 +1,21 @@
 //********************* Default *********************//
+table{
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
+}
+td,tr,th {
+  border: 1px solid black;
+  background-color: white;
+  padding: 0;
+  text-align: center;
+}
+.content{
+  height: 200px;
+  width: 200px;
+}
 
 
 
