@@ -4,7 +4,50 @@
 
   &-content {
     display: flex;
+    overflow-y: scroll;
   }
+
+  &-content::-webkit-scrollbar{
+    display: none;
+  }
+
+  &-content{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  &-main{
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    top: 40%;
+    color: white;
+    padding-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+
+  &-main p{
+    width: 100%;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &-main span{
+    width: 100%;
+  }
+
+  &-main button{
+    border-radius: 6px;
+    height: 35px;
+    width: 130px;
+    border: none;
+    opacity: 0.7;
+    margin-top: 10px;
+  }
+
 }
 
 
@@ -12,13 +55,34 @@
 @include resFrom($res_m) {
   .home {
     padding: 15px;
+    height: 100%;
+    overflow-x: hidden;
+    width: 100%;
 
     &-content {
       width: 100%;
       flex-direction: row;
       overflow-x: auto;
-      margin-top: 720px;  //TMP
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      padding-left: 20px;
+      -webkit-overflow-scrolling: touch;
     }
+
+    &-main p{
+      font-size: 45px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &-main span{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
   }
 }
 
@@ -29,7 +93,24 @@
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
+  .home{
 
+    &-main p{
+      width: 100%;
+      font-size: 60px;
+      font-weight: 400;
+      margin: 0;
+      overflow: visible;
+      text-overflow: unset;
+      white-space: unset;
+    }
+
+    &-main span{
+      overflow: visible;
+      text-overflow: unset;
+      white-space: unset;
+    }
+  }
 }
 
 //********************** Tablet *********************//
@@ -42,10 +123,19 @@
       max-width: 480px;
       flex-direction: column;
     }
+
+    &-main{
+      display: none;
+    }
+
   }
 }
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-
+  .home{
+    &-main{
+      display: none;
+    }
+  }
 }

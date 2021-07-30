@@ -5,26 +5,26 @@ export default function MyAccount({name, guardian_picture, guardian_name, guardi
         <div className="account">
             <div className="account-content">
                 <h2>Witaj, {name}</h2>
-                <h3>Twój opiekun:</h3>
+                <p>Twój opiekun:</p>
                 <img className="guardian-picture" src={guardian_picture} alt={guardian_name}/>
-                <h4>Imie i Nazwisko: {guardian_name}</h4>
-                <h4>Numer telefonu: {guardian_number}</h4>
+                <p>Imie i Nazwisko: {guardian_name}</p>
+                <span>Numer telefonu: {guardian_number}</span>
                 <div className="account-contact">
                     <div className="contact">
-                        <h5 >Koordynator ds. Uczestników:</h5>
-                        <h3> 123456789</h3>
+                        <p >Koordynator ds. Uczestników:</p>
+                        <span> 123456789</span>
                     </div>
                     <div className="contact">
-                        <h5 >Koordynator ds. Programu: </h5>
-                        <h3> 123456789</h3>
+                        <p >Koordynator ds. Programu: </p>
+                        <span> 123456789</span>
                     </div>
                     <div className="contact">
-                        <h5 >Koordynator ds. Ciężkich: </h5>
-                        <h3> 123456789</h3>
+                        <p >Koordynator ds. Ciężkich: </p>
+                        <span> 123456789</span>
                     </div>
                     <div className="contact">
-                        <h5 >Pogotowie (klinowe): </h5>
-                        <h3> 123456789</h3>
+                        <p >Pogotowie (klinowe): </p>
+                        <span> 123456789</span>
                     </div>
                 </div>
                 <div className="account-footer">
