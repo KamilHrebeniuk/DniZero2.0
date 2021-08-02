@@ -3,14 +3,10 @@ import LoginPage from "./loginPage";
 import HomePage from "./homePage";
 
 const Container = () => {
-    const isLoggedIn = false;
-    console.log("Container")
+  const isLoggedIn = false;
+  console.log("Container");
 
-    return (
-        <>
-            {isLoggedIn ? (<HomePage/>) : (<LoginPage/>)}
-        </>
-    )
+  return <>{isLoggedIn ? <HomePage /> : <LoginPage />}</>;
 };
 
-export default Container
+export default Container;

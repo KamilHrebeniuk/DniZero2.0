@@ -17,25 +17,20 @@
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
-
 }
 
 //********************* Desktop *********************//
 @include resFrom($res_l) {
-
 }
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-
 }
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
-
 }
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-
 }

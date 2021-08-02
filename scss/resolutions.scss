@@ -1,25 +1,25 @@
-$res_xxs: 360px;    //Supportive breakpoint for <320px - 360px)
-$res_xs: 480px;     //Main breakpoint for mobiles
+$res_xxs: 360px; //Supportive breakpoint for <320px - 360px)
+$res_xs: 480px; //Main breakpoint for mobiles
 $res_s: 640px;
-$res_m: 768px;      //Main breakpoint for tablet
-$res_l: 1024px;     //Main breakpoint for desktop
+$res_m: 768px; //Main breakpoint for tablet
+$res_l: 1024px; //Main breakpoint for desktop
 $res_xl: 1280px;
 $res_xxl: 1440px;
 
 @mixin resTo($value) {
-  @media only screen and ('max-width': $value - 1px) {
+  @media only screen and ("max-width": $value - 1px) {
     @content;
   }
 }
 
 @mixin resFrom($value) {
-  @media only screen and ('min-width': $value) {
+  @media only screen and ("min-width": $value) {
     @content;
   }
 }
 
 @mixin resBetween($value_min, $value_max) {
-  @media only screen and ('min-width': $value_min) and ('max-width': $value_max - 1px) {
+  @media only screen and ("min-width": $value_min) and ("max-width": $value_max - 1px) {
     @content;
   }
 }

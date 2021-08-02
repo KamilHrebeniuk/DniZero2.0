@@ -13,9 +13,7 @@
 
   &-content {
     font-size: $font_size_s;
-
   }
-
 }
 
 .agenda_item_text {
@@ -45,7 +43,6 @@
   }
 }
 
-
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
   .agenda_item_text,
@@ -59,12 +56,10 @@
 
 //********************* Desktop *********************//
 @include resFrom($res_l) {
-
 }
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-
 }
 
 //********************** Tablet *********************//
@@ -77,5 +72,4 @@
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-
 }
