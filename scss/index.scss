@@ -18,11 +18,21 @@
 
 * {
   box-sizing: border-box;
-}
 
+}
+#root{
+  background-image:url("../images/placeholders/background.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
 body {
   font-family: $font_face_primary;
   font-size: $font_size_m;
   color: $color_primary_text;
   margin: 0;
+  height: 100%;
+}
+html{
+  height: 100%;
 }

@@ -5,7 +5,12 @@ import { AgendaItemTextImage } from "../AgendaItem";
 export default function HomePage() {
     return (
         <section className="home">
-            <div className="home-content">
+            <div className="home-main">
+                <p>Lorem ipsum dolor sit amet</p>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eni</span><br/>
+                <button>Szczegóły &rarr;</button>
+            </div>
+            <div className="home-content" onLoad={horizontalScroll}>
                 {/* TO DO: title and content as variables */}
                 <AgendaItemText title={"First point"} content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
                 <AgendaItemTextImage title={"Second point"} content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
@@ -14,4 +19,13 @@ export default function HomePage() {
             </div>
         </section>
     )
+}
+function horizontalScroll(){
+    const scrollContainer = document.querySelector(".home-content");
+    if(scrollContainer){
+        scrollContainer.addEventListener("wheel",(evt) =>{
+            evt.preventDefault();
+            scrollContainer.scrollLeft +=evt.deltaY;
+        })
+    }
 }
