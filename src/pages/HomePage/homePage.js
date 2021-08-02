@@ -1,8 +1,8 @@
 import React from "react";
-import { AgendaItemText } from "../AgendaItem";
-import { AgendaItemTextImage } from "../AgendaItem";
+import { AgendaItemText } from "../../components/AgendaItem";
+import { AgendaItemTextImage } from "../../components/AgendaItem";
 
-export default function HomePage() {
+const HomePage = () => {
     return (
         <section className="home">
             <div className="home-main">
@@ -29,3 +29,5 @@ function horizontalScroll(){
         })
     }
 }
+
+export default HomePage

@@ -5,8 +5,10 @@ import { useHistory } from "react-router-dom";
 import popUpActions from "../../actions/PopUp";
 import PopUpTypes from "../PopUp/types"
 
-import TimeTable from "../TimeTable/timeTable";
-import MyAccount from "../MyAccount/myAccount";
+import TimeTable from "../../pages/TimeTable/timeTable";
+import MyAccount from "../../pages/MyAccount/myAccount";
+import Register from "../../pages/Register";
+import Info from "../../pages/Info";
 
 
 function PopUp ({popUpState, openPopUp, closePopUp, openDoublePopUp, closeDoublePopUp, popUpWidth, popUpContentType}) {
@@ -35,6 +37,10 @@ function PopUp ({popUpState, openPopUp, closePopUp, openDoublePopUp, closeDouble
                 return (<TimeTable/>)
             case PopUpTypes.popUpMyAccount:
                 return (<MyAccount/>)
+            case PopUpTypes.popUpRegister:
+                return (<Register/>)
+            case PopUpTypes.popUpInfo:
+                return (<Info/>)
             default:
                 return undefined
         }

@@ -136,6 +136,22 @@
     justify-content: flex-start;
   }
 }
+.player-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.player-content {
+  width: unset !important;
+  height: unset !important;
+  object-fit: cover;
+}
+
 .home {
   width: 100%;
 }
@@ -415,9 +431,6 @@
 }
 
 #root {
-  background-image: url("../images/placeholders/background.png");
-  background-size: cover;
-  background-position: center;
   height: 100%;
 }
 
