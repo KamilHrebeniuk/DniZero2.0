@@ -426,6 +426,157 @@
     display: block;
   }
 }
+.required:after {
+  content: "*";
+  color: red;
+}
+
+.register-content {
+  text-align: center;
+}
+.register-content p {
+  padding-top: 5px;
+  margin-bottom: 20px;
+  font-size: large;
+}
+.register-content label {
+  font-size: medium;
+}
+.register-content input {
+  margin-bottom: 20px;
+}
+
+.login-page-left-container {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  background-color: #c5c5c5;
+  left: 8%;
+  top: 30%;
+  text-align: center;
+}
+
+.login-page-left-container p {
+  padding-top: 5px;
+  margin-bottom: 20px;
+  font-size: large;
+}
+
+.login-page-left-container label {
+  font-size: medium;
+}
+
+.login-page-left-container input {
+  margin-top: 5px;
+  margin-bottom: 35px;
+}
+
+.login-page-left-container input[type=submit] {
+  height: 40px;
+  width: 100px;
+}
+
+.blocker {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  opacity: 0;
+  left: 8%;
+  top: 30%;
+  text-align: center;
+  padding-top: 140px;
+  font-size: large;
+}
+
+.blocker:hover {
+  background-color: #c5c5c5;
+  opacity: 0.9;
+}
+
+.login-page-right-container {
+  position: absolute;
+  height: 150px;
+  width: 300px;
+  background-color: #c5c5c5;
+  right: 8%;
+  top: 40%;
+  text-align: center;
+}
+
+.login-page-right-container p {
+  padding-top: 10px;
+  margin-bottom: 20px;
+  font-size: large;
+}
+
+.login-page-right-container button {
+  margin-top: 15px;
+  font-size: large;
+}
+
+.login-page-bottom-container {
+  --width: 400px;
+  position: absolute;
+  height: 100px;
+  width: var(--width);
+  background-color: #c5c5c5;
+  bottom: 0;
+  left: calc(50% - calc(var(--width)) / 2);
+  text-align: center;
+}
+
+.login-page-bottom-container a {
+  text-decoration: none;
+}
+
+.login-page-bottom-container a:link,
+a:visited,
+a:active {
+  color: #777777;
+}
+
+@media only screen and (max-width: 767px) {
+  .login {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .player-container {
+    display: none;
+  }
+
+  .login-page-left-container {
+    width: 100%;
+    margin: 0;
+    display: block;
+    position: static;
+    height: 33%;
+  }
+
+  .blocker {
+    width: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    height: 33%;
+  }
+
+  .login-page-right-container {
+    width: 100%;
+    margin: 0;
+    display: block;
+    position: static;
+    height: 33%;
+  }
+
+  .login-page-bottom-container {
+    width: 100%;
+    margin: 0;
+    display: block;
+    position: static;
+    height: 33%;
+  }
+}
 * {
   box-sizing: border-box;
 }
