@@ -7,16 +7,16 @@
     overflow-y: scroll;
   }
 
-  &-content::-webkit-scrollbar{
+  &-content::-webkit-scrollbar {
     display: none;
   }
 
-  &-content{
+  &-content {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
-  &-main{
+  &-main {
     position: absolute;
     width: 30%;
     height: 30%;
@@ -28,18 +28,18 @@
     cursor: pointer;
   }
 
-  &-main p{
+  &-main p {
     width: 100%;
     font-size: 60px;
     font-weight: 400;
     margin: 0;
   }
 
-  &-main span{
+  &-main span {
     width: 100%;
   }
 
-  &-main button{
+  &-main button {
     border-radius: 6px;
     height: 35px;
     width: 130px;
@@ -47,9 +47,7 @@
     opacity: 0.7;
     margin-top: 10px;
   }
-
 }
-
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
@@ -70,32 +68,29 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    &-main p{
+    &-main p {
       font-size: 45px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    &-main span{
+    &-main span {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-
   }
 }
 
 //********************* Desktop *********************//
 @include resFrom($res_l) {
-
 }
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-  .home{
-
-    &-main p{
+  .home {
+    &-main p {
       width: 100%;
       font-size: 60px;
       font-weight: 400;
@@ -105,7 +100,7 @@
       white-space: unset;
     }
 
-    &-main span{
+    &-main span {
       overflow: visible;
       text-overflow: unset;
       white-space: unset;
@@ -124,17 +119,16 @@
       flex-direction: column;
     }
 
-    &-main{
+    &-main {
       display: none;
     }
-
   }
 }
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-  .home{
-    &-main{
+  .home {
+    &-main {
       display: none;
     }
   }

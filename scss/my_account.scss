@@ -1,14 +1,14 @@
 //********************* Default *********************//
-.account{
+.account {
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 
-  &-content{
+  &-content {
     position: relative;
     background-color: #fefefe;
     border-left: 1px solid lightgray;
-    float:right;
+    float: right;
     width: 70%;
     height: 100%;
     text-align: center;
@@ -23,7 +23,7 @@
     justify-content: center;
   }
 
-  &-button{
+  &-button {
     display: block;
     width: 100%;
     padding: 17px;
@@ -34,29 +34,29 @@
     text-align: left;
     border: 1px solid lightgray;
   }
-  &-button:focus{
+  &-button:focus {
     background-color: lightgray;
     border: 1px solid gray;
   }
-  &-button:hover{
+  &-button:hover {
     background-color: lightgray;
     border: 1px solid gray;
     transition: all 0.25s;
   }
-  &-button span{
+  &-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.25s;
   }
   &-button span:after {
-    content: '\00bb';
+    content: "\00bb";
     position: absolute;
     opacity: 0;
     top: -7px;
     right: -50px;
     transition: 0.25s;
-    font-size:25px;
+    font-size: 25px;
   }
   &-button:hover span {
     padding-right: 40px;
@@ -65,37 +65,36 @@
     opacity: 1;
     right: 0;
   }
-  &-footer{
+  &-footer {
     bottom: 5px;
     left: 31%;
     position: absolute;
-    color: #BEBEBE;
+    color: #bebebe;
   }
-  &-number{
+  &-number {
     position: absolute;
     bottom: 5px;
   }
-  &-contact{
+  &-contact {
     display: flex;
     flex-flow: row wrap;
-    clear:both;
+    clear: both;
   }
-  .contact{
+  .contact {
     flex-grow: 1;
     flex-basis: 50%;
   }
-
 }
-#close{
-    display: none;
+#close {
+  display: none;
 }
-.guardian-picture{
+.guardian-picture {
   width: 200px;
   height: 200px;
   float: left;
   margin-left: 50px;
 }
-.qr-code{
+.qr-code {
   width: 207px;
   height: 207px;
   margin: 2px;
@@ -103,58 +102,54 @@
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
-
 }
 
 //********************* Desktop *********************//
 @include resFrom($res_l) {
-
 }
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-
 }
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
-.account{
-  padding-top: 0;
+  .account {
+    padding-top: 0;
 
-  &-content{
-    overflow: scroll;
-  }
+    &-content {
+      overflow: scroll;
+    }
 
-  &-menu{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: flex-start;
-  }
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: flex-start;
+    }
 
-  &-footer{
-    display: none;
-  }
+    &-footer {
+      display: none;
+    }
 
-  &-button{
-    width: 100%;
-    align-items: center;
-    margin: 5px;
-    padding: 10px;
-    text-align: center;
+    &-button {
+      width: 100%;
+      align-items: center;
+      margin: 5px;
+      padding: 10px;
+      text-align: center;
+    }
+    &-button span:after {
+      content: "\25bd";
+      font-size: 20px;
+      top: -3px;
+    }
   }
-  &-button span:after{
-    content: '\25bd';
-    font-size: 20px;
-    top:-3px;
+  #close {
+    display: block;
   }
-}
-#close{
-  display: block;
-}
 }
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-
 }

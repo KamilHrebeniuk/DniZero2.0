@@ -7,23 +7,25 @@
 @import "menu";
 @import "agenda_items";
 @import "popup";
+@import "player";
 
 //Pages
 @import "homepage";
 @import "timetable";
 @import "my_account";
+@import "register";
+@import "info";
 
 //Demo
 //@import "demo/breakpoints";
 
 * {
   box-sizing: border-box;
-
 }
-#root{
-  background-image:url("../images/placeholders/background.png");
-  background-size: cover;
-  background-position: center;
+#root {
+  //background-image:url("../images/placeholders/background.png");
+  //background-size: cover;
+  //background-position: center;
   height: 100%;
 }
 body {
@@ -33,6 +35,6 @@ body {
   margin: 0;
   height: 100%;
 }
-html{
+html {
   height: 100%;
 }

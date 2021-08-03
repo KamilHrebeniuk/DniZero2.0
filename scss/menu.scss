@@ -6,9 +6,7 @@
   background-color: $color_primary;
   z-index: 10;
 
-
   &-element {
-
     flex-basis: 33.33%;
     text-align: center;
     padding: 8px 0 4px;
@@ -19,7 +17,6 @@
     height: 32px;
   }
 }
-
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
@@ -34,12 +31,10 @@
 
 //********************* Desktop *********************//
 @include resFrom($res_l) {
-
 }
 
 //****************** Large Desktop ******************//
 @include resFrom($res_xl) {
-
 }
 
 //********************** Tablet *********************//
@@ -53,5 +48,4 @@
 
 //********************** Mobile *********************//
 @include resTo($res_xs) {
-
 }
