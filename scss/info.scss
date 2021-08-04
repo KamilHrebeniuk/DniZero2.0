@@ -1,5 +1,25 @@
 //********************* Default *********************//
-
+.info{
+  padding: 15px;
+  &-description{
+    margin-bottom: 10px;
+    display: block;
+    height: 200px;
+  }
+  &-description div{
+   width: 450px;
+  }
+  &-place p{
+    margin: 0;
+  }
+}
+.logo{
+  height: 200px;
+  float: right;
+}
+.place{
+  height: 200px;
+}
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
 }
@@ -14,6 +34,19 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
+  .info{
+    &-content{
+      display:flex;
+      flex-flow: column nowrap;
+    }
+    &-description{
+      margin-bottom: 10px;
+      display: block;
+    }
+    &-place{
+
+    }
+  }
 }
 
 //********************** Mobile *********************//

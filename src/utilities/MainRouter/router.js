@@ -37,7 +37,7 @@ const MainRouter = () => {
         ) : (
           <PopUp
             popUpContentType={PopUpTypes.popUpRegister}
-            popUpWidth="420px"
+            popUpWidth="460px"
           />
         )}
       </Route>

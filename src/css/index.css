@@ -152,6 +152,43 @@
   object-fit: cover;
 }
 
+.required:after {
+  content: "*";
+  color: red;
+}
+
+.register-content {
+  padding: 8px;
+}
+.register input[type=text], .register input[type=password], .register input[type=tel], .register input[type=email] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  border: none;
+  background: #c5c5c5;
+}
+.register select {
+  margin: 0 11px 10px 7px;
+}
+.register input[type=submit] {
+  background-color: #c5c5c5;
+  width: 100px;
+  height: 30px;
+  border: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  margin-left: calc((100% - 100px)/2);
+  margin-top: 40px;
+}
+.register input[type=submit]:hover {
+  background-color: #A5A5A5;
+}
+
+.ICE-content input[type=text], input[type=password], input[type=tel], input[type=email] {
+  margin: 5px 0 5px 0;
+}
+
 .home {
   width: 100%;
 }
@@ -426,26 +463,40 @@
     display: block;
   }
 }
-.required:after {
-  content: "*";
-  color: red;
+.info {
+  padding: 15px;
+}
+.info-description {
+  margin-bottom: 10px;
+  display: block;
+  height: 200px;
+}
+.info-description div {
+  width: 450px;
+}
+.info-place p {
+  margin: 0;
 }
 
-.register-content {
-  text-align: center;
-}
-.register-content p {
-  padding-top: 5px;
-  margin-bottom: 20px;
-  font-size: large;
-}
-.register-content label {
-  font-size: medium;
-}
-.register-content input {
-  margin-bottom: 20px;
+.logo {
+  height: 200px;
+  float: right;
 }
 
+.place {
+  height: 200px;
+}
+
+@media only screen and (max-width: 767px) {
+  .info-content {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .info-description {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
 .login-page-left-container {
   position: absolute;
   height: 300px;
@@ -535,10 +586,16 @@ a:active {
   color: #777777;
 }
 
+.login-page-bottom-container-info {
+  display: none;
+}
+
 @media only screen and (max-width: 767px) {
   .login {
     display: flex;
     flex-flow: column nowrap;
+    height: 100%;
+    padding: 5px;
   }
 
   .player-container {
@@ -546,27 +603,24 @@ a:active {
   }
 
   .login-page-left-container {
-    width: 100%;
-    margin: 0;
-    display: block;
-    position: static;
-    height: 33%;
+    display: none;
   }
 
   .blocker {
-    width: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    height: 33%;
+    display: none;
   }
 
   .login-page-right-container {
     width: 100%;
-    margin: 0;
+    margin-bottom: 5px;
     display: block;
     position: static;
-    height: 33%;
+    height: 40%;
+  }
+
+  .login-page-right-container button {
+    margin-top: 10vh;
+    font-size: large;
   }
 
   .login-page-bottom-container {
@@ -574,7 +628,11 @@ a:active {
     margin: 0;
     display: block;
     position: static;
-    height: 33%;
+    height: 40%;
+  }
+
+  .login-page-bottom-container-info {
+    display: block;
   }
 }
 * {
