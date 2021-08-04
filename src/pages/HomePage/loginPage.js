@@ -57,8 +57,15 @@ const LoginPage = () => {
             <u>Wieleniu Zaobrzańskim</u>
           </b>
         </p>
+          <div className="login-page-bottom-container-info">
+              Obóz studentów PWr to tydzień niesamowitych warsztatów, szkoleń i integracji studentów naszej uczelni. Mimo, że to wydarzenie skierowane jest głównie do nowo przyjętych studentów, udział w nim może wziąć każdy student Politechniki.
+              Co roku w obozie bierze udział ponad dwustu uczestników przeżywających wspaniałą, tygodniową przygodę. Kadra złożona z najaktywniejszych studentów prowadzi warsztaty z różnych dziedzin – w tym wprowadzi Was w tajniki działania naszej Uczelni.
+          </div>
         <Link to="Info">Czytaj więcej!</Link>
       </div>
+    <div className="sponsors">
+
+    </div>
     </section>
   );
 };

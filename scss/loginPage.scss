@@ -75,6 +75,9 @@ a:visited,
 a:active {
   color: $color_primary_text;
 }
+.login-page-bottom-container-info {
+  display: none;
+}
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
@@ -93,37 +96,38 @@ a:active {
   .login {
     display: flex;
     flex-flow: column nowrap;
+    height: 100%;
+    padding: 5px;
   }
   .player-container {
     display: none;
   }
   .login-page-left-container {
-    width: 100%;
-    margin: 0;
-    display: block;
-    position: static;
-    height: 33%;
+    display: none;
   }
   .blocker {
-    width: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    height: 33%;
+    display: none;
   }
   .login-page-right-container {
     width: 100%;
-    margin: 0;
+    margin-bottom: 5px;
     display: block;
     position: static;
-    height: 33%;
+    height: 40%;
+  }
+  .login-page-right-container button {
+    margin-top: 10vh;
+    font-size: large;
   }
   .login-page-bottom-container {
     width: 100%;
     margin: 0;
     display: block;
     position: static;
-    height: 33%;
+    height: 40%;
+  }
+  .login-page-bottom-container-info {
+    display: block;
   }
 }
 

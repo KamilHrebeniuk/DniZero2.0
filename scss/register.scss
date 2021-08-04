@@ -1,24 +1,5 @@
 //********************* Default *********************//
-.required:after {
-  content: "*";
-  color: red;
-}
-.register {
-  &-content {
-    text-align: center;
-  }
-  &-content p {
-    padding-top: 5px;
-    margin-bottom: 20px;
-    font-size: large;
-  }
-  &-content label {
-    font-size: medium;
-  }
-  &-content input {
-    margin-bottom: 20px;
-  }
-}
+
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
 }
