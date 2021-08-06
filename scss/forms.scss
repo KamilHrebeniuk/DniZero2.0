@@ -3,37 +3,48 @@
   content: "*";
   color: red;
 }
-.register{
-  &-content{
+.register {
+  &-content {
     padding: 8px;
   }
 
-input[type=text], input[type=password], input[type=tel],input[type=email]{
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0 15px 0;
-  display: inline-block;
-  border: none;
-  background: $color_secondary;
-}
-  select{
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: none;
+    background: $color_secondary;
+  }
+  select {
     margin: 0 11px 10px 7px;
   }
-  input[type=submit]{
+  input[type="submit"] {
     background-color: $color_secondary;
     width: 100px;
     height: 30px;
     border: none;
     transition-duration: 0.3s;
     cursor: pointer;
-    margin-left: calc((100% - 100px)/2);
-    margin-top: 40px;
+    margin-left: calc((100% - 100px) / 2);
+    margin-top: 20px;
   }
-  input[type=submit]:hover{
-    background-color: #A5A5A5;
+  input[type="submit"]:hover {
+    background-color: #a5a5a5;
   }
 }
-.ICE-content input[type=text], input[type=password], input[type=tel],input[type=email]{
+.extra {
+  font-size: 11px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.ICE-content input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
   margin: 5px 0 5px 0;
 }
 //******************* Large Tablet ******************//

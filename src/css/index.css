@@ -160,10 +160,13 @@
 .register-content {
   padding: 8px;
 }
-.register input[type=text], .register input[type=password], .register input[type=tel], .register input[type=email] {
+.register input[type=text],
+.register input[type=password],
+.register input[type=tel],
+.register input[type=email] {
   width: 100%;
   padding: 10px;
-  margin: 5px 0 15px 0;
+  margin: 5px 0 10px 0;
   display: inline-block;
   border: none;
   background: #c5c5c5;
@@ -178,14 +181,23 @@
   border: none;
   transition-duration: 0.3s;
   cursor: pointer;
-  margin-left: calc((100% - 100px)/2);
-  margin-top: 40px;
+  margin-left: calc((100% - 100px) / 2);
+  margin-top: 20px;
 }
 .register input[type=submit]:hover {
-  background-color: #A5A5A5;
+  background-color: #a5a5a5;
 }
 
-.ICE-content input[type=text], input[type=password], input[type=tel], input[type=email] {
+.extra {
+  font-size: 11px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.ICE-content input[type=text],
+input[type=password],
+input[type=tel],
+input[type=email] {
   margin: 5px 0 5px 0;
 }
 
