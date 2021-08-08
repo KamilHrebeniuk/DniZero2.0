@@ -4,9 +4,9 @@ import { bindActionCreators } from "redux";
 import popUpActions from "../../actions/PopUp";
 import { Link, useHistory } from "react-router-dom";
 import PopUpStates from "../../actions/PopUp/types";
-import ico_home from "../../images/icons/home.png";
-import ico_timetable from "../../images/icons/timetable.png";
-import ico_account from "../../images/icons/account.png";
+import ico_home from "../../assets/icons/home.png";
+import ico_timetable from "../../assets/icons/timetable.png";
+import ico_account from "../../assets/icons/account.png";
 
 function Navigation({ popUpState, openPopUp, closePopUp }) {
   const history = useHistory();

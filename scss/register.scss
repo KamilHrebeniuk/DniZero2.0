@@ -5,18 +5,18 @@
       display: flex;
       flex-flow: row nowrap;
       &-primary {
-        padding-right: 4px;
+        padding-right: 8px;
         width: 50%;
       }
       &-primary p {
         margin-top: 0;
       }
       &-secondary {
-        padding-left: 4px;
+        padding-left: 8px;
         width: 50%;
       }
       &-secondary p {
-        margin-top: 0px;
+        margin-top: 0;
       }
     }
   }
@@ -24,6 +24,7 @@
 .title {
   text-align: center;
   margin-bottom: 8px;
+  color: $color_secondary_text;
 }
 
 //******************* Large Tablet ******************//

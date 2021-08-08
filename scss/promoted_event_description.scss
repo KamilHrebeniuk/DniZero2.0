@@ -2,27 +2,25 @@
 .promoted_event_description-container {
   position: absolute;
   height: 300px;
-  width: 350px;
-  left: 8%;
-  top: calc(calc(100% - 300px) / 2);
+  width: 500px;
+  left: 80px;
+  top: 50%;
+  transform: translate(0, -50%);
   font-size: $font_size_l;
-  text-shadow: 1px 2px #000000;
-}
-h1 {
-  font-size: $font_size_xxl;
-  font-weight: 400;
-}
-.promoted_event_description-container a {
-  text-decoration: none;
-}
-.promoted_event_description-container a:link,
-a:visited,
-a:active {
-  color: $color_primary_text;
-}
-.promoted_event_description-buttons_container {
-  display: flex;
-  flex-flow: row nowrap;
+  text-shadow: 1px 1px 1px #808080;
+
+  h1 {
+    font-size: $font_size_xxxl;
+    font-weight: 400;
+  }
+  .promoted_event_description-buttons_container {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .button-container-secondary {
+    margin-left: 10px;
+  }
 }
 
 //******************* Large Tablet ******************//
