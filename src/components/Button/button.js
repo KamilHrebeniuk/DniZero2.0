@@ -12,7 +12,7 @@ const Button = ({ type = "primary", to = "/", title }) => {
     }
     case "secondary": {
       return (
-        <div className="button-container-primary">
+        <div className="button-container-secondary">
           <Link to={to}>{title}</Link>
         </div>
       );

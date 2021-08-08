@@ -33,13 +33,20 @@
     margin-top: 20px;
   }
   input[type="submit"]:hover {
-    background-color: #a5a5a5;
+    background-color: $color_spare;
+  }
+  input[type="checkbox"] {
+    margin-bottom: 5px;
+  }
+  select {
+    width: 100px;
   }
 }
+
 .extra {
   font-size: 11px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 .ICE-content input[type="text"],
 input[type="password"],

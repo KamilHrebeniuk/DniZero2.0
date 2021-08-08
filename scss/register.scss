@@ -1,4 +1,30 @@
 //********************* Default *********************//
+.register {
+  &-content {
+    &-column {
+      display: flex;
+      flex-flow: row nowrap;
+      &-primary {
+        padding-right: 4px;
+        width: 50%;
+      }
+      &-primary p {
+        margin-top: 0;
+      }
+      &-secondary {
+        padding-left: 4px;
+        width: 50%;
+      }
+      &-secondary p {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+.title {
+  text-align: center;
+  margin-bottom: 8px;
+}
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
