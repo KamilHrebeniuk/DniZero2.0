@@ -20,6 +20,8 @@
 .place {
   height: 200px;
 }
+ul {
+}
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {

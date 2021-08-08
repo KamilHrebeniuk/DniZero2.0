@@ -1,5 +1,15 @@
 //********************* Default *********************//
-
+.button-container-primary {
+  padding: 10px 20px 10px 20px;
+  background-color: $color_primary;
+  margin-right: 10px;
+  border-radius: 7px;
+}
+.button-container-secondary {
+  padding: 10px 20px 10px 20px;
+  background-color: $color_primary;
+  border-radius: 7px;
+}
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
 }
