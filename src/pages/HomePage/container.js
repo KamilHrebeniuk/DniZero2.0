@@ -1,12 +1,12 @@
 import React from "react";
-import LoginPage from "./loginPage";
+import LandingPage from "./landingPage";
 import HomePage from "./homePage";
 
 const Container = () => {
   const isLoggedIn = false;
   console.log("Container");
 
-  return <>{isLoggedIn ? <HomePage /> : <LoginPage />}</>;
+  return <>{isLoggedIn ? <HomePage /> : <LandingPage />}</>;
 };
 
 export default Container;
