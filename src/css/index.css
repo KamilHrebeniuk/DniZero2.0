@@ -59,7 +59,8 @@
   flex-wrap: wrap;
   padding: 10px 10px 0 10px;
 }
-.agenda_item_text_image-header, .agenda_item_text_image-content {
+.agenda_item_text_image-header,
+.agenda_item_text_image-content {
   width: calc(100% - 82px);
 }
 .agenda_item_text_image-content {
@@ -75,7 +76,7 @@
 
 @media only screen and (min-width: 768px) {
   .agenda_item_text,
-.agenda_item_text_image {
+  .agenda_item_text_image {
     margin-right: 20px;
     min-width: 400px;
     width: 400px;
@@ -84,7 +85,7 @@
 }
 @media only screen and (max-width: 767px) {
   .agenda_item_text,
-.agenda_item_text_image {
+  .agenda_item_text_image {
     margin-bottom: 20px;
   }
 }
@@ -160,10 +161,10 @@
 .register-content {
   padding: 8px;
 }
-.register input[type=text],
-.register input[type=password],
-.register input[type=tel],
-.register input[type=email] {
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="tel"],
+.register input[type="email"] {
   width: 100%;
   padding: 10px;
   margin: 5px 0 10px 0;
@@ -174,7 +175,7 @@
 .register select {
   margin: 0 11px 10px 7px;
 }
-.register input[type=submit] {
+.register input[type="submit"] {
   background-color: #c5c5c5;
   width: 100px;
   height: 30px;
@@ -184,7 +185,7 @@
   margin-left: calc((100% - 100px) / 2);
   margin-top: 20px;
 }
-.register input[type=submit]:hover {
+.register input[type="submit"]:hover {
   background-color: #a5a5a5;
 }
 
@@ -194,10 +195,10 @@
   margin-bottom: 2px;
 }
 
-.ICE-content input[type=text],
-input[type=password],
-input[type=tel],
-input[type=email] {
+.ICE-content input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
   margin: 5px 0 5px 0;
 }
 
@@ -334,7 +335,8 @@ input[type=email] {
   padding: 0;
   font-size: 15px;
   text-align: center;
-  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000,
+    2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
 }
 
 #time {
@@ -534,7 +536,7 @@ input[type=email] {
   margin-bottom: 35px;
 }
 
-.login-page-left-container input[type=submit] {
+.login-page-left-container input[type="submit"] {
   height: 40px;
   width: 100px;
 }
