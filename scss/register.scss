@@ -1,5 +1,8 @@
 //********************* Default *********************//
 .register {
+  &-close {
+    display: none;
+  }
   &-content {
     &-column {
       display: flex;
@@ -25,6 +28,7 @@
   text-align: center;
   margin-bottom: 8px;
   color: $color_secondary_text;
+  font-size: $font_size_xl;
 }
 
 //******************* Large Tablet ******************//
@@ -41,6 +45,60 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
+  .register {
+    font-size: $font_size_l;
+    &-close {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      max-width: 50px;
+      max-height: 50px;
+      padding-top: 10px;
+
+      &-icon {
+        max-width: 50px;
+        max-height: 50px;
+      }
+    }
+    &-content {
+      &-column {
+        display: flex;
+        flex-flow: column nowrap;
+        &-primary {
+          padding-right: 0;
+          padding-bottom: 10px;
+          width: 100%;
+          font-size: $font-size_l;
+        }
+        &-primary p {
+          margin-top: 0;
+          font-size: 23px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        &-secondary {
+          padding-left: 0;
+          padding-top: 10px;
+          width: 100%;
+          font-size: $font-size_l;
+          border-top: 1px $color_white solid;
+          margin-bottom: 10px;
+        }
+        &-secondary p {
+          margin-top: 0;
+          font-size: 23px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 8px;
+    color: $color_secondary_text;
+  }
 }
 
 //********************** Mobile *********************//

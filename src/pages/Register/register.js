@@ -1,6 +1,8 @@
 import React from "react";
 import { Field, Formik, Form } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
+import exit from "../../assets/placeholders/exit.jpg";
 
 export default function Register() {
   function send(array) {
@@ -91,6 +93,11 @@ export default function Register() {
     >
       <div className="register">
         <p className="title">Rejestracja</p>
+        <div className="register-close">
+          <Link to="/">
+            <img className="register-close-icon" src={exit} alt={"Exit"} />
+          </Link>
+        </div>
         <div className="register-content">
           <Form name="register">
             <div className="register-content-column">
@@ -107,7 +114,7 @@ export default function Register() {
                   placeholder="Jan Kowalski"
                   required
                 />
-                <br />
+
                 <label className="required" htmlFor="email">
                   Email:
                 </label>
@@ -118,7 +125,7 @@ export default function Register() {
                   placeholder="jan.kowalski@o2.pl"
                   required
                 />
-                <br />
+
                 <label className="required" htmlFor="phone">
                   Numer telefonu:
                 </label>
@@ -130,7 +137,6 @@ export default function Register() {
                   placeholder="123456789"
                   required
                 />
-                <br />
               </div>
 
               <div className="register-content-column-secondary">
@@ -173,7 +179,7 @@ export default function Register() {
               </div>
             </div>
 
-            <label className="required" htmlFor="size">
+            <label className="required shirt" htmlFor="shirt">
               Rozmiar koszuli:
             </label>
             <Field as="select" name="shirt" id="shirt">
@@ -186,7 +192,7 @@ export default function Register() {
               <option value="xl">XL</option>
             </Field>
 
-            <label className="required" htmlFor="year">
+            <label className="required year" htmlFor="year">
               Rok studiów:
             </label>
             <Field as="select" name="year" id="year">
@@ -198,7 +204,7 @@ export default function Register() {
               <option value="5">5 rok</option>
             </Field>
 
-            <label className="required" htmlFor="diet">
+            <label className="required diet" htmlFor="diet">
               Dieta:
             </label>
             <Field as="select" name="diet" id="diet" required>
@@ -209,45 +215,41 @@ export default function Register() {
               <option value="special">Specjalna ze względów zdrowotnych</option>
             </Field>
 
-            <br />
-
-            <label className="required" htmlFor="bus">
-              Potrzebny transport z Wrocławia na obóz:
+            <label className="required bus" htmlFor="bus">
+              Transport z Wrocławia na obóz:
             </label>
             <Field as="select" name="bus" id="bus" required>
               <option hidden value></option>
               <option value="with">tak</option>
               <option value="without">nie</option>
             </Field>
-            <br />
 
-            <Field type="checkbox" id="vaccine" name="vaccine" />
-            <label htmlFor="vaccine">Jestem osobą zaszczepioną</label>
-            <br />
+            <label htmlFor="vaccine">
+              <Field type="checkbox" id="vaccine" name="vaccine" />
+              Jestem osobą zaszczepioną
+            </label>
+
             <p className="extra">
               Informacja nie jest skojarzona z osobą, a podanie jej jest
               dobrowolne i nieobligatoryjne. <br /> Zbierana jest w celu
               zliczenia ilości osób zaszczepionych
             </p>
-
-            <Field type="checkbox" id="health" name="health" required />
             <label className="required" htmlFor="health">
+              <Field type="checkbox" id="health" name="health" required />
               Deklaruje że jestem w dobrym stanie zdrowia i mogę wziąć udział w
               obozie.
             </label>
-            <br />
+
             <p className="extra">
               Ośrodek nie jest przystosowany do potrzeb osób niepełnosprawnych.
             </p>
-
-            <Field type="checkbox" id="age" name="age" required />
             <label className="required" htmlFor="age">
+              <Field type="checkbox" id="age" name="age" required />
               Mam ukończone 18 lat
             </label>
-            <br />
 
-            <Field type="checkbox" id="rules" name="rules" required />
             <label className="required" htmlFor="rules">
+              <Field type="checkbox" id="rules" name="rules" required />
               Przeczytałem/-am i akceptuję warunki{" "}
               <a
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -257,9 +259,12 @@ export default function Register() {
                 regulaminu
               </a>
             </label>
-            <br />
 
-            <input type="submit" value="Wyślij!" />
+            <input
+              className="button-container-primary"
+              type="submit"
+              value="Wyślij!"
+            />
           </Form>
         </div>
       </div>

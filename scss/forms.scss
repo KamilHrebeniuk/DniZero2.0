@@ -1,14 +1,18 @@
 //********************* Default *********************//
-.required:after {
-  content: "*";
-  color: red;
-}
 .register {
   &-content {
     padding: 16px;
     color: $color_secondary_text;
   }
-
+  label {
+    display: block;
+  }
+  .shirt,
+  .bus,
+  .diet,
+  .year {
+    display: inline-block;
+  }
   input[type="text"],
   input[type="password"],
   input[type="tel"],
@@ -20,27 +24,22 @@
     border: none;
     background: $color_white;
   }
-  select {
-    margin: 0 11px 10px 7px;
-  }
+
   input[type="submit"] {
-    background-color: $color_white;
-    width: 100px;
-    height: 30px;
-    border: none;
-    transition-duration: 0.3s;
-    cursor: pointer;
-    margin-left: calc((100% - 100px) / 2);
+    margin-left: calc((100% - 124px) / 2);
     margin-top: 20px;
+    font-size: $font_size_xl;
+    border: none;
+    box-shadow: none;
   }
-  input[type="submit"]:hover {
-    background-color: $color_spare;
-  }
+
   input[type="checkbox"] {
     margin-bottom: 5px;
   }
+
   select {
-    width: 100px;
+    width: 90px;
+    margin: 0 11px 10px 7px;
   }
 }
 
@@ -54,6 +53,10 @@ input[type="password"],
 input[type="tel"],
 input[type="email"] {
   margin: 5px 0 5px 0;
+}
+.required:after {
+  content: "*";
+  color: red;
 }
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
@@ -69,6 +72,40 @@ input[type="email"] {
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
+  .register {
+    select {
+      width: 100px;
+      height: 30px;
+      margin: 0 20px 20px 7px;
+      font-size: $font_size_m;
+    }
+    .shirt,
+    .bus,
+    .diet,
+    .year {
+      display: inline-block;
+      width: 400px;
+    }
+    input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    label {
+      display: block;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="email"] {
+      height: 45px;
+      font-size: $font_size_l;
+    }
+    .extra {
+      font-size: $font_size_m;
+    }
+  }
 }
 
 //********************** Mobile *********************//
