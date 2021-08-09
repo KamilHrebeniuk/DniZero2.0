@@ -1,5 +1,5 @@
 import React from "react";
-import agenda_item_placeholder from "../../images/placeholders/agenda_item_placeholder.png";
+import agenda_item_placeholder from "../../assets/placeholders/agenda_item_placeholder.png";
 
 export function AgendaItemTextImage({
   title = "Title",

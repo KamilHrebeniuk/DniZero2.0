@@ -1,14 +1,32 @@
 //********************* Default *********************//
-.button-container-primary {
-  padding: 10px 20px 10px 20px;
-  background-color: $color_primary;
-  margin-right: 10px;
-  border-radius: 7px;
-}
-.button-container-secondary {
-  padding: 10px 20px 10px 20px;
-  background-color: $color_primary;
-  border-radius: 7px;
+.button-container {
+  &-primary,
+  &-secondary {
+    padding: 10px 20px 10px 20px;
+    border-radius: 7px;
+    text-shadow: none;
+
+    a {
+      text-decoration: none;
+    }
+    a:link,
+    a:visited,
+    a:active {
+      color: $color_primary_text;
+    }
+  }
+
+  &-primary {
+    background-color: $color_primary;
+  }
+
+  &-secondary {
+    background-color: $color_secondary_background;
+    a {
+      color: $color_primary_text;
+      font-weight: 500;
+    }
+  }
 }
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {

@@ -1,7 +1,5 @@
 import React from "react";
-import ReactPlayer from "react-player";
-import { Link } from "react-router-dom";
-import backgroundVideo from "../../images/backgrounds/backgroundMainVideo.mp4";
+import BackgroundVideo from "../../components/BackgroundVideo";
 import PromotedEventDescription from "../../components/PromotedEvent";
 
 const LandingPage = () => {
@@ -12,17 +10,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className="player-container">
-        <ReactPlayer
-          className="player-content"
-          onEnded={() => {
-            console.log("Koniec filmu");
-          }}
-          playing
-          muted
-          url={backgroundVideo}
-        />
-      </div>
+      <BackgroundVideo />
       <PromotedEventDescription
         title={"Zapisz się na Obóz Studentów PWr"}
         description={

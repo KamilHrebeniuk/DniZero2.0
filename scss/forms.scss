@@ -5,7 +5,8 @@
 }
 .register {
   &-content {
-    padding: 8px;
+    padding: 16px;
+    color: $color_secondary_text;
   }
 
   input[type="text"],
@@ -17,13 +18,13 @@
     margin: 5px 0 10px 0;
     display: inline-block;
     border: none;
-    background: $color_secondary;
+    background: $color_white;
   }
   select {
     margin: 0 11px 10px 7px;
   }
   input[type="submit"] {
-    background-color: $color_secondary;
+    background-color: $color_white;
     width: 100px;
     height: 30px;
     border: none;

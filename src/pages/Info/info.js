@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../images/placeholders/logo.png";
-import trzyjeziora from "../../images/placeholders/trzyjeziora.png";
+import logo from "../../assets/placeholders/logo.png";
+import trzyjeziora from "../../assets/placeholders/trzyjeziora.png";
 
 export default function Info() {
   return (
