@@ -1,26 +1,29 @@
 //********************* Default *********************//
 .info {
   padding: 15px;
-  &-description {
-    margin-bottom: 10px;
-    display: block;
-    height: 200px;
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
   }
-  &-description div {
-    width: 450px;
+  &-description {
+    margin-bottom: 5px;
+    display: block;
+    height: auto;
+  }
+
+  &-title {
+    font-size: $font_size_xl;
+    text-align: center;
   }
   &-place p {
     margin: 0;
   }
-}
-.logo {
-  height: 200px;
-  float: right;
+  &-close {
+    display: none;
+  }
 }
 .place {
   height: 200px;
-}
-ul {
 }
 
 //******************* Large Tablet ******************//
@@ -39,18 +42,27 @@ ul {
 @include resTo($res_m) {
   .info {
     &-content {
-      display: flex;
-      flex-flow: column nowrap;
+      width: 100%;
+      height: 100%;
     }
+
     &-description {
       margin-bottom: 10px;
-      display: block;
+      width: 100%;
+      height: auto;
     }
-    &-place {
+
+    &-close {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      max-width: 50px;
+      max-height: 50px;
+      padding-top: 10px;
     }
   }
 }
-
 //********************** Mobile *********************//
 @include resTo($res_xs) {
 }

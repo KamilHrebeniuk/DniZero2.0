@@ -174,14 +174,41 @@
   transition: all 2s ease-out;
 }
 
-.required:after {
-  content: "*";
-  color: red;
-}
+@media only screen and (max-width: 767px) {
+  .player-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 2s ease-out;
+  }
 
+  .player-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: all 2s ease-out;
+  }
+}
 .register-content {
   padding: 16px;
   color: #303030;
+}
+.register label {
+  display: block;
+}
+.register .shirt,
+.register .bus,
+.register .diet,
+.register .year {
+  display: inline-block;
 }
 .register input[type=text],
 .register input[type=password],
@@ -194,27 +221,19 @@
   border: none;
   background: #ffffff;
 }
-.register select {
-  margin: 0 11px 10px 7px;
-}
 .register input[type=submit] {
-  background-color: #ffffff;
-  width: 100px;
-  height: 30px;
-  border: none;
-  transition-duration: 0.3s;
-  cursor: pointer;
-  margin-left: calc((100% - 100px) / 2);
+  margin-left: calc((100% - 124px) / 2);
   margin-top: 20px;
-}
-.register input[type=submit]:hover {
-  background-color: #705845;
+  font-size: 28px;
+  border: none;
+  box-shadow: none;
 }
 .register input[type=checkbox] {
   margin-bottom: 5px;
 }
 .register select {
-  width: 100px;
+  width: 90px;
+  margin: 0 11px 10px 7px;
 }
 
 .extra {
@@ -230,6 +249,45 @@ input[type=email] {
   margin: 5px 0 5px 0;
 }
 
+.required:after {
+  content: "*";
+  color: red;
+}
+
+@media only screen and (max-width: 767px) {
+  .register select {
+    width: 100px;
+    height: 30px;
+    margin: 0 20px 20px 7px;
+    font-size: 16px;
+  }
+  .register .shirt,
+.register .bus,
+.register .diet,
+.register .year {
+    display: inline-block;
+    width: 400px;
+  }
+  .register input[type=checkbox] {
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .register label {
+    display: block;
+  }
+  .register input[type=text],
+.register input[type=password],
+.register input[type=tel],
+.register input[type=email] {
+    height: 45px;
+    font-size: 18px;
+  }
+  .register .extra {
+    font-size: 16px;
+  }
+}
 .button-container-primary, .button-container-secondary {
   padding: 10px 20px 10px 20px;
   border-radius: 7px;
@@ -247,6 +305,7 @@ input[type=email] {
 }
 .button-container-primary {
   background-color: #681a2b;
+  color: #ece9e4;
 }
 .button-container-secondary {
   background-color: rgba(110, 110, 110, 0.6);
@@ -323,6 +382,38 @@ input[type=email] {
   font-weight: 500;
 }
 
+@media only screen and (max-width: 767px) {
+  .sponsors_bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    width: 80%;
+    height: 240px;
+    transform: translate(0, 70%);
+    overflow: hidden;
+    opacity: 0;
+    transition: all 2s ease-out;
+  }
+  .sponsors_bar-sponsors-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    padding-top: 30px;
+    border-top: solid 1px #ece9e4;
+    border-left: none;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  .sponsors_bar-sponsor-container {
+    width: 230px;
+    border-radius: 7px;
+    text-align: center;
+    margin: 0 10px 30px;
+  }
+  .sponsors_bar-sponsor-title {
+    display: none;
+  }
+}
 .home {
   width: 100%;
 }
@@ -597,6 +688,9 @@ input[type=email] {
     display: block;
   }
 }
+.register-close {
+  display: none;
+}
 .register-content-column {
   display: flex;
   flex-flow: row nowrap;
@@ -620,26 +714,84 @@ input[type=email] {
   text-align: center;
   margin-bottom: 8px;
   color: #303030;
+  font-size: 28px;
 }
 
+@media only screen and (max-width: 767px) {
+  .register {
+    font-size: 18px;
+  }
+  .register-close {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    padding-top: 10px;
+  }
+  .register-close-icon {
+    max-width: 50px;
+    max-height: 50px;
+  }
+  .register-content-column {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .register-content-column-primary {
+    padding-right: 0;
+    padding-bottom: 10px;
+    width: 100%;
+    font-size: 18px;
+  }
+  .register-content-column-primary p {
+    margin-top: 0;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .register-content-column-secondary {
+    padding-left: 0;
+    padding-top: 10px;
+    width: 100%;
+    font-size: 18px;
+    border-top: 1px #ffffff solid;
+    margin-bottom: 10px;
+  }
+  .register-content-column-secondary p {
+    margin-top: 0;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 8px;
+    color: #303030;
+  }
+}
 .info {
   padding: 15px;
 }
-.info-description {
-  margin-bottom: 10px;
-  display: block;
-  height: 200px;
+.info-content {
+  display: flex;
+  flex-flow: column nowrap;
 }
-.info-description div {
-  width: 450px;
+.info-description {
+  margin-bottom: 5px;
+  display: block;
+  height: auto;
+}
+.info-title {
+  font-size: 28px;
+  text-align: center;
 }
 .info-place p {
   margin: 0;
 }
-
-.logo {
-  height: 200px;
-  float: right;
+.info-close {
+  display: none;
 }
 
 .place {
@@ -648,12 +800,22 @@ input[type=email] {
 
 @media only screen and (max-width: 767px) {
   .info-content {
-    display: flex;
-    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
   }
   .info-description {
     margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+  }
+  .info-close {
     display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    padding-top: 10px;
   }
 }
 * {
