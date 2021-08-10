@@ -2,11 +2,9 @@
 .sponsors_bar {
   &-container {
     position: absolute;
-    top: 50%;
-    right: 80px;
-    width: 281px;
-    height: 80%;
-    transform: translate(0, -50%);
+    bottom: 20px;
+    left: 80px;
+    width: calc(100% - 160px);
     overflow: hidden;
     opacity: 0;
     transition: all 2s ease-out;
@@ -14,19 +12,18 @@
 
   &-sponsors {
     &-container {
-      width: 300px;
-      height: calc(100% - 34px);
-      padding-left: 30px;
-      border-left: solid 1px $color_primary_text;
+      width: 100%;
+      padding-top: 20px;
+      border-top: solid 1px $color_primary_text;
       overflow-y: auto;
       overflow-x: hidden;
+      display: flex;
     }
 
     &-title {
       font-size: $font-size_xl;
       font-weight: 500;
-      padding-left: 30px;
-      margin: 0 0 30px;
+      margin: 0 0 10px;
       text-shadow: 1px 1px 1px #808080;
     }
   }
@@ -36,7 +33,7 @@
       width: 230px;
       border-radius: 7px;
       text-align: center;
-      margin: 0 0 30px;
+      margin: 0 30px 0 0;
     }
 
     &-logo {
