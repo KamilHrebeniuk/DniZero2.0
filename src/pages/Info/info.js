@@ -15,6 +15,17 @@ export default function Info() {
 
         <div className="info-description">
           <p className="info-title">Obóz na horyzoncie!!</p>
+          <p className="info-description-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
           Każdy pirat chce wiedzieć za co płaci tak więc w cenie obozu:
           <ul>
             <li>Trzy posiłki dziennie (śniadanie, obiad, kolacja)</li>
@@ -33,9 +44,7 @@ export default function Info() {
           <img className="place" src={trzyjeziora} alt="Ośrodek" />
         </div>
 
-        <p>
-          <center>Do zobaczenia!</center>
-        </p>
+        <p className="info-footer">Do zobaczenia!</p>
       </div>
     </div>
   );

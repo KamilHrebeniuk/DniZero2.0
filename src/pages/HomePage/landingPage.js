@@ -26,7 +26,7 @@ const LandingPage = () => {
         buttons={register_buttons}
         movable
       />
-      <ContactBar/>
+      <ContactBar />
       <SponsorsBar title={"Organizatorzy i sponsorzy"} />
     </>
   );

@@ -1,0 +1,51 @@
+//********************* Default *********************//
+.contactBar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  background-color: $color_secondary_background;
+  z-index: 10;
+  border-radius: 0 0 0 8px;
+  &-element {
+    flex-basis: 33.33%;
+    text-align: center;
+    padding: 8px 10px 4px;
+  }
+
+  &-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+  .contactBar {
+    top: 0;
+    right: 0;
+
+    //border-bottom: solid 1px $color_secondary;
+    //border-left: solid 1px $color_secondary;
+  }
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+  .contactBar {
+    bottom: 0;
+    width: 100%;
+    border-top: solid 1px $color_secondary;
+  }
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}
