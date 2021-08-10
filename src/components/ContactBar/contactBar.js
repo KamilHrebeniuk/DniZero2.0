@@ -11,16 +11,22 @@ const ContactBar = () => {
           <a
             href="https://www.facebook.com/events/3190446271190442/?active_tab=discussion"
             target="_blank"
+            rel="noreferrer"
           >
             <img
               className="contactBar-icon"
               src={ico_facebook}
               alt="Facebook"
+              rel="noreferrer"
             />
           </a>
         </div>
         <div className="contactBar-element">
-          <a href="https://www.instagram.com/obozpwr/?hl=pl" target="_blank">
+          <a
+            href="https://www.instagram.com/obozpwr/?hl=pl"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               className="contactBar-icon"
               src={ico_instagram}
