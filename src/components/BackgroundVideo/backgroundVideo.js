@@ -1,32 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import backgroundVideo from "../../assets/backgrounds/backgroundMainVideo.mp4";
 import backgroundImage from "../../assets/backgrounds/backgroundMainImage.jpg";
 import logo from "../../assets/logo.png";
-import SponsorsBar from "../SponsorsBar";
+import { bindActionCreators } from "redux";
+import videoActions from "../../actions/BackgroundVideo/actions";
+import { connect } from "react-redux";
+import videoStateTypes from "../../actions/BackgroundVideo/types";
 
-const BackgroundVideo = () => {
+const BackgroundVideo = ({ videoState, videoFinished }) => {
   const [backgroundOpacity, setBackgroundOpacity] = useState(0);
   const [logoOpacity, setLogoOpacity] = useState(0);
-  const [sponsorsOpacity, setSponsorsOpacity] = useState(0);
 
   const staticImage = () => {
     setBackgroundOpacity(1);
     setTimeout(() => {
       setLogoOpacity(1);
     }, 4000);
-    setTimeout(() => {
-      setSponsorsOpacity(1);
-    }, 1000);
   };
+
+  useEffect(() => {
+    if (videoState === videoStateTypes.videoFinished) {
+      staticImage();
+    }
+  }, [videoState]);
 
   return (
     <>
       <div className="player-container">
         <ReactPlayer
           className="player-content"
-          onEnded={staticImage}
+          onEnded={videoFinished}
           playing
           muted
           url={backgroundVideo}
@@ -45,9 +50,21 @@ const BackgroundVideo = () => {
           style={{ opacity: logoOpacity }}
         />
       </div>
-      <SponsorsBar opacity={sponsorsOpacity} />
     </>
   );
 };
 
-export default BackgroundVideo;
+const putActionsToProps = (dispatch) => {
+  return {
+    videoReset: bindActionCreators(videoActions.videoReset, dispatch),
+    videoFinished: bindActionCreators(videoActions.videoFinished, dispatch),
+  };
+};
+
+const putStateToProps = (state) => {
+  return {
+    videoState: state.backgroundVideo.videoState,
+  };
+};
+
+export default connect(putStateToProps, putActionsToProps)(BackgroundVideo);
