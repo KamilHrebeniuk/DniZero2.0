@@ -11,16 +11,16 @@ export default function Register() {
       if (this.readyState === 4 && this.status === 200) {
         var response = JSON.parse(this.response);
         /* TO DO: Trzeba zrobic jakiegos info boxa/popupa by umieszczac tam info zwrotne*/
-        document.getElementById("content").innerHTML = response["message"];
-        if (response["result"]) {
+        alert(response["message"]);
+        /*if (response["result"]) {
           document.getElementById("content").style.backgroundColor = "green";
         } else {
           document.getElementById("content").style.backgroundColor = "red";
-        }
+        }*/
       }
     };
     /* TO DO: Zmienic tylko link i dziala. Ogolnie wydaje mi sie ze cala ta funkcje daloby zrobic globalna ale nie do konca wiem jak*/
-    xhttp.open("POST", "http://localhost:80/text/register.php", true);
+    xhttp.open("POST", "http://api.obozpwr.pl/register.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
   }
@@ -93,7 +93,7 @@ export default function Register() {
       })}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values));
+          send(JSON.stringify(values));
           setSubmitting(false);
         }, 400);
       }}
@@ -265,6 +265,7 @@ export default function Register() {
               >
                 regulaminu
               </a>
+              oraz polityka prywatności
             </label>
 
             <input

@@ -27,7 +27,7 @@ const SponsorsBar = ({ title, videoState }) => {
     { title: "PKO Bank Polski", image: PKO_logo, color: "#ffffff" },
     { title: "Wydruki C-13", image: C13_logo, color: "#ffffff" },
     { title: "Szamani", image: Szamani_logo, color: "#ffffff" },
-    { title: "Neobab", image: Neobab_logo, color: "#0D6638" },
+    { title: "Neobab", image: Neobab_logo, color: "#000000" },
   ];
 
   const [sponsorsOpacity, setSponsorsOpacity] = useState(0);
