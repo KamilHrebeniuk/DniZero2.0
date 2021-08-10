@@ -14,7 +14,7 @@
             $this -> conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         function __destruct(){
-            $this->conn-=null;
+            $this->conn=null;
         }
         public static function getConnection(): PDO
         {

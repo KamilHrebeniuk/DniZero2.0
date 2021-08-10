@@ -9,7 +9,14 @@ export default function Register() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
-        console.log(this.responseText);
+        var response = JSON.parse(this.response);
+        /* TO DO: Trzeba zrobic jakiegos info boxa/popupa by umieszczac tam info zwrotne*/
+        document.getElementById("content").innerHTML = response["message"];
+        if (response["result"]) {
+          document.getElementById("content").style.backgroundColor = "green";
+        } else {
+          document.getElementById("content").style.backgroundColor = "red";
+        }
       }
     };
     /* TO DO: Zmienic tylko link i dziala. Ogolnie wydaje mi sie ze cala ta funkcje daloby zrobic globalna ale nie do konca wiem jak*/
