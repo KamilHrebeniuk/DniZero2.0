@@ -1,7 +1,8 @@
 import React from "react";
 import BackgroundVideo from "../../components/BackgroundVideo";
 import PromotedEventDescription from "../../components/PromotedEvent";
-import SponsorsBar from "../../components/SponsorsBar/sponsorsBar";
+import ContactBar from "../../components/ContactBar";
+import SponsorsBar from "../../components/SponsorsBar";
 
 const LandingPage = () => {
   const register_buttons = [
@@ -25,6 +26,7 @@ const LandingPage = () => {
         buttons={register_buttons}
         movable
       />
+      <ContactBar/>
       <SponsorsBar title={"Organizatorzy i sponsorzy"} />
     </>
   );
