@@ -50,17 +50,6 @@ Kwota: <b>699,99 PLN/779,98 PLN (bez dojazdu/z dojazdem)</b><br>
 <p>Do zobaczenia w Wieleniu!</p>
 </div>";
 
-
-
-
-
-
-
-
-
-
-
-
 echo "Start maila 2";
 
 //echo ($message);
