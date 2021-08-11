@@ -21,17 +21,17 @@
     display: inline-block;
     border: none;
     background: $color_white;
-    font-family: "Crimson Text";
+    font-family: "Crimson Pro";
     font-size: $font_size_l;
   }
   option {
     color: $color_primary;
-    font-family: "Crimson Text";
+    font-family: "Crimson Pro";
   }
 
   select {
     color: $color_primary;
-    font-family: "Crimson Text";
+    font-family: "Crimson Pro";
   }
 
   input[type="submit"] {
@@ -41,6 +41,7 @@
     border: none;
     box-shadow: none;
     cursor: pointer;
+    font-family: "Crimson Pro";
   }
 
   input[type="checkbox"] {

@@ -12,6 +12,7 @@ export default function Register() {
     xhttp.onreadystatechange = function() {
       if (this.readyState === 4) {
         if (this.status === 200) {
+          console.log(this.response);
           var resp = JSON.parse(this.response);
           if(resp['result']){
             history.push("/RegisterSuccess");
@@ -91,7 +92,11 @@ export default function Register() {
           .string()
           .min(4, "Imie i nazwisko musi zawierać co najmniej 4 litery!")
           .required("Wymagane"),
-        ICE_phone: yup.string().required("Wymagane"),
+        ICE_phone: yup
+            .string()
+            .min(5)
+            .max(14)
+            .required("Wymagane"),
         health: yup
           .boolean()
           .oneOf([true], "Musisz potwierdzić swój stan zdrowia")
@@ -133,7 +138,7 @@ export default function Register() {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Jan Kowalski"
+                  placeholder="Jan Adam Kowalski"
                   required
                 />
 
@@ -152,8 +157,7 @@ export default function Register() {
                   Numer telefonu:
                 </label>
                 <Field
-                  type="tel"
-                  pattern="[0-9]{9}"
+                    type="text"
                   id="phone"
                   name="phone"
                   placeholder="123456789"
@@ -163,8 +167,7 @@ export default function Register() {
                   PESEL/seria i numer dowodu tożsamości:
                 </label>
                 <Field
-                  type="tel"
-                  pattern="[0-9]{11}"
+                  type="text"
                   id="pesel"
                   name="pesel"
                   placeholder="12345678909"
@@ -209,8 +212,7 @@ export default function Register() {
                   Numer telefonu:
                 </label>
                 <Field
-                  type="tel"
-                  pattern="[0-9]{9}"
+                  type="text"
                   id="ICE_phone"
                   name="ICE_phone"
                   placeholder="987654321"
@@ -218,7 +220,7 @@ export default function Register() {
                 />
                 <div>
                   <label className="required shirt" htmlFor="shirt">
-                    Rozmiar koszuli:
+                    Rozmiar koszulki:
                   </label>
                   <Field as="select" name="shirt" id="shirt">
                     <option hidden value></option>{" "}
