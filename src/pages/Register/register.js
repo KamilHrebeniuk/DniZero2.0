@@ -12,7 +12,6 @@ export default function Register() {
     xhttp.onreadystatechange = function() {
       if (this.readyState === 4) {
         if (this.status === 200) {
-          console.log(this.response);
           var resp = JSON.parse(this.response);
           if(resp['result']){
             history.push("/RegisterSuccess");
@@ -111,7 +110,6 @@ export default function Register() {
           .required("Wymagane"),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("Suuubmit")
         setTimeout(() => {
           sendRegisterForm(JSON.stringify(values));
           setSubmitting(false);

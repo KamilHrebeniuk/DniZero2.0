@@ -10,7 +10,6 @@ import ico_account from "../../assets/icons/account.png";
 
 function Navigation({ popUpState, openPopUp, closePopUp }) {
   const history = useHistory();
-  console.log(history);
 
   // eslint-disable-next-line no-unused-vars
   const closePopUpHandler = () => {

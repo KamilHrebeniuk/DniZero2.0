@@ -35,7 +35,6 @@ function PopUp({
 
   const closePopUpHandler = () => {
     closePopUp();
-    console.log(popUpState);
     document
       .getElementsByClassName("popup-overlay")[0]
       .classList.remove("popup-overlay-active");

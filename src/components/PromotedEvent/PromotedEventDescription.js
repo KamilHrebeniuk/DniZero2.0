@@ -10,8 +10,6 @@ const PromotedEventDescription = ({
   videoState,
   movable,
 }) => {
-  console.log(buttons);
-
   const [containerPosition, setContainerPosition] = useState("50%");
 
   useEffect(() => {

@@ -4,7 +4,6 @@ import HomePage from "./homePage";
 
 const Container = () => {
   const isLoggedIn = false;
-  console.log("Container");
 
   return <>{isLoggedIn ? <HomePage /> : <LandingPage />}</>;
 };

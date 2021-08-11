@@ -13,8 +13,7 @@ const LandingPage = () => {
   ];
 
   const isMobile = IsMobile();
-  console.log("Mobile");
-  console.log(isMobile);
+
   return (
     <>
       {isMobile ? <BackgroundImage /> : <BackgroundVideo />}

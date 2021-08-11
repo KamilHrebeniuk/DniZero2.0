@@ -11,7 +11,6 @@ import videoStateTypes from "../../actions/BackgroundVideo/types";
 import IsMobile from "../../hooks/isMobile";
 
 const Sponsor = ({ logo, color, link }) => {
-  console.log(color);
   return (
       <a href={link} target="_blank" rel="noreferrer">
         <div
