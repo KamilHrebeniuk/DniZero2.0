@@ -316,7 +316,7 @@ export default function Register() {
                   >
                     regulamin i politykę prywatności
                   </a>
-                  <span> oraz akceptuję ich postanowienia.</span>
+                  <span>, akceptuję ich postanowienia i wyrażam zgodę na prztwarzanie określonych w nich danych osobowych na potrzeby zrealizowania usługi.</span>
                 </label>
 
                 <p className="profile">
