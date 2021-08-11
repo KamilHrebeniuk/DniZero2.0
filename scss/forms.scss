@@ -4,9 +4,7 @@
     padding: 16px;
     color: $color_secondary_text;
   }
-  label {
-    display: block;
-  }
+
   .shirt,
   .bus,
   .diet,
@@ -18,11 +16,23 @@
   input[type="tel"],
   input[type="email"] {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
+    padding: 5px 10px;
+    margin: 3px 0 10px 0;
     display: inline-block;
     border: none;
     background: $color_white;
+    color: $color_primary;
+    font-family: "Crimson Text";
+    font-size: $font_size_l;
+  }
+  option {
+    color: $color_primary;
+    font-family: "Crimson Text";
+  }
+
+  select {
+    color: $color_primary;
+    font-family: "Crimson Text";
   }
 
   input[type="submit"] {
@@ -34,7 +44,34 @@
   }
 
   input[type="checkbox"] {
-    margin-bottom: 5px;
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 6px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+  }
+  input[type="checkbox"]:active,
+  input[type="checkbox"]:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  input[type="checkbox"]:checked {
+    background-color: $color_primary_logo;
+    border: 1px solid #adb8c0;
+    color: #99a1a7;
+  }
+  input[type="checkbox"]:checked:after {
+    content: "\2714";
+    font-size: $font_size_xs;
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    color: $color_primary;
   }
 
   select {
@@ -43,11 +80,6 @@
   }
 }
 
-.extra {
-  font-size: 11px;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
 .ICE-content input[type="text"],
 input[type="password"],
 input[type="tel"],
