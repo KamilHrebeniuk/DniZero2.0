@@ -8,6 +8,7 @@ import Kwater_logo from "../../assets/sponsors/kwater_logo.png";
 import SMSapi_logo from "../../assets/sponsors/smsapi.png";
 import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
+import IsMobile from "../../hooks/isMobile";
 
 const Sponsor = ({ logo, color }) => {
   console.log(color);
@@ -32,13 +33,15 @@ const SponsorsBar = ({ title, videoState }) => {
 
   ];
 
+  const isMobile = IsMobile;
   const [sponsorsOpacity, setSponsorsOpacity] = useState(0);
+  const timeout = isMobile ? 0 : 1000;
 
   useEffect(() => {
     if (videoState === videoStateTypes.videoFinished) {
       setTimeout(() => {
         setSponsorsOpacity(1);
-      }, 1000);
+      }, timeout);
     }
   }, [videoState]);
 

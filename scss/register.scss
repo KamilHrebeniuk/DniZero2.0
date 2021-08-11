@@ -58,20 +58,10 @@
         a:active {
           color: $color_primary;
         }
-        pre {
-          display: inline;
-          color: $color_primary_text;
-          font-family: "Crimson Text";
-          font-size: $font_size_m;
-        }
         .back {
-          background-color: $color_secondary_background;
           padding: 0 5px 5px;
           line-height: 14px;
           margin-top: 2px;
-          &-extra {
-            font-size: $font_size_xs;
-          }
         }
       }
     }

@@ -269,16 +269,14 @@ export default function Register() {
                   (uczestnictwa w Obozie).
                 </label>
                 <div className="back">
-                  <pre className="back-extra">
-                    {"Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie z Regulaminem zobowiązuję się poinformować\n" +
-                      "Organizatora do dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach mogących mieć wpływ na bezpieczeństwo\n" +
-                      "w trakcie trwania Obozu. Ponoszę wszelkie konsekwencje wynikające z zaniechania tego obowiązku. Organizator zastrzega\n" +
-                      " sobie prawo do niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z pełnym zwrotem opłaty za Obóz,\n" +
-                      "jeżeli zgłoszenie zostało złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez uczestnika dolegliwości mogłyby\n" +
-                      "stanowić przeszkodę w udziale w Obozie. Organizator informuje, że wynajęty ośrodek nie spełnia wymogów dla osób\n" +
-                      "o obniżonej sprawności fizycznej. Organizator nie ponosi odpowiedzialności z tytułu niedostosowania Ośrodka do\n" +
-                      "indywidualnych potrzeb Uczestnika o obniżonej sprawności fizycznej."}
-                  </pre>
+                  Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie z Regulaminem zobowiązuję się poinformować
+                  Organizatora do dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach mogących mieć wpływ na bezpieczeństwo
+                  w trakcie trwania Obozu. Ponoszę wszelkie konsekwencje wynikające z zaniechania tego obowiązku. Organizator zastrzega
+                   sobie prawo do niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z pełnym zwrotem opłaty za Obóz,
+                  jeżeli zgłoszenie zostało złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez uczestnika dolegliwości mogłyby
+                  stanowić przeszkodę w udziale w Obozie. Organizator informuje, że wynajęty ośrodek nie spełnia wymogów dla osób
+                  o obniżonej sprawności fizycznej. Organizator nie ponosi odpowiedzialności z tytułu niedostosowania Ośrodka do
+                  indywidualnych potrzeb Uczestnika o obniżonej sprawności fizycznej.
                 </div>
 
                 <label className="required" htmlFor="age">

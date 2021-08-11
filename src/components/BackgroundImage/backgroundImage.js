@@ -1,8 +1,12 @@
 import React from "react";
 import backgroundImage from "../../assets/backgrounds/backgroundMainImage.jpg";
 import logo from "../../assets/logo.png";
+import {bindActionCreators} from "redux";
+import videoActions from "../../actions/BackgroundVideo/actions";
+import {connect} from "react-redux";
 
-const BackgroundImage = () => {
+const BackgroundImage = ({videoFinished}) => {
+  videoFinished()
   return (
     <>
       <div className="backgroundImage-container">
@@ -25,4 +29,16 @@ const BackgroundImage = () => {
 };
 
 
-export default BackgroundImage;
+const putActionsToProps = (dispatch) => {
+    return {
+        videoFinished: bindActionCreators(videoActions.videoFinished, dispatch),
+    };
+};
+
+const putStateToProps = (state) => {
+    return {
+        videoState: state.backgroundVideo.videoState,
+    };
+};
+
+export default connect(putStateToProps, putActionsToProps)(BackgroundImage);
