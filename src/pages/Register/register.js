@@ -1,22 +1,23 @@
 import React from "react";
 import { Field, Formik, Form } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import exit from "../../assets/placeholders/exit.jpg";
 
 export default function Register() {
-  function send(array) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        var response = JSON.parse(this.response);
-        /* TO DO: Trzeba zrobic jakiegos info boxa/popupa by umieszczac tam info zwrotne*/
-        alert(response["message"]);
-        /*if (response["result"]) {
-          document.getElementById("content").style.backgroundColor = "green";
+  let history = useHistory();
+
+  const sendRegisterForm = (array) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState === 4) {
+        if (this.status === 200) {
+          console.log("Zakończone pozytywnie")
+          history.push("/RegisterSuccess");
         } else {
-          document.getElementById("content").style.backgroundColor = "red";
-        }*/
+          console.log("Coś poszło nie tak")
+          history.push("/RegisterFail");
+        }
       }
     };
     /* TO DO: Zmienic tylko link i dziala. Ogolnie wydaje mi sie ze cala ta funkcje daloby zrobic globalna ale nie do konca wiem jak*/
@@ -101,8 +102,9 @@ export default function Register() {
           .required("Wymagane"),
       })}
       onSubmit={(values, { setSubmitting }) => {
+        console.log("Suuubmit")
         setTimeout(() => {
-          send(JSON.stringify(values));
+          sendRegisterForm(JSON.stringify(values));
           setSubmitting(false);
         }, 400);
       }}

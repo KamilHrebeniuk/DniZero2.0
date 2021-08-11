@@ -48,6 +48,20 @@ const MainRouter = () => {
           <PopUp popUpContentType={PopUpTypes.popUpInfo} popUpWidth="700px" />
         )}
       </Route>
+      <Route path="/RegisterSuccess">
+          {isMobile ? (
+              <PopUp popUpContentType={PopUpTypes.popUpRegisterSuccess} />
+          ) : (
+              <PopUp popUpContentType={PopUpTypes.popUpRegisterSuccess} popUpWidth="700px" />
+          )}
+      </Route>
+      <Route path="/RegisterFail">
+          {isMobile ? (
+              <PopUp popUpContentType={PopUpTypes.popUpRegisterFail} />
+          ) : (
+              <PopUp popUpContentType={PopUpTypes.popUpRegisterFail} popUpWidth="700px" />
+          )}
+      </Route>
     </>
   );
 };
