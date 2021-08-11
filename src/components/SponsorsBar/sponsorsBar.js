@@ -4,10 +4,11 @@ import PKO_logo from "../../assets/sponsors/PKO_logo.png";
 import C13_logo from "../../assets/sponsors/C13_logo.png";
 import Szamani_logo from "../../assets/sponsors/Szamani_logo.png";
 import Neobab_logo from "../../assets/sponsors/Neobab_logo.png";
+import Kwater_logo from "../../assets/sponsors/kwater_logo.png";
 import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
 
-const Sponsor = ({ title, logo, color }) => {
+const Sponsor = ({ logo, color }) => {
   console.log(color);
   return (
     <div
@@ -15,19 +16,18 @@ const Sponsor = ({ title, logo, color }) => {
       style={{ backgroundColor: color }}
     >
       <img className="sponsors_bar-sponsor-logo" src={logo} alt={"Logo"} />
-      <p className="sponsors_bar-sponsor-title">{title}</p>
     </div>
   );
 };
 
 const SponsorsBar = ({ title, videoState }) => {
   const sponsors = [
-    { title: "Samorząd Studencki PWr", image: SS_logo, color: "#ffffff" },
-    { title: "KwaTOUR", image: C13_logo, color: "#ffffff" },
-    { title: "PKO Bank Polski", image: PKO_logo, color: "#ffffff" },
-    { title: "Wydruki C-13", image: C13_logo, color: "#ffffff" },
-    { title: "Szamani", image: Szamani_logo, color: "#ffffff" },
-    { title: "Neobab", image: Neobab_logo, color: "#000000" },
+    { image: SS_logo, color: "#ffffff" },
+    { image: Kwater_logo, color: "#ffffff" },
+    { image: PKO_logo, color: "#ffffff" },
+    { image: C13_logo, color: "#ffffff" },
+    { image: Szamani_logo, color: "#ffffff" },
+    { image: Neobab_logo, color: "#000000" },
   ];
 
   const [sponsorsOpacity, setSponsorsOpacity] = useState(0);
@@ -48,11 +48,7 @@ const SponsorsBar = ({ title, videoState }) => {
       <h1 className="sponsors_bar-sponsors-title">{title}</h1>
       <div className="sponsors_bar-sponsors-container">
         {sponsors.map((sponsor) => (
-          <Sponsor
-            title={sponsor.title}
-            logo={sponsor.image}
-            color={sponsor.color}
-          />
+          <Sponsor logo={sponsor.image} color={sponsor.color} />
         ))}
       </div>
     </section>

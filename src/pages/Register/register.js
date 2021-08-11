@@ -55,9 +55,13 @@ export default function Register() {
           .required("Wymagane"),
         pesel: yup
           .string()
-          .min(9, "Pesel lub inny dowód tożsamości musi zawierać co najmniej 9 znaków"
+          .min(
+            9,
+            "Pesel lub inny dowód tożsamości musi zawierać co najmniej 9 znaków"
           )
-          .max(11, "Pesel lub inny dowód tożsamości zawiera maksymalnie 11 znaków"
+          .max(
+            11,
+            "Pesel lub inny dowód tożsamości zawiera maksymalnie 11 znaków"
           )
           .required("Wymagane"),
         adr: yup.string().min(4, "Podaj prawidłowy adres").required("Wymagane"),
@@ -257,31 +261,26 @@ export default function Register() {
               <div className="register-content-column-third">
                 <label className="required" htmlFor="health">
                   <Field type="checkbox" id="health" name="health" required />
-                  Wyrażam zgodę na przetwarzanie przez Organizatora danych o
+                  Wyrazam zgode na przetwarzanie przez Organizatora danych o
                   moim stanie zdrowia, w tym o spełnieniu wymogu dotyczącego
                   szczepienia określonego w pkt. 6. Regulaminu. Podanie tych
                   danych jest dobrowolne, ale niezbędne do zapewnienia
                   bezpieczeństwa uczestnikowi, a więc i do wykonania usługi
                   (uczestnictwa w Obozie).
                 </label>
+                <div className="back">
+                  <pre className="back-extra">
+                    {"Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie z Regulaminem zobowiązuję się poinformować\n" +
+                      "Organizatora do dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach mogących mieć wpływ na bezpieczeństwo\n" +
+                      "w trakcie trwania Obozu. Ponoszę wszelkie konsekwencje wynikające z zaniechania tego obowiązku. Organizator zastrzega\n" +
+                      " sobie prawo do niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z pełnym zwrotem opłaty za Obóz,\n" +
+                      "jeżeli zgłoszenie zostało złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez uczestnika dolegliwości mogłyby\n" +
+                      "stanowić przeszkodę w udziale w Obozie. Organizator informuje, że wynajęty ośrodek nie spełnia wymogów dla osób\n" +
+                      "o obniżonej sprawności fizycznej. Organizator nie ponosi odpowiedzialności z tytułu niedostosowania Ośrodka do\n" +
+                      "indywidualnych potrzeb Uczestnika o obniżonej sprawności fizycznej."}
+                  </pre>
+                </div>
 
-                <p className="extra">
-                  Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie
-                  z Regulaminem zobowiązuję się poinformować Organizatora do
-                  dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach
-                  mogących mieć wpływ na bezpieczeństwo w trakcie trwania Obozu.
-                  Ponoszę wszelkie konsekwencje wynikające z zaniechania tego
-                  obowiązku. Organizator zastrzega sobie prawo do
-                  niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z
-                  pełnym zwrotem opłaty za Obóz, jeżeli zgłoszenie zostało
-                  złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez
-                  uczestnika dolegliwości mogłyby stanowić przeszkodę w udziale
-                  w Obozie. Organizator informuje, że wynajęty ośrodek nie
-                  spełnia wymogów dla osób o obniżonej sprawności fizycznej.
-                  Organizator nie ponosi odpowiedzialności z tytułu
-                  niedostosowania Ośrodka do indywidualnych potrzeb Uczestnika o
-                  obniżonej sprawności fizycznej.
-                </p>
                 <label className="required" htmlFor="age">
                   <Field type="checkbox" id="age" name="age" required />
                   Mam ukończone 18 lat i posiadam status studenta lub jestem
@@ -301,12 +300,24 @@ export default function Register() {
                   <span> oraz akceptuję ich postanowienia.</span>
                 </label>
 
-                <p>
+                <p className="profile">
                   W trakcie trwania Obozu będą wykonywane i publikowane przez
                   Organizatora i jego partnerów (również w celach promocyjnych
                   swoich produktów i usług) zdjęcia i filmy, na których
                   uczestnik może stanowić element większej całości.
                 </p>
+                <span className="profile">
+                  Przed rozpoczęciem udziału w Obozie konieczne będzie
+                  przekazanie Organizatorowi wypełnionej tego samego dnia{" "}
+                </span>
+                <a
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  deklaracji o stanie zdrowia w związku z pandemią COVID-19.
+                </a>
+
                 <input
                   className="button-container-primary"
                   type="submit"
