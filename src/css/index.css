@@ -223,7 +223,6 @@
   display: inline-block;
   border: none;
   background: #ffffff;
-  color: #681a2b;
   font-family: "Crimson Text";
   font-size: 18px;
 }
@@ -241,6 +240,7 @@
   font-size: 28px;
   border: none;
   box-shadow: none;
+  cursor: pointer;
 }
 .register input[type=checkbox] {
   -webkit-appearance: none;
@@ -318,6 +318,11 @@ input[type=email] {
   }
   .register .extra {
     font-size: 16px;
+  }
+  .register input[type=checkbox]:checked:after {
+    font-size: 18px;
+    top: -3px;
+    left: 3px;
   }
 }
 .button-container-primary, .button-container-secondary {
@@ -442,8 +447,8 @@ input[type=email] {
     padding-top: 30px;
     border-top: solid 1px #ece9e4;
     border-left: none;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .sponsors_bar-sponsors-title {
     font-size: 24px;
@@ -847,6 +852,7 @@ input[type=email] {
   padding: 10px 8px 0 0;
   border-top: 1px solid #e4cf9f;
   font-size: 16px;
+  text-align: justify;
 }
 .register-content-column-third label {
   display: block;
@@ -864,9 +870,9 @@ input[type=email] {
   color: #681a2b;
 }
 .register-content-column-third .back {
-  padding: 0 5px 5px;
-  line-height: 14px;
-  margin-top: 2px;
+  padding: 0 5px 5px 0;
+  line-height: 20px;
+  margin-top: 15px;
 }
 .register ::-webkit-scrollbar {
   width: 7px;
@@ -909,12 +915,13 @@ input[type=email] {
     max-width: 50px;
     max-height: 50px;
   }
+  .register-content {
+    height: 90%;
+  }
   .register-content-column {
-    display: flex;
-    flex-flow: column nowrap;
+    height: 80vh;
   }
   .register-content-column-primary {
-    padding-right: 0;
     padding-bottom: 10px;
     width: 100%;
     font-size: 18px;
@@ -999,6 +1006,7 @@ input[type=email] {
   .info-content {
     width: 100%;
     height: 100%;
+    overflow-y: scroll;
   }
   .info-description {
     margin-bottom: 10px;
@@ -1006,6 +1014,9 @@ input[type=email] {
     height: auto;
     padding-right: 15px;
     padding-left: 15px;
+  }
+  .info-place {
+    display: none;
   }
   .info-close {
     display: block;
