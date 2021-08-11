@@ -20,7 +20,7 @@ export default function Register() {
       }
     };
     /* TO DO: Zmienic tylko link i dziala. Ogolnie wydaje mi sie ze cala ta funkcje daloby zrobic globalna ale nie do konca wiem jak*/
-    xhttp.open("POST", "http://api.obozpwr.pl/register.php", true);
+    xhttp.open("POST", "https://api.obozpwr.pl/register.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
   }
@@ -30,14 +30,15 @@ export default function Register() {
         name: "",
         email: "",
         phone: "",
+        pesel: "",
+        adr: "",
+        list_adr: "",
         shirt: "",
         year: "",
         bus: "",
         diet: "",
         ICE_name: "",
         ICE_phone: "",
-        ICE_adr: "",
-        vaccine: false,
         health: false,
         age: false,
         rules: false,
@@ -47,11 +48,20 @@ export default function Register() {
           .string()
           .min(4, "Imie i nazwisko musi zawierać co najmniej 4 litery!")
           .required("Wymagane"),
-        phone: yup.string().required("Wymagane"),
+        phone: yup.string().min(8).max(15).required("Wymagane"),
         email: yup
           .string()
           .email("Podaj prawidłowy adres email")
           .required("Wymagane"),
+        pesel: yup
+          .string()
+          .min(9, "Pesel lub inny dowód tożsamości musi zawierać co najmniej 9 znaków"
+          )
+          .max(11, "Pesel lub inny dowód tożsamości zawiera maksymalnie 11 znaków"
+          )
+          .required("Wymagane"),
+        adr: yup.string().min(4, "Podaj prawidłowy adres").required("Wymagane"),
+        list_adr: yup.string().min(4, "Podaj prawidłowy adres"),
         shirt: yup
           .string()
           .oneOf(["xs", "s", "m", "l", "xl"], "Wybrano niepoprawny rozmiar")
@@ -72,12 +82,7 @@ export default function Register() {
           .string()
           .min(4, "Imie i nazwisko musi zawierać co najmniej 4 litery!")
           .required("Wymagane"),
-        ICE_adr: yup
-          .string()
-          .min(4, "Podaj prawidłowy adres")
-          .required("Wymagane"),
         ICE_phone: yup.string().required("Wymagane"),
-        vaccine: yup.boolean().oneOf([true, false]),
         health: yup
           .boolean()
           .oneOf([true], "Musisz potwierdzić swój stan zdrowia")
@@ -112,7 +117,7 @@ export default function Register() {
                 <p>Twoje dane:</p>
 
                 <label className="required" htmlFor="name">
-                  Imię i nazwisko:
+                  Imiona i nazwisko:
                 </label>
                 <Field
                   type="text"
@@ -144,6 +149,36 @@ export default function Register() {
                   placeholder="123456789"
                   required
                 />
+                <label className="required" htmlFor="pesel">
+                  PESEL/seria i numer dowodu tożsamości:
+                </label>
+                <Field
+                  type="tel"
+                  pattern="[0-9]{11}"
+                  id="pesel"
+                  name="pesel"
+                  placeholder="12345678909"
+                  required
+                />
+                <label className="required" htmlFor="adr">
+                  Adres zamieszkania:
+                </label>
+                <Field
+                  type="text"
+                  id="adr"
+                  name="adr"
+                  placeholder="ul. Piekna 3/5 Wroclaw"
+                  required
+                />
+                <label htmlFor="list_adr">
+                  Adres korespondencyjny, jeżeli inny:
+                </label>
+                <Field
+                  type="text"
+                  id="list_adr"
+                  name="list_adr"
+                  placeholder="ul. Piekna 3/5 Wroclaw"
+                />
               </div>
 
               <div className="register-content-column-secondary">
@@ -159,7 +194,7 @@ export default function Register() {
                   placeholder="Anna Kowalska"
                   required
                 />
-                <br />
+
                 <label className="required" htmlFor="ICE_phone">
                   Numer telefonu:
                 </label>
@@ -171,108 +206,114 @@ export default function Register() {
                   placeholder="987654321"
                   required
                 />
-                <br />
-                <label className="required" htmlFor="ICE_adr">
-                  Adres:
+                <label className="required shirt" htmlFor="shirt">
+                  Rozmiar koszuli:
                 </label>
-                <Field
-                  type="text"
-                  id="ICE_adr"
-                  name="ICE_adr"
-                  placeholder="ul. Piekna 3/5 Wroclaw"
-                  required
+                <Field as="select" name="shirt" id="shirt">
+                  <option hidden value></option>{" "}
+                  {/*daje puste miejsce w dropboxie i dobrze wyglada*/}
+                  <option value="xs">XS</option>
+                  <option value="s">S</option>
+                  <option value="m">M</option>
+                  <option value="l">L</option>
+                  <option value="xl">XL</option>
+                </Field>
+
+                <label className="required year" htmlFor="year">
+                  Rok studiów:
+                </label>
+                <Field as="select" name="year" id="year">
+                  <option hidden value></option>
+                  <option value="1">1 rok</option>
+                  <option value="2">2 rok</option>
+                  <option value="3">3 rok</option>
+                  <option value="4">4 rok</option>
+                  <option value="5">5 rok</option>
+                </Field>
+
+                <label className="required diet" htmlFor="diet">
+                  Dieta:
+                </label>
+                <Field as="select" name="diet" id="diet" required>
+                  <option hidden value></option>
+                  <option value="meat">Normalna</option>
+                  <option value="vege">Wegetariańska</option>
+                  <option value="vegan">Wegańska</option>
+                  <option value="special">
+                    Specjalna ze względów zdrowotnych
+                  </option>
+                </Field>
+
+                <label className="required bus" htmlFor="bus">
+                  Transport z Wrocławia na obóz:
+                </label>
+                <Field as="select" name="bus" id="bus" required>
+                  <option hidden value></option>
+                  <option value="with">tak</option>
+                  <option value="without">nie</option>
+                </Field>
+              </div>
+
+              <div className="register-content-column-third">
+                <label className="required" htmlFor="health">
+                  <Field type="checkbox" id="health" name="health" required />
+                  Wyrażam zgodę na przetwarzanie przez Organizatora danych o
+                  moim stanie zdrowia, w tym o spełnieniu wymogu dotyczącego
+                  szczepienia określonego w pkt. 6. Regulaminu. Podanie tych
+                  danych jest dobrowolne, ale niezbędne do zapewnienia
+                  bezpieczeństwa uczestnikowi, a więc i do wykonania usługi
+                  (uczestnictwa w Obozie).
+                </label>
+
+                <p className="extra">
+                  Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie
+                  z Regulaminem zobowiązuję się poinformować Organizatora do
+                  dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach
+                  mogących mieć wpływ na bezpieczeństwo w trakcie trwania Obozu.
+                  Ponoszę wszelkie konsekwencje wynikające z zaniechania tego
+                  obowiązku. Organizator zastrzega sobie prawo do
+                  niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z
+                  pełnym zwrotem opłaty za Obóz, jeżeli zgłoszenie zostało
+                  złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez
+                  uczestnika dolegliwości mogłyby stanowić przeszkodę w udziale
+                  w Obozie. Organizator informuje, że wynajęty ośrodek nie
+                  spełnia wymogów dla osób o obniżonej sprawności fizycznej.
+                  Organizator nie ponosi odpowiedzialności z tytułu
+                  niedostosowania Ośrodka do indywidualnych potrzeb Uczestnika o
+                  obniżonej sprawności fizycznej.
+                </p>
+                <label className="required" htmlFor="age">
+                  <Field type="checkbox" id="age" name="age" required />
+                  Mam ukończone 18 lat i posiadam status studenta lub jestem
+                  nowo przyjętym studentem.
+                </label>
+
+                <label className="required" htmlFor="rules">
+                  <Field type="checkbox" id="rules" name="rules" required />
+                  <span>Przeczytałem/-am </span>
+                  <a
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    regulamin i politykę prywatności
+                  </a>
+                  <span> oraz akceptuję ich postanowienia.</span>
+                </label>
+
+                <p>
+                  W trakcie trwania Obozu będą wykonywane i publikowane przez
+                  Organizatora i jego partnerów (również w celach promocyjnych
+                  swoich produktów i usług) zdjęcia i filmy, na których
+                  uczestnik może stanowić element większej całości.
+                </p>
+                <input
+                  className="button-container-primary"
+                  type="submit"
+                  value="Wyślij!"
                 />
-                <br />
               </div>
             </div>
-
-            <label className="required shirt" htmlFor="shirt">
-              Rozmiar koszuli:
-            </label>
-            <Field as="select" name="shirt" id="shirt">
-              <option hidden value></option>{" "}
-              {/*daje puste miejsce w dropboxie i dobrze wyglada*/}
-              <option value="xs">XS</option>
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
-            </Field>
-
-            <label className="required year" htmlFor="year">
-              Rok studiów:
-            </label>
-            <Field as="select" name="year" id="year">
-              <option hidden value></option>
-              <option value="1">1 rok</option>
-              <option value="2">2 rok</option>
-              <option value="3">3 rok</option>
-              <option value="4">4 rok</option>
-              <option value="5">5 rok</option>
-            </Field>
-
-            <label className="required diet" htmlFor="diet">
-              Dieta:
-            </label>
-            <Field as="select" name="diet" id="diet" required>
-              <option hidden value></option>
-              <option value="meat">Normalna</option>
-              <option value="vege">Wegetariańska</option>
-              <option value="vegan">Wegańska</option>
-              <option value="special">Specjalna ze względów zdrowotnych</option>
-            </Field>
-
-            <label className="required bus" htmlFor="bus">
-              Transport z Wrocławia na obóz:
-            </label>
-            <Field as="select" name="bus" id="bus" required>
-              <option hidden value></option>
-              <option value="with">tak</option>
-              <option value="without">nie</option>
-            </Field>
-
-            <label htmlFor="vaccine">
-              <Field type="checkbox" id="vaccine" name="vaccine" />
-              Jestem osobą zaszczepioną
-            </label>
-
-            <p className="extra">
-              Informacja nie jest skojarzona z osobą, a podanie jej jest
-              dobrowolne i nieobligatoryjne. <br /> Zbierana jest w celu
-              zliczenia ilości osób zaszczepionych
-            </p>
-            <label className="required" htmlFor="health">
-              <Field type="checkbox" id="health" name="health" required />
-              Deklaruje że jestem w dobrym stanie zdrowia i mogę wziąć udział w
-              obozie.
-            </label>
-
-            <p className="extra">
-              Ośrodek nie jest przystosowany do potrzeb osób niepełnosprawnych.
-            </p>
-            <label className="required" htmlFor="age">
-              <Field type="checkbox" id="age" name="age" required />
-              Mam ukończone 18 lat
-            </label>
-
-            <label className="required" htmlFor="rules">
-              <Field type="checkbox" id="rules" name="rules" required />
-              Przeczytałem/-am i akceptuję warunki{" "}
-              <a
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                rel="noreferrer"
-                target="_blank"
-              >
-                regulaminu
-              </a>
-              oraz polityka prywatności
-            </label>
-
-            <input
-              className="button-container-primary"
-              type="submit"
-              value="Wyślij!"
-            />
           </Form>
         </div>
       </div>
