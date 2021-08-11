@@ -43,6 +43,12 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
+  .button-container {
+    &-primary,
+    &-secondary {
+      padding: 7px 14px 7px 14px;
+    }
+  }
 }
 
 //********************** Mobile *********************//

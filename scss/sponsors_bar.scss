@@ -60,16 +60,11 @@
 @include resTo($res_m) {
   .sponsors_bar {
     &-container {
-      position: absolute;
-      bottom: 40px;
-      left: 0;
-      width: 90%;
+      position: unset;
+      width: calc(100% - 40px);
       height: 240px;
-
-      overflow: hidden;
-      opacity: 0;
-      transition: all 2s ease-out;
-      margin-left:5%;
+      transition: none;
+      margin: 40px 20px 0;
     }
     &-sponsors {
       &-container {
@@ -81,6 +76,9 @@
         border-left: none;
         overflow-y: hidden;
         overflow-x: scroll;
+      }
+      &-title {
+        font-size: $font_size_xl0;
       }
     }
     &-sponsor {
