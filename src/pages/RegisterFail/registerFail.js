@@ -4,29 +4,21 @@ import exit from "../../assets/placeholders/exit.jpg";
 
 const RegisterFail = () => {
   return (
-    <div className="register">
-      <p className="title">Rejestracja nie udana!</p>
-      <div className="register-close">
-        <Link to="/">
-          <img className="register-close-icon" src={exit} alt={"Exit"} />
-        </Link>
+      <div className="register">
+        <p className="title">Rejestracja nie udana!</p>
+        <div className="register-close">
+          <Link to="/">
+            <img className="register-close-icon" src={exit} alt={"Exit"} />
+          </Link>
+        </div>
+          <div className="register-content">
+              <p className="register-info-title">Coś poszło nie tak..</p>
+              <p className="register-info-email-info">Wystąpił nieoczekiwany błąd, spróbuj ponownie za jakiś czas.</p>
+              <p id="Error"></p>
+
+          </div>
       </div>
-      <div className="register-content">
-        <p className="register-success-title">Już prawie gotowe...</p>
-        <p className="register-success-email-info">
-          Wysłaliśmy na Twoją skrzynkę mailową potwierdzenie rejestracji.
-          Znajdziesz tam szczegółowe informacje co do płatności za Obóz.
-        </p>
-        <p className="register-success-email-info">
-          W przypadku braku powiadomienia o mailu w przeciągu 5 minut, sprawdź
-          zakładkę spam lub w przypadku urzytkowników Gmaila również kartę
-          "Oferty". Jeśli mail nie został dostarczony, skontaktuj się z nami na
-          oboz@samorzad.pwr.edu.pl lub za pośrednictwem portali
-          społecznościowych.
-        </p>
-      </div>
-    </div>
   );
-};
+}
 
 export default RegisterFail;

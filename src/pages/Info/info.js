@@ -16,27 +16,27 @@ export default function Info() {
         <div className="info-description">
           <p className="info-title">Obóz na horyzoncie!!</p>
           <p className="info-description-text">
-            Obóz studentów PWr to tydzień niesamowitych warsztatów, szkoleń
-            i&nbsp;integracji studentów naszej uczelni. Mimo, że to wydarzenie
-            skierowane jest głównie do nowo przyjętych studentów, udział
-            w&nbsp;nim może wziąć każdy student Politechniki. Co roku
-            w&nbsp;obozie bierze udział ponad dwustu uczestników przeżywających
-            wspaniałą, tygodniową przygodę. Kadra złożona
-            z&nbsp;najaktywniejszych studentów prowadzi warsztaty z&nbsp;różnych
-            dziedzin – w&nbsp;tym wprowadzi Was w&nbsp;tajniki działania naszej
+            Obóz studentów PWr to tydzień niesamowitych warsztatów,
+            szkoleń i integracji studentów naszej uczelni.
+            Mimo, że to wydarzenie skierowane jest głównie do nowo przyjętych studentów,
+            udział w nim może wziąć każdy student Politechniki.
+
+            Co roku w obozie bierze udział ponad dwustu uczestników przeżywających wspaniałą,
+            tygodniową przygodę. Kadra złożona z najaktywniejszych studentów prowadzi
+            warsztaty z różnych dziedzin – w tym wprowadzi Was w tajniki działania naszej
             Uczelni.
           </p>
-          Każdy pirat chce wiedzieć za co płaci tak więc w&nbsp;cenie obozu:
+          Każdy pirat chce wiedzieć za co płaci tak więc w cenie obozu:
           <ul>
             <li>Trzy posiłki dziennie (śniadanie, obiad, kolacja)</li>
-            <li>Pięciodniowe zakwaterowanie w&nbsp;6-10-osobowych domkach</li>
-            <li>Liczne warsztaty i&nbsp;atrakcje</li>
-            <li>pamiątkowa koszulka i&nbsp;Obozowe gadżety</li>
-            <li>Zdjęcia w&nbsp;formie cyfrowej zrobione przez fotografa</li>
+            <li>Pięciodniowe zakwaterowanie w 6-10-osobowych domkach</li>
+            <li>Liczne warsztaty i atrakcje</li>
+            <li>pamiątkowa koszulka i Obozowe gadżety</li>
+            <li>Zdjęcia w formie cyfrowej zrobione przez fotografa</li>
           </ul>
           Dodatkowo płatne (80zł):
           <ul>
-            <li>Transport w&nbsp;dwie strony z/do Wrocławia</li>
+            <li>Transport w dwie strony z/do Wrocławia</li>
           </ul>
         </div>
 

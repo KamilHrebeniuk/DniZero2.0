@@ -51,7 +51,7 @@ const SponsorsBar = ({ title, videoState }) => {
       style={{ opacity: sponsorsOpacity }}
     >
       <h1 className="sponsors_bar-sponsors-title">{title}</h1>
-      <div className="sponsors_bar-sponsors-container">
+      <div className="sponsors_bar-sponsors-container" onLoad={horizontalScroll}>
         {sponsors.map((sponsor) => (
           <Sponsor logo={sponsor.image} color={sponsor.color} />
         ))}
@@ -59,7 +59,15 @@ const SponsorsBar = ({ title, videoState }) => {
     </section>
   );
 };
-
+function horizontalScroll() {
+  const scrollContainer = document.querySelector(".sponsors_bar-sponsors-container");
+  if (scrollContainer) {
+    scrollContainer.addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      scrollContainer.scrollLeft += evt.deltaY;
+    });
+  }
+}
 const putStateToProps = (state) => {
   return {
     videoState: state.backgroundVideo.videoState,

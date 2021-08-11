@@ -9,13 +9,17 @@ export default function Register() {
 
   const sendRegisterForm = (array) => {
     const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
+    xhttp.onreadystatechange = function() {
       if (this.readyState === 4) {
         if (this.status === 200) {
-          console.log("Zakończone pozytywnie");
-          history.push("/RegisterSuccess");
+          var resp = JSON.parse(this.response);
+          if(resp['result']){
+            history.push("/RegisterSuccess");
+          }else{
+            history.push("/RegisterFail");
+            document.getElementById("Error").innerHTML = resp['message'];
+          }
         } else {
-          console.log("Coś poszło nie tak");
           history.push("/RegisterFail");
         }
       }
@@ -102,7 +106,7 @@ export default function Register() {
           .required("Wymagane"),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("Suuubmit");
+        console.log("Suuubmit")
         setTimeout(() => {
           sendRegisterForm(JSON.stringify(values));
           setSubmitting(false);

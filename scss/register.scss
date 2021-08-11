@@ -86,6 +86,20 @@
   ::-webkit-scrollbar-thumb:hover {
     background: $color_primary;
   }
+  &-info-title{
+    position: absolute;
+    top: 30%;
+    font-size: $font_size_xl;
+  }
+  &-info-email-info{
+    font-size: $font_size_l;
+    position: absolute;
+    top: 40%;
+  }
+}
+#Error{
+  position: absolute;
+  top: 50%;
 }
 .title {
   text-align: center;
@@ -162,7 +176,7 @@
   .title {
     text-align: center;
     margin-bottom: 8px;
-    color: $color_secondary_text;
+    color: $color_primary_text;
   }
 }
 

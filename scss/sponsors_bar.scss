@@ -15,8 +15,9 @@
       width: 100%;
       padding-top: 20px;
       border-top: solid 1px $color_primary_text;
+      overflow-y: auto;
+      overflow-x: hidden;
       display: flex;
-      overflow-x: auto;
     }
 
     &-title {
@@ -88,9 +89,7 @@
         text-align: center;
         margin: 0 10px 30px;
       }
-      &-title {
-        display: none;
-      }
+
     }
   }
 }
