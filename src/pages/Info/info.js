@@ -34,7 +34,7 @@ export default function Info() {
             <li>pamiątkowa koszulka i Obozowe gadżety</li>
             <li>Zdjęcia w formie cyfrowej zrobione przez fotografa</li>
           </ul>
-          Dodatkowo płatne (80zł):
+          Dodatkowo płatne (79,99zł):
           <ul>
             <li>Transport w dwie strony z/do Wrocławia</li>
           </ul>

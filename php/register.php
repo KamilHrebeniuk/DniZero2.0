@@ -9,7 +9,7 @@
     'message' => 'Niepoprawny URL',
     );
     if(isset($_SERVER['HTTP_ORIGIN'])){
-        if ($_SERVER['HTTP_ORIGIN'] == 'https://dev.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.dev.obozpwr.pl'){
+        if ($_SERVER['HTTP_ORIGIN'] == 'https://dev.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.dev.obozpwr.pl'||$_SERVER['HTTP_ORIGIN'] == 'https://obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.obozpwr.pl'){
             $data = file_get_contents("php://input");
             $DATA = json_decode($data,true);
             $date = date("Y-m-d H:i:s");
@@ -44,10 +44,10 @@
                     }else{
                         $response['message'] = "Nie udało sie wysłać maila";
                     }
-                    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+
                 }catch (PDOException $e){
                     $response['message'] = "Niepowodzenie! Rejestracja nie powiodła się: ".$e->getMessage();
-                    echo json_encode($response,JSON_UNESCAPED_UNICODE);
+
                     $conn = null;
                 }
             }

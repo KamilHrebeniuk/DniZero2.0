@@ -7,7 +7,7 @@
              "  <div class='container' style='width: 600px; line-height: 16px; font-size: 14px;'>
                 <h2 class='header' style='text-align: center'>Witamy na pokładzie!</h2>
                 
-                <p>Udało Ci się zaciągnąć do naszej załogi do naszej załogi. Chcielibyśmy potwierdzić Wasze zgłoszenie. Poniżej znajdują się ważne informacje i czynności, które trzeba wykonać, aby wybrać się z nami na \"Kurs W Nieznane\".</p>
+                <p>Udało Ci się zaciągnąć do naszej załogi. Chcielibyśmy potwierdzić Wasze zgłoszenie. Poniżej znajdują się ważne informacje i czynności, które trzeba wykonać, aby wybrać się z nami na \"Kurs w Nieznane\".</p>
                 
                 <h4>Dane do przelewu:</h4>
                 <div class='payment'>
@@ -26,16 +26,16 @@
                 ";
                  if($bus=="without"){
                      $message .= "<p>Wzór dla opłaty za sam Obóz:</p>
-                                  <p>".$name." - Obóz Studentów PWr 2021</p>  ";
+                                  <p><b>".$name." - Obóz Studentów PWr 2021</b></p>  ";
                  }else{
                      $message .= "<p>Wzór dla opłaty za Obóz i transport:</p>
-                                  <p>".$name." - Obóz Studentów PWr 2021 i transport</p>";
+                                  <p><b>".$name." - Obóz Studentów PWr 2021 i transport</b></p>";
                  }
                  $message.="
                 <p>Po wykonaniu wpłaty należy przesłać potwierdzenie przelewu na adres:</p>
                 <p>oboz@samorzad.pwr.edu.pl</p>
                 
-                <p>W wiadomości możecie również zamieścić informacje na temat specjalnej diety zaznaczonej w formularzu, alergii, schorzeń i dolegliwości, o których mowa w Regulaminie Obozu.</p>
+                <p>W wiadomości możecie również zamieścić informacje na temat specjalnej diety zaznaczonej w formularzu, alergii, schorzeń i dolegliwości, o których mowa w <a style='color: black' href='https://www.api.obozpwr.pl/documents/Regulamin_Obozu_Studentow_PWr_2021.pdf' target='_blank' rel='noreferrer'>Regulaminie Obozu</a>.</p>
                 
                 <p>Jeżeli potrzebujecie fakturę należy zawrzeć takową informację w mailu wraz z potwierdzeniem przelewu.</p>
                 
@@ -53,10 +53,11 @@
                     <li>NIP</li>
                 </ul>
                 <br>
-                <p>Przypominamy również o konieczności posiadania dowodu tożsamości oraz zabraniu ze sobą oświadczenia o stanie zdrowia [tutaj załącznik]</p>
+                <p>Przypominamy również o konieczności posiadania dowodu tożsamości oraz zabraniu ze sobą <a style='color: black' href='https://www.api.obozpwr.pl/documents/Zalacznik_nr_2_1_Deklaracja_o_stanie_zdrowia_w_zwiazku_z_pandemia_COVID-19.pdf' target='_blank' rel='noreferrer'>oświadczenia o stanie zdrowia.</a></p>
                 
-                <p>Jeśli będziecie mieć jakiekolwiek pytania kontaktujcie się z nami przez nasze media społecznościowe.</p>
+                <p>Jeśli będziecie mieć jakiekolwiek pytania kontaktujcie się z nami przez nasze <a style='color: black' href='https://www.facebook.com/events/3190446271190442/?active_tab=discussion' target='_blank' rel='noreferrer'>media społecznościowe</a>.</p>
                 <p>Do zobaczenia w Wieleniu!</p>
+                <p>Organizatorzy Obozu</p>
                 </div>";
 
          $headers  = "From:  <zapisy@obozpwr.pl>\n";

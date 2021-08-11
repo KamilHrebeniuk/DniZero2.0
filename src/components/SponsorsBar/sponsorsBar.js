@@ -10,27 +10,30 @@ import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
 import IsMobile from "../../hooks/isMobile";
 
-const Sponsor = ({ logo, color }) => {
+const Sponsor = ({ logo, color, link }) => {
   console.log(color);
   return (
-    <div
-      className="sponsors_bar-sponsor-container"
-      style={{ backgroundColor: color }}
-    >
-      <img className="sponsors_bar-sponsor-logo" src={logo} alt={"Logo"} />
-    </div>
+      <a href={link} target="_blank" rel="noreferrer">
+        <div
+            className="sponsors_bar-sponsor-container"
+            style={{ backgroundColor: color }}
+        >
+          <img className="sponsors_bar-sponsor-logo" src={logo} alt={"Logo"} />
+        </div>
+      </a>
+
   );
 };
 
 const SponsorsBar = ({ title, videoState }) => {
   const sponsors = [
-    { image: SS_logo, color: "#ffffff" },
+    { image: SS_logo, color: "#ffffff", link: "https://samorzad.pwr.edu.pl" },
     { image: Kwater_logo, color: "#ffffff" },
-    { image: PKO_logo, color: "#ffffff" },
-    { image: C13_logo, color: "#ffffff" },
-    { image: Szamani_logo, color: "#ffffff" },
-    { image: Neobab_logo, color: "#000000" },
-    { image: SMSapi_logo, color: "#ffffff" },
+    { image: PKO_logo, color: "#ffffff", link: "https://www.pkobp.pl" },
+    { image: C13_logo, color: "#ffffff", link: "https://c-13.pl" },
+    { image: Szamani_logo, color: "#ffffff", link: "https://www.facebook.com/SZAMAniTruck/" },
+    { image: Neobab_logo, color: "#000000", link: "https://neobab.pl" },
+    { image: SMSapi_logo, color: "#ffffff", link: "http://idz.do/smsapiforstudents" },
   ];
 
   const isMobile = IsMobile;
@@ -53,7 +56,7 @@ const SponsorsBar = ({ title, videoState }) => {
       <h1 className="sponsors_bar-sponsors-title">{title}</h1>
       <div className="sponsors_bar-sponsors-container" onLoad={horizontalScroll}>
         {sponsors.map((sponsor) => (
-          <Sponsor logo={sponsor.image} color={sponsor.color} />
+          <Sponsor logo={sponsor.image} color={sponsor.color} link={sponsor.link}/>
         ))}
       </div>
     </section>

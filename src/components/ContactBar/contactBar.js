@@ -35,9 +35,7 @@ const ContactBar = () => {
           </a>
         </div>
         <div className="contactBar-element">
-          <Link to="https://www.facebook.com/events/3190446271190442/?active_tab=discussion">
             <img className="contactBar-icon" src={ico_mail} alt="Facebook" />
-          </Link>
         </div>
       </nav>
     </section>
