@@ -30,6 +30,7 @@ const SponsorsBar = ({ title, videoState }) => {
     { image: C13_logo, color: "#ffffff" },
     { image: Szamani_logo, color: "#ffffff" },
     { image: Neobab_logo, color: "#000000" },
+    { image: SMSapi_logo, color: "#ffffff" },
 
   ];
 

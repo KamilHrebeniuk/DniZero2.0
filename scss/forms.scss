@@ -21,7 +21,6 @@
     display: inline-block;
     border: none;
     background: $color_white;
-    color: $color_primary;
     font-family: "Crimson Text";
     font-size: $font_size_l;
   }
@@ -41,6 +40,7 @@
     font-size: $font_size_xl;
     border: none;
     box-shadow: none;
+    cursor: pointer;
   }
 
   input[type="checkbox"] {
@@ -110,6 +110,8 @@ input[type="email"] {
       height: 30px;
       margin: 0 20px 20px 7px;
       font-size: $font_size_m;
+
+
     }
     .shirt,
     .bus,
@@ -136,6 +138,11 @@ input[type="email"] {
     }
     .extra {
       font-size: $font_size_m;
+    }
+    input[type="checkbox"]:checked:after {
+      font-size: $font_size_l;
+      top: -3px;
+      left: 3px;
     }
   }
 }

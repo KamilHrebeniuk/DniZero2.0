@@ -210,19 +210,22 @@ export default function Register() {
                   placeholder="987654321"
                   required
                 />
-                <label className="required shirt" htmlFor="shirt">
-                  Rozmiar koszuli:
-                </label>
-                <Field as="select" name="shirt" id="shirt">
-                  <option hidden value></option>{" "}
-                  {/*daje puste miejsce w dropboxie i dobrze wyglada*/}
-                  <option value="xs">XS</option>
-                  <option value="s">S</option>
-                  <option value="m">M</option>
-                  <option value="l">L</option>
-                  <option value="xl">XL</option>
-                </Field>
+                <div>
+                  <label className="required shirt" htmlFor="shirt">
+                    Rozmiar koszuli:
+                  </label>
+                  <Field as="select" name="shirt" id="shirt">
+                    <option hidden value></option>{" "}
+                    {/*daje puste miejsce w dropboxie i dobrze wyglada*/}
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                  </Field>
+                </div>
 
+              <div>
                 <label className="required year" htmlFor="year">
                   Rok studiów:
                 </label>
@@ -234,7 +237,9 @@ export default function Register() {
                   <option value="4">4 rok</option>
                   <option value="5">5 rok</option>
                 </Field>
+              </div>
 
+              <div>
                 <label className="required diet" htmlFor="diet">
                   Dieta:
                 </label>
@@ -247,15 +252,19 @@ export default function Register() {
                     Specjalna ze względów zdrowotnych
                   </option>
                 </Field>
+              </div>
 
+              <div>
                 <label className="required bus" htmlFor="bus">
-                  Transport z Wrocławia na obóz:
+                  Transport w obie strony:
                 </label>
                 <Field as="select" name="bus" id="bus" required>
                   <option hidden value></option>
                   <option value="with">tak</option>
                   <option value="without">nie</option>
                 </Field>
+              </div>
+
               </div>
 
               <div className="register-content-column-third">
