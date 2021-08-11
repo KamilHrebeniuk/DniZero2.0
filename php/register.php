@@ -1,7 +1,8 @@
 <?php
-    include "src/actions/General/connection.php";
-    include "src/actions/General/mail.php";
-
+    include "connection.php";
+    include "mail.php";
+    header("Access-Control-Allow-Origin: https://www.dev.obozpwr.pl");
+    header("Access-Control-Allow-Headers: *");
     $data = file_get_contents("php://input");
     $DATA = json_decode($data,true);
     $date = date("Y-m-d H:i:s");
@@ -27,14 +28,13 @@
             $stmt ->bindParam(':diet',$DATA['diet'],PDO::PARAM_STR);
             $stmt ->bindParam(':ICE_name',$DATA['ICE_name'],PDO::PARAM_STR);
             $stmt ->bindParam(':ICE_phone',$DATA['ICE_phone'],PDO::PARAM_STR);
-            $stmt ->bindParam(':ICE_adr',$DATA['ICE_adr'],PDO::PARAM_STR);
             $stmt ->bindParam(':health',$DATA['health'],PDO::PARAM_BOOL);
             $stmt ->bindParam(':age',$DATA['age'],PDO::PARAM_BOOL);
             $stmt ->bindParam(':rules',$DATA['rules'],PDO::PARAM_BOOL);
             $stmt ->bindParam(':date',$date,PDO::PARAM_STR);
             $stmt->execute();
 
-            $response['result'] = mailTo($DATA['email']);
+            $response['result'] = mailTo($DATA['email'],$DATA['name'],$DATA['bus']);
             if($response['result']){
                 $response['message'] = "To dopiero część skonćzonej przygody! Teraz wejdz na maila (sprawdź spam) i postępuj zgodnie z instrukcjami!";
             }else{
