@@ -1,8 +1,12 @@
 //********************* Default *********************//
 .info {
-  padding: 15px;
-  color: $color_secondary_text;
+  padding: 8px;
+  color: $color_primary_text;
   font-size: $font_size_m;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
   &-content {
     display: flex;
     flex-flow: column nowrap;
@@ -11,11 +15,20 @@
     margin-bottom: 5px;
     display: block;
     height: auto;
-    padding-left: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    &-text{
+      margin: 5px 0 ;
+    }
+    ul{
+      margin: 0 0 5px 0;
+    }
   }
+
   &-title {
     font-size: $font_size_xl;
     text-align: center;
+    margin:0 0 5px 0 ;
   }
   &-close {
     display: none;
@@ -28,6 +41,8 @@
   }
   &-footer {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

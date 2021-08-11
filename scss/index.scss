@@ -13,6 +13,7 @@
 @import "promoted_event_description";
 @import "sponsors_bar";
 @import "contactBar";
+@import "backgroundImage";
 
 //Pages
 @import "homepage";
@@ -33,6 +34,7 @@
   //background-size: cover;
   //background-position: center;
   height: 100%;
+
 }
 body {
   font-family: $font_face_primary;
