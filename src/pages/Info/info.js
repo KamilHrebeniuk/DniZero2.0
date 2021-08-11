@@ -40,10 +40,6 @@ export default function Info() {
           </ul>
         </div>
 
-        <div className="info-place">
-          <img className="place" src={trzyjeziora} alt="Ośrodek" />
-        </div>
-
         <p className="info-footer">Do zobaczenia!</p>
       </div>
     </div>

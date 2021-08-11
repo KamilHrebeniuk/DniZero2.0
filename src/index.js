@@ -5,6 +5,7 @@ import { store } from "./store";
 import "./css/index.css";
 import Navigation from "./components/Navigation";
 import { BrowserRouter } from "react-router-dom";
+import HttpsRedirect from "react-https-redirect";
 import MainRouter from "./utilities/MainRouter";
 
 export function App() {
@@ -18,7 +19,9 @@ export function App() {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HttpsRedirect>
+      <App />
+    </HttpsRedirect>
   </Provider>,
   document.getElementById("root")
 );
