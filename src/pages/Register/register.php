@@ -27,6 +27,7 @@
             $stmt ->bindParam(':diet',$DATA['diet'],PDO::PARAM_STR);
             $stmt ->bindParam(':ICE_name',$DATA['ICE_name'],PDO::PARAM_STR);
             $stmt ->bindParam(':ICE_phone',$DATA['ICE_phone'],PDO::PARAM_STR);
+            $stmt ->bindParam(':ICE_adr',$DATA['ICE_adr'],PDO::PARAM_STR);
             $stmt ->bindParam(':health',$DATA['health'],PDO::PARAM_BOOL);
             $stmt ->bindParam(':age',$DATA['age'],PDO::PARAM_BOOL);
             $stmt ->bindParam(':rules',$DATA['rules'],PDO::PARAM_BOOL);
