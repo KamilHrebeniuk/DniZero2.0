@@ -31,7 +31,6 @@ const SponsorsBar = ({ title, videoState }) => {
     { image: Szamani_logo, color: "#ffffff" },
     { image: Neobab_logo, color: "#000000" },
     { image: SMSapi_logo, color: "#ffffff" },
-
   ];
 
   const isMobile = IsMobile;

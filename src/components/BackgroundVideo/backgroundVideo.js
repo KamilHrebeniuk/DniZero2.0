@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ReactPlayer from "react-player";
 import backgroundVideo from "../../assets/backgrounds/backgroundMainVideo.mp4";
-import backgroundImage from "../../assets/backgrounds/backgroundMainImage.jpg";
+import backgroundImage from "../../assets/backgrounds/desktopBackgroundMainImage.jpg";
 import logo from "../../assets/logo.png";
 import { bindActionCreators } from "redux";
 import videoActions from "../../actions/BackgroundVideo/actions";

@@ -9,13 +9,13 @@ export default function Register() {
 
   const sendRegisterForm = (array) => {
     const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
       if (this.readyState === 4) {
         if (this.status === 200) {
-          console.log("Zakończone pozytywnie")
+          console.log("Zakończone pozytywnie");
           history.push("/RegisterSuccess");
         } else {
-          console.log("Coś poszło nie tak")
+          console.log("Coś poszło nie tak");
           history.push("/RegisterFail");
         }
       }
@@ -24,7 +24,7 @@ export default function Register() {
     xhttp.open("POST", "https://api.obozpwr.pl/register.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
-  }
+  };
   return (
     <Formik
       initialValues={{
@@ -102,7 +102,7 @@ export default function Register() {
           .required("Wymagane"),
       })}
       onSubmit={(values, { setSubmitting }) => {
-        console.log("Suuubmit")
+        console.log("Suuubmit");
         setTimeout(() => {
           sendRegisterForm(JSON.stringify(values));
           setSubmitting(false);
@@ -227,46 +227,45 @@ export default function Register() {
                   </Field>
                 </div>
 
-              <div>
-                <label className="required year" htmlFor="year">
-                  Rok studiów:
-                </label>
-                <Field as="select" name="year" id="year">
-                  <option hidden value></option>
-                  <option value="1">1 rok</option>
-                  <option value="2">2 rok</option>
-                  <option value="3">3 rok</option>
-                  <option value="4">4 rok</option>
-                  <option value="5">5 rok</option>
-                </Field>
-              </div>
+                <div>
+                  <label className="required year" htmlFor="year">
+                    Rok studiów:
+                  </label>
+                  <Field as="select" name="year" id="year">
+                    <option hidden value></option>
+                    <option value="1">1 rok</option>
+                    <option value="2">2 rok</option>
+                    <option value="3">3 rok</option>
+                    <option value="4">4 rok</option>
+                    <option value="5">5 rok</option>
+                  </Field>
+                </div>
 
-              <div>
-                <label className="required diet" htmlFor="diet">
-                  Dieta:
-                </label>
-                <Field as="select" name="diet" id="diet" required>
-                  <option hidden value></option>
-                  <option value="meat">Normalna</option>
-                  <option value="vege">Wegetariańska</option>
-                  <option value="vegan">Wegańska</option>
-                  <option value="special">
-                    Specjalna ze względów zdrowotnych
-                  </option>
-                </Field>
-              </div>
+                <div>
+                  <label className="required diet" htmlFor="diet">
+                    Dieta:
+                  </label>
+                  <Field as="select" name="diet" id="diet" required>
+                    <option hidden value></option>
+                    <option value="meat">Normalna</option>
+                    <option value="vege">Wegetariańska</option>
+                    <option value="vegan">Wegańska</option>
+                    <option value="special">
+                      Specjalna ze względów zdrowotnych
+                    </option>
+                  </Field>
+                </div>
 
-              <div>
-                <label className="required bus" htmlFor="bus">
-                  Transport w obie strony:
-                </label>
-                <Field as="select" name="bus" id="bus" required>
-                  <option hidden value></option>
-                  <option value="with">tak</option>
-                  <option value="without">nie</option>
-                </Field>
-              </div>
-
+                <div>
+                  <label className="required bus" htmlFor="bus">
+                    Transport w obie strony:
+                  </label>
+                  <Field as="select" name="bus" id="bus" required>
+                    <option hidden value></option>
+                    <option value="with">tak</option>
+                    <option value="without">nie</option>
+                  </Field>
+                </div>
               </div>
 
               <div className="register-content-column-third">
@@ -280,14 +279,21 @@ export default function Register() {
                   (uczestnictwa w Obozie).
                 </label>
                 <div className="back">
-                  Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie z Regulaminem zobowiązuję się poinformować
-                  Organizatora do dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach mogących mieć wpływ na bezpieczeństwo
-                  w trakcie trwania Obozu. Ponoszę wszelkie konsekwencje wynikające z zaniechania tego obowiązku. Organizator zastrzega
-                   sobie prawo do niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z pełnym zwrotem opłaty za Obóz,
-                  jeżeli zgłoszenie zostało złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez uczestnika dolegliwości mogłyby
-                  stanowić przeszkodę w udziale w Obozie. Organizator informuje, że wynajęty ośrodek nie spełnia wymogów dla osób
-                  o obniżonej sprawności fizycznej. Organizator nie ponosi odpowiedzialności z tytułu niedostosowania Ośrodka do
-                  indywidualnych potrzeb Uczestnika o obniżonej sprawności fizycznej.
+                  Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie
+                  z Regulaminem zobowiązuję się poinformować Organizatora do
+                  dnia 28.08.2021 r. o jakichkolwiek dolegliwościach i chorobach
+                  mogących mieć wpływ na bezpieczeństwo w trakcie trwania Obozu.
+                  Ponoszę wszelkie konsekwencje wynikające z zaniechania tego
+                  obowiązku. Organizator zastrzega sobie prawo do
+                  niedopuszczenia uczestnika do udziału w Obozie (co wiąże się z
+                  pełnym zwrotem opłaty za Obóz, jeżeli zgłoszenie zostało
+                  złożone w ustalonym wyżej terminie), jeżeli zgłoszone przez
+                  uczestnika dolegliwości mogłyby stanowić przeszkodę w udziale
+                  w Obozie. Organizator informuje, że wynajęty ośrodek nie
+                  spełnia wymogów dla osób o obniżonej sprawności fizycznej.
+                  Organizator nie ponosi odpowiedzialności z tytułu
+                  niedostosowania Ośrodka do indywidualnych potrzeb Uczestnika o
+                  obniżonej sprawności fizycznej.
                 </div>
 
                 <label className="required" htmlFor="age">

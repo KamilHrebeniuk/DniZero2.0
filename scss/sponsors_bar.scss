@@ -15,9 +15,8 @@
       width: 100%;
       padding-top: 20px;
       border-top: solid 1px $color_primary_text;
-      overflow-y: auto;
-      overflow-x: hidden;
       display: flex;
+      overflow-x: auto;
     }
 
     &-title {
@@ -34,6 +33,7 @@
       border-radius: 7px;
       text-align: center;
       margin: 0 30px 0 0;
+      min-width: 230px;
     }
 
     &-logo {
@@ -74,8 +74,8 @@
         padding-top: 30px;
         border-top: solid 1px $color_primary_text;
         border-left: none;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        overflow-y: hidden;
+        overflow-x: auto;
       }
       &-title {
         font-size: $font_size_xl0;
