@@ -405,14 +405,31 @@ input[type=email] {
   overflow: hidden;
   opacity: 0;
   transition: all 2s ease-out;
+  /* Handle */
+  /* Handle on hover */
+}
+.sponsors_bar-container ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.sponsors_bar-container ::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 4px;
+}
+.sponsors_bar-container ::-webkit-scrollbar-thumb {
+  background: rgba(110, 110, 110, 0.6);
+  border-radius: 4px;
+}
+.sponsors_bar-container ::-webkit-scrollbar-thumb:hover {
+  background: #681a2b;
 }
 .sponsors_bar-sponsors-container {
   width: 100%;
   padding-top: 20px;
   border-top: solid 1px #ece9e4;
-  overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 .sponsors_bar-sponsors-title {
   font-size: 28px;

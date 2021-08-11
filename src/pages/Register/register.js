@@ -310,7 +310,7 @@ export default function Register() {
                   <Field type="checkbox" id="rules" name="rules" required />
                   <span>Przeczytałem/-am </span>
                   <a
-                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    href="https://www.api.obozpwr.pl/documents/Regulamin_Obozu_Studentow_PWr_2021.pdf"
                     rel="noreferrer"
                     target="_blank"
                   >
@@ -330,7 +330,7 @@ export default function Register() {
                   przekazanie Organizatorowi wypełnionej tego samego dnia{" "}
                 </span>
                 <a
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                  href="https://www.api.obozpwr.pl/documents/Zalacznik_nr_2_1_Deklaracja_o_stanie_zdrowia_w_zwiazku_z_pandemia_COVID-19.pdf"
                   rel="noreferrer"
                   target="_blank"
                 >
