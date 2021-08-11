@@ -6,4 +6,6 @@ export default {
   popUpAgendaItem: "POP_UP_OPEN_AGENDA_ITEM",
   popUpRegister: "POP_UP_REGISTER",
   popUpInfo: "POP_UP_INFO",
+  popUpRegisterSuccess: "POP_UP_REGISTER_SUCCESS",
+  popUpRegisterFail: "POP_UP_REGISTER_FAIL",
 };

@@ -44,7 +44,7 @@ const SponsorsBar = ({ title, videoState }) => {
         setSponsorsOpacity(1);
       }, timeout);
     }
-  }, [videoState]);
+  }, [timeout, videoState]);
 
   return (
     <section

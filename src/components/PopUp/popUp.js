@@ -9,6 +9,8 @@ import TimeTable from "../../pages/TimeTable/timeTable";
 import MyAccount from "../../pages/MyAccount/myAccount";
 import Register from "../../pages/Register";
 import Info from "../../pages/Info";
+import RegisterSuccess from "../../pages/RegisterSuccess";
+import RegisterFail from "../../pages/RegisterFail";
 
 function PopUp({
   popUpState,
@@ -55,6 +57,10 @@ function PopUp({
         return <Register />;
       case PopUpTypes.popUpInfo:
         return <Info />;
+      case PopUpTypes.popUpRegisterSuccess:
+        return <RegisterSuccess />;
+      case PopUpTypes.popUpRegisterFail:
+        return <RegisterFail />;
       default:
         return undefined;
     }
