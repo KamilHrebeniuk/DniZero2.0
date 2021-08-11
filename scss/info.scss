@@ -10,7 +10,6 @@
   &-content {
     display: flex;
     flex-flow: column nowrap;
-
   }
   &-description {
     margin-bottom: 5px;
@@ -18,10 +17,10 @@
     height: auto;
     padding-left: 8px;
     padding-right: 8px;
-    &-text{
-      margin: 5px 0 ;
+    &-text {
+      margin: 5px 0;
     }
-    ul{
+    ul {
       margin: 0 0 5px 0;
     }
   }
@@ -29,7 +28,7 @@
   &-title {
     font-size: $font_size_xl;
     text-align: center;
-    margin:0 0 5px 0 ;
+    margin: 0 0 5px 0;
   }
   &-close {
     display: none;
@@ -77,9 +76,8 @@
       padding-left: 15px;
       &-text {
       }
-
     }
-    &-place{
+    &-place {
       display: none;
     }
     &-close {

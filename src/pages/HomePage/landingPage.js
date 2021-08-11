@@ -13,11 +13,11 @@ const LandingPage = () => {
   ];
 
   const isMobile = IsMobile();
-    console.log("Mobile")
-    console.log(isMobile)
+  console.log("Mobile");
+  console.log(isMobile);
   return (
     <>
-      {isMobile ? (<BackgroundImage/>) : (<BackgroundVideo />)}
+      {isMobile ? <BackgroundImage /> : <BackgroundVideo />}
       <PromotedEventDescription
         title={"Zapisz się na Obóz Studentów PWr"}
         description={

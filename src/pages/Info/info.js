@@ -16,14 +16,14 @@ export default function Info() {
         <div className="info-description">
           <p className="info-title">Obóz na horyzoncie!!</p>
           <p className="info-description-text">
-            Obóz studentów PWr to tydzień niesamowitych warsztatów,
-            szkoleń i&nbsp;integracji studentów naszej uczelni.
-            Mimo, że to wydarzenie skierowane jest głównie do nowo przyjętych studentów,
-            udział w&nbsp;nim może wziąć każdy student Politechniki.
-
-            Co roku w&nbsp;obozie bierze udział ponad dwustu uczestników przeżywających wspaniałą,
-            tygodniową przygodę. Kadra złożona z&nbsp;najaktywniejszych studentów prowadzi
-            warsztaty z&nbsp;różnych dziedzin – w&nbsp;tym wprowadzi Was w&nbsp;tajniki działania naszej
+            Obóz studentów PWr to tydzień niesamowitych warsztatów, szkoleń
+            i&nbsp;integracji studentów naszej uczelni. Mimo, że to wydarzenie
+            skierowane jest głównie do nowo przyjętych studentów, udział
+            w&nbsp;nim może wziąć każdy student Politechniki. Co roku
+            w&nbsp;obozie bierze udział ponad dwustu uczestników przeżywających
+            wspaniałą, tygodniową przygodę. Kadra złożona
+            z&nbsp;najaktywniejszych studentów prowadzi warsztaty z&nbsp;różnych
+            dziedzin – w&nbsp;tym wprowadzi Was w&nbsp;tajniki działania naszej
             Uczelni.
           </p>
           Każdy pirat chce wiedzieć za co płaci tak więc w&nbsp;cenie obozu:
