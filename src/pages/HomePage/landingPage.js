@@ -1,8 +1,10 @@
 import React from "react";
 import BackgroundVideo from "../../components/BackgroundVideo";
+import BackgroundImage from "../../components/BackgroundImage";
 import PromotedEventDescription from "../../components/PromotedEvent";
 import ContactBar from "../../components/ContactBar";
 import SponsorsBar from "../../components/SponsorsBar";
+import IsMobile from "../../hooks/isMobile";
 
 const LandingPage = () => {
   const register_buttons = [
@@ -10,9 +12,12 @@ const LandingPage = () => {
     { type: "secondary", title: "Więcej informacji", to: "/Info" },
   ];
 
+  const isMobile = IsMobile();
+    console.log("Mobile")
+    console.log(isMobile)
   return (
     <>
-      <BackgroundVideo />
+      {isMobile ? (<BackgroundImage/>) : (<BackgroundVideo />)}
       <PromotedEventDescription
         title={"Zapisz się na Obóz Studentów PWr"}
         description={
