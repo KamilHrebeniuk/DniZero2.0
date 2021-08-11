@@ -5,6 +5,7 @@ import C13_logo from "../../assets/sponsors/C13_logo.png";
 import Szamani_logo from "../../assets/sponsors/Szamani_logo.png";
 import Neobab_logo from "../../assets/sponsors/Neobab_logo.png";
 import Kwater_logo from "../../assets/sponsors/kwater_logo.png";
+import SMSapi_logo from "../../assets/sponsors/smsapi.png";
 import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
 
@@ -28,6 +29,7 @@ const SponsorsBar = ({ title, videoState }) => {
     { image: C13_logo, color: "#ffffff" },
     { image: Szamani_logo, color: "#ffffff" },
     { image: Neobab_logo, color: "#000000" },
+
   ];
 
   const [sponsorsOpacity, setSponsorsOpacity] = useState(0);

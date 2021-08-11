@@ -61,14 +61,15 @@
   .sponsors_bar {
     &-container {
       position: absolute;
-      bottom: 0;
-      left: 80px;
-      width: 80%;
+      bottom: 40px;
+      left: 0;
+      width: 90%;
       height: 240px;
-      transform: translate(0, 70%);
+
       overflow: hidden;
       opacity: 0;
       transition: all 2s ease-out;
+      margin-left:5%;
     }
     &-sponsors {
       &-container {

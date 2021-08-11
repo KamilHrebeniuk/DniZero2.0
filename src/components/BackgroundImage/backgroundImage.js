@@ -5,16 +5,16 @@ import logo from "../../assets/logo.png";
 const BackgroundImage = () => {
   return (
     <>
-      <div className="player-container">
+      <div className="backgroundImage-container">
         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
         <img
-          className="player-image"
+          className="backgroundImage-image"
           src={backgroundImage}
           alt={"Background image"}
           style={{ opacity: 1 }}
         />
         <img
-          className="player-logo"
+          className="backgroundImage-logo"
           src={logo}
           alt={"Logo"}
           style={{ opacity: 1 }}

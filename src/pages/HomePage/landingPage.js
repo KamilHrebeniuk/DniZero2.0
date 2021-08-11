@@ -32,7 +32,7 @@ const LandingPage = () => {
         movable
       />
       <ContactBar />
-      <SponsorsBar title={"Organizatorzy i sponsorzy"} />
+      <SponsorsBar title={"Organizatorzy i partnerzy"} />
     </>
   );
 };

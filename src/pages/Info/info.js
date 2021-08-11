@@ -16,15 +16,15 @@ export default function Info() {
         <div className="info-description">
           <p className="info-title">Obóz na horyzoncie!!</p>
           <p className="info-description-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Obóz studentów PWr to tydzień niesamowitych warsztatów,
+            szkoleń i integracji studentów naszej uczelni.
+            Mimo, że to wydarzenie skierowane jest głównie do nowo przyjętych studentów,
+            udział w nim może wziąć każdy student Politechniki.
+
+            Co roku w obozie bierze udział ponad dwustu uczestników przeżywających wspaniałą
+            , tygodniową przygodę. Kadra złożona z najaktywniejszych studentów prowadzi
+            warsztaty z różnych dziedzin – w tym wprowadzi Was w tajniki działania naszej
+            Uczelni.
           </p>
           Każdy pirat chce wiedzieć za co płaci tak więc w cenie obozu:
           <ul>
@@ -34,7 +34,7 @@ export default function Info() {
             <li>pamiątkowa koszulka i Obozowe gadżety</li>
             <li>Zdjęcia w formie cyfrowej zrobione przez fotografa</li>
           </ul>
-          Dodatkowo płatne(80zł):
+          Dodatkowo płatne (80zł):
           <ul>
             <li>Transport w dwie strony z/do Wrocławia</li>
           </ul>
