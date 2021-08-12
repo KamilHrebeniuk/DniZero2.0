@@ -24,7 +24,7 @@ const LandingPage = () => {
             Kiedy: 4-9 września 2021
             <br /> Gdzie: Trzy jeziora w Wieleniu Zaobrzańskim
             <br />
-            Cena: 699,99zł + 79,99zł dojazd
+            Cena: 699,99zł + 79,99zł dojazd (VAT marża)
           </p>
         }
         buttons={register_buttons}

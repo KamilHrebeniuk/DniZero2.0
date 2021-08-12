@@ -491,6 +491,7 @@ input[type=email] {
   flex-basis: 33.33%;
   text-align: center;
   padding: 8px 10px 4px;
+  cursor: pointer;
 }
 .contactBar-icon {
   width: 32px;
@@ -915,6 +916,8 @@ input[type=email] {
   font-size: 18px;
   position: absolute;
   top: 40%;
+  padding-right: 1em;
+  text-align: justify;
 }
 
 #Error {

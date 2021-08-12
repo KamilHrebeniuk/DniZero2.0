@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SS_logo from "../../assets/sponsors/SS_logo.png";
-import PKO_logo from "../../assets/sponsors/PKO_logo.png";
+// import PKO_logo from "../../assets/sponsors/PKO_logo.png";
 import C13_logo from "../../assets/sponsors/C13_logo.png";
 import Szamani_logo from "../../assets/sponsors/Szamani_logo.png";
 import Neobab_logo from "../../assets/sponsors/Neobab_logo.png";
@@ -28,7 +28,7 @@ const SponsorsBar = ({ title, videoState }) => {
   const sponsors = [
     { image: SS_logo, color: "#ffffff", link: "https://samorzad.pwr.edu.pl" },
     { image: Kwater_logo, color: "#ffffff" },
-    { image: PKO_logo, color: "#ffffff", link: "https://www.pkobp.pl" },
+    // { image: PKO_logo, color: "#ffffff", link: "https://www.pkobp.pl" },
     { image: C13_logo, color: "#ffffff", link: "https://c-13.pl" },
     { image: Szamani_logo, color: "#ffffff", link: "https://www.facebook.com/SZAMAniTruck/" },
     { image: Neobab_logo, color: "#000000", link: "https://neobab.pl" },

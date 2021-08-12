@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ico_facebook from "../../assets/icons/facebook.png";
 import ico_instagram from "../../assets/icons/instagram.png";
 import ico_mail from "../../assets/icons/mail.png";
@@ -34,8 +33,8 @@ const ContactBar = () => {
             />
           </a>
         </div>
-        <div className="contactBar-element">
-            <img className="contactBar-icon" src={ico_mail} alt="Facebook" />
+        <div className="contactBar-element" onClick={() => {navigator.clipboard.writeText("oboz@samorzad.pwr.edu.pl").then(() => {alert("Skopiowano email do schowka")}); }}>
+            <img className="contactBar-icon" src={ico_mail} alt="Mail" />
         </div>
       </nav>
     </section>
