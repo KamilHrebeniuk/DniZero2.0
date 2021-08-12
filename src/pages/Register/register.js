@@ -28,6 +28,7 @@ export default function Register() {
     xhttp.open("POST", "https://api.obozpwr.pl/register.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
+
   };
   return (
     <Formik
