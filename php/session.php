@@ -5,7 +5,6 @@ function startSession(){
     if(!empty($_SESSION['time']) && $_SESSION['time'] < time() - 300){
         session_destroy();
         session_start();
-        echo "jestem w ifie";
     }
 
     $SID = session_create_id('Ob21-');

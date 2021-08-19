@@ -36,6 +36,7 @@ const HomePage = () => {
     </section>
   );
 };
+
 function horizontalScroll() {
   const scrollContainer = document.querySelector(".home-content");
   if (scrollContainer) {
