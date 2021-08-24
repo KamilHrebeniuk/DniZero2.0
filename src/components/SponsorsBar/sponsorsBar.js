@@ -6,6 +6,9 @@ import Szamani_logo from "../../assets/sponsors/Szamani_logo.png";
 import Neobab_logo from "../../assets/sponsors/Neobab_logo.png";
 import Kwater_logo from "../../assets/sponsors/kwater_logo.png";
 import SMSapi_logo from "../../assets/sponsors/smsapi.png";
+import fuga_logo from "../../assets/sponsors/fuga_mundi.png";
+import piast_logo from "../../assets/sponsors/Piast.png";
+import pizza_pany_logo from "../../assets/sponsors/pizza_pany.png";
 import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
 import IsMobile from "../../hooks/isMobile";
@@ -29,10 +32,13 @@ const SponsorsBar = ({ title, videoState }) => {
     { image: SS_logo, color: "#ffffff", link: "https://samorzad.pwr.edu.pl" },
     { image: Kwater_logo, color: "#ffffff" },
     // { image: PKO_logo, color: "#ffffff", link: "https://www.pkobp.pl" },
+    { image: piast_logo, color: "#ffffff", link: "http://piwopiast.pl" },
     { image: C13_logo, color: "#ffffff", link: "https://c-13.pl" },
     { image: Szamani_logo, color: "#ffffff", link: "https://www.facebook.com/SZAMAniTruck/" },
     { image: Neobab_logo, color: "#000000", link: "https://neobab.pl" },
     { image: SMSapi_logo, color: "#ffffff", link: "http://idz.do/smsapiforstudents" },
+    { image: fuga_logo, color: "#ffffff", link: "http://fugamundiclub.pl" },
+    { image: pizza_pany_logo, color: "#ffffff", link: "https://www.pizzapany.pl" },
   ];
 
   const isMobile = IsMobile;
