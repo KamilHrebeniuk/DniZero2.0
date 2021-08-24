@@ -327,7 +327,7 @@ input[type=email] {
   }
 }
 .button-container-primary, .button-container-secondary {
-  padding: 8.5px 20px 8.5px 20px;
+  padding: 9px 20px 9px 20px;
   border-radius: 7px;
   text-shadow: none;
 }
@@ -381,9 +381,21 @@ input[type=email] {
 .promoted_event_description-container .promoted_event_description-buttons_container {
   display: flex;
   flex-flow: row nowrap;
+  width: fit-content;
+}
+.promoted_event_description-container .promoted_event_description-buttons_container_helper {
+  width: fit-content;
 }
 .promoted_event_description-container .button-container-secondary {
   margin-left: 10px;
+}
+.promoted_event_description-additional_info {
+  padding: 9px 20px 9px 20px;
+  border-radius: 7px;
+  text-shadow: none;
+  background-color: rgba(110, 110, 110, 0.6);
+  color: #ece9e4;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 767px) {

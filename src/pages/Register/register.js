@@ -158,7 +158,7 @@ export default function Register() {
                   required
                 />
                 <label className="required" htmlFor="pesel">
-                  PESEL/seria i numer dowodu tożsamości:
+                  PESEL lub seria i numer dowodu tożsamości lub numer paszportu:
                 </label>
                 <Field
                   type="text"
@@ -273,7 +273,7 @@ export default function Register() {
                   <Field type="checkbox" id="health" name="health" required />
                   Wyrazam zgode na przetwarzanie przez Organizatora danych o
                   moim stanie zdrowia, w tym o spełnieniu wymogu dotyczącego
-                  szczepienia określonego w pkt. 6. Regulaminu. Podanie tych
+                  <b style={{color: "#681a2b"}}> szczepienia określonego w pkt. 6. Regulaminu</b>. Podanie tych
                   danych jest dobrowolne, ale niezbędne do zapewnienia
                   bezpieczeństwa uczestnikowi, a więc i do wykonania usługi
                   (uczestnictwa w Obozie).
