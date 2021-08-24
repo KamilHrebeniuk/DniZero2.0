@@ -7,6 +7,7 @@ const PromotedEventDescription = ({
   title,
   description,
   buttons,
+  additionalInfo,
   videoState,
   movable,
 }) => {
@@ -27,10 +28,13 @@ const PromotedEventDescription = ({
     >
       <h1>{title}</h1>
       <p>{description}</p>
-      <div className="promoted_event_description-buttons_container">
-        {buttons.map((button) => (
-          <Button type={button.type} to={button.to} title={button.title} />
-        ))}
+      <div className="promoted_event_description-buttons_container_helper">
+        <div className="promoted_event_description-buttons_container">
+          {buttons.map((button) => (
+            <Button type={button.type} to={button.to} title={button.title} />
+          ))}
+        </div>
+        <div className="promoted_event_description-additional_info">{additionalInfo}</div>
       </div>
     </section>
   );

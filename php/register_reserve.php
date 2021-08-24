@@ -1,6 +1,6 @@
 <?php
     include "connection.php";
-    include "mail.php";
+    include "mail_reserve.php";
     header("Access-Control-Allow-Headers: Content-Type");
     header("Access-Control-Allow-Methods: POST");
     header("Access-Control-Allow-Origin: *");
@@ -17,7 +17,7 @@
             if($DATA){
                 $conn = Database::getConnection();
                 try{
-                    $stmt = $conn->prepare("INSERT INTO OBOZ_zapisy 
+                    $stmt = $conn->prepare("INSERT INTO OBOZ_rezerwowa 
             (id_osoby, name, email, phone, pesel, adr, list_adr, shirt, year, bus, diet, ICE_name, ICE_phone, health, age_confirmation, rules_acceptance, date) 
             VALUES (NULL, :name , :email , :phone, :pesel, :adr, :list_adr, :shirt, :year, :bus, :diet, :ICE_name, :ICE_phone, :health, :age, :rules , :date)");
                     $stmt ->bindParam(':name',$DATA['name'],PDO::PARAM_STR);
@@ -38,9 +38,17 @@
                     $stmt ->bindParam(':date',$date,PDO::PARAM_STR);
                     $stmt->execute();
 
-                    $response['result'] = mailTo($DATA['email'],$DATA['name'],$DATA['bus']);
+                    $stmt = $conn->prepare("SELECT COUNT(DISTINCT pesel) AS amount FROM OBOZ_rezerwowa WHERE email <> 'kamil.hrebeniuk@gmail.com'");
+                    $stmt->execute();
+
+                    $users_amounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($users_amounts as $users_amount) {
+                        $response['result'] = mailTo($DATA['email'],$users_amount['amount']);
+                    }
+
                     if($response['result']){
-                        $response['message'] = "To dopiero część skonćzonej przygody! Teraz wejdz na maila (sprawdź spam) i postępuj zgodnie z instrukcjami!";
+                        $response['message'] = "Udało dopisać się do listy rezerwowej!";
                     }else{
                         $response['message'] = "Nie udało sie wysłać maila";
                     }
