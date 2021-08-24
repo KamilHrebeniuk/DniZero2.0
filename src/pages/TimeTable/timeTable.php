@@ -15,6 +15,7 @@
             }
         }
         $startTime = strtotime('08:00:00');
+
         for($x = 0; $x<count($dates);$x++){
             for($i = 0; $i<$size; $i++){
                 $date = explode(" ",$result[$i][1]);
@@ -23,6 +24,7 @@
                 }
             }
         }
+
         $height = 1;
         echo "<div class='container'>";
             echo "<div class='column' id='time'>";
@@ -40,7 +42,7 @@
                     for($j=$days[$k][0];$j<$size;$j++){
                         $start = explode(" ",$result[$j][1]);
                         if($dates[$k]==$start[0]){
-                            $freeTime = (strtotime($start[1])-$startTime)/1800;
+                            $freeTime = (strtotime($start[1])-$startTime)/1800; #1800000
                             $end = explode(" ",$result[$j][2]);
                             if($freeTime==0){
                                 $height = ((strtotime($end[1]) - strtotime($start[1])) / 1800);

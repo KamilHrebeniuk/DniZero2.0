@@ -4,6 +4,7 @@ import HomePage from "../../pages/HomePage";
 import PopUp from "../../components/PopUp/popUp";
 import PopUpTypes from "../../components/PopUp/types";
 import IsMobile from "../../hooks/isMobile";
+import {App} from "../../index";
 
 const MainRouter = () => {
   const isMobile = IsMobile();
@@ -68,6 +69,19 @@ const MainRouter = () => {
           />
         )}
       </Route>
+      <Route path="/eventDescription/:id">
+        {isMobile ? (
+          <PopUp popUpContentType={PopUpTypes.popUpEventDescription} />
+        ) : (
+          <PopUp
+            popUpContentType={PopUpTypes.popUpEventDescription}
+            popUpWidth="1000px"
+          />
+        )}
+      </Route>
+        <Route path="/HomePage">
+            
+        </Route>
     </>
   );
 };

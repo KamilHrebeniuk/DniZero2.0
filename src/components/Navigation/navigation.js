@@ -7,7 +7,7 @@ import PopUpStates from "../../actions/PopUp/types";
 import ico_home from "../../assets/icons/home.png";
 import ico_timetable from "../../assets/icons/timetable.png";
 import ico_account from "../../assets/icons/account.png";
-
+import {isLoggedIn} from "../../pages/LoginPage/loginPage";
 function Navigation({ popUpState, openPopUp, closePopUp }) {
   const history = useHistory();
 
@@ -26,8 +26,6 @@ function Navigation({ popUpState, openPopUp, closePopUp }) {
       }, 1500);
     }
   };
-
-  const isLoggedIn = false;
 
   return isLoggedIn ? (
     <nav className="navigation">

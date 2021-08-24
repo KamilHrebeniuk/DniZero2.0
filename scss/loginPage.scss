@@ -1,0 +1,70 @@
+//********************* Default *********************//
+.login-content {
+  position: absolute;
+  width: 500px;
+  left: 80px;
+  top: 40%;
+  transform: translate(0, -30%);
+  font-size: $font_size_l;
+  text-shadow: 1px 1px 1px #808080;
+  transition: all 2s ease-out;
+
+  h1 {
+    font-size: $font_size_xxxl;
+    font-weight: 400;
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  input[type="password"],
+  input[type="email"] {
+    max-width: 60%;
+    padding: 5px 10px;
+    margin: 3px 0 10px 0;
+    display:block;
+    border: none;
+    background: $color_white;
+    font-size: $font_size_l;
+  }
+  p{
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: $font_size_xl;
+    display: inline-block;
+  }
+  input[type="submit"]{
+    cursor: pointer;
+    display: block;
+  }
+}
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+  .login-content {
+    position: unset;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    transform: unset;
+    margin-top: 40px;
+    h1 {
+      font-size: $font_size_xxl;
+    }
+  }
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}

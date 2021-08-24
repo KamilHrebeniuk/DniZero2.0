@@ -11,6 +11,7 @@ import Register from "../../pages/Register";
 import Info from "../../pages/Info";
 import RegisterSuccess from "../../pages/RegisterSuccess";
 import RegisterFail from "../../pages/RegisterFail";
+import EventDescription from "../EventDescription/eventDescription";
 
 function PopUp({
   popUpState,
@@ -60,6 +61,8 @@ function PopUp({
         return <RegisterSuccess />;
       case PopUpTypes.popUpRegisterFail:
         return <RegisterFail />;
+      case PopUpTypes.popUpEventDescription:
+        return <EventDescription />;
       default:
         return undefined;
     }

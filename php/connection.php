@@ -4,7 +4,7 @@
         private $conn;
         private $servername = "collabgazo1.mysql.db";
         private $username = "collabgazo1";
-        private $password = "RooTrOOt666";
+        private $password = "NoweSilneHaslo123";
         private $dbname = "collabgazo1";
 
         private function __construct(){

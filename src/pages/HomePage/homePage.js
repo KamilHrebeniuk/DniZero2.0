@@ -9,7 +9,7 @@ const HomePage = () => {
         <p>Lorem ipsum dolor sit amet</p>
         <span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut eni
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         </span>
         <br />
         <button>Szczegóły &rarr;</button>
@@ -17,25 +17,26 @@ const HomePage = () => {
       <div className="home-content" onLoad={horizontalScroll}>
         {/* TO DO: title and content as variables */}
         <AgendaItemText
-          title={"First point"}
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          title="Lorem ipsum dolor sit amet"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
         />
         <AgendaItemTextImage
-          title={"Second point"}
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          title="Lorem ipsum dolor sit amet"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
         />
         <AgendaItemText
-          title={"Third point"}
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          title="Lorem ipsum dolor sit amet"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
         />
         <AgendaItemTextImage
-          title={"Fourth point"}
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          title="Lorem ipsum dolor sit amet"
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad"
         />
       </div>
     </section>
   );
 };
+
 function horizontalScroll() {
   const scrollContainer = document.querySelector(".home-content");
   if (scrollContainer) {
@@ -45,5 +46,6 @@ function horizontalScroll() {
     });
   }
 }
+
 
 export default HomePage;
