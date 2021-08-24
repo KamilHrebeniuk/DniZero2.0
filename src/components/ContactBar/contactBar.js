@@ -33,8 +33,17 @@ const ContactBar = () => {
             />
           </a>
         </div>
-        <div className="contactBar-element" onClick={() => {navigator.clipboard.writeText("oboz@samorzad.pwr.edu.pl").then(() => {alert("Skopiowano email do schowka")}); }}>
-            <img className="contactBar-icon" src={ico_mail} alt="Mail" />
+        <div
+          className="contactBar-element"
+          onClick={() => {
+            navigator.clipboard
+              .writeText("oboz@samorzad.pwr.edu.pl")
+              .then(() => {
+                alert("Skopiowano email do schowka");
+              });
+          }}
+        >
+          <img className="contactBar-icon" src={ico_mail} alt="Mail" />
         </div>
       </nav>
     </section>

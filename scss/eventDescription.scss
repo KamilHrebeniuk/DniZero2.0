@@ -1,0 +1,74 @@
+//********************* Default *********************//
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+  .eventDescription-content {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    &-close {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      max-width: 50px;
+      max-height: 50px;
+      padding-top: 10px;
+    }
+    &-description {
+      width: 55%;
+      border-right: 1px solid grey;
+      &-title {
+        height: 70px;
+        border-bottom: 1px solid grey;
+        p {
+          margin: 0;
+        }
+      }
+      &-picture {
+        height: 250px;
+        border-bottom: 1px solid grey;
+      }
+      &-place {
+        position: relative;
+        bottom: -85%;
+        right: -65%;
+        width: 175px;
+        margin: 0;
+      }
+    }
+    &-register {
+      width: 45%;
+      &-required {
+        height: 150px;
+        border-bottom: 1px solid grey;
+      }
+      &-team-title,
+      &-newteam-title,
+      &-solo-title {
+        height: 50px;
+        border-bottom: 1px solid grey;
+      }
+      &-team-content,
+      &-newteam-content,
+      &-solo-content {
+        border-bottom: 1px solid grey;
+      }
+    }
+  }
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+}
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}

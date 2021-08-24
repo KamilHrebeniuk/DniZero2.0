@@ -1,8 +1,8 @@
 //********************* Default *********************//
 .container {
   display: flex;
-  height: 646px;
-  width: 770px;
+  height: 100%;
+  width: 100%;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-content: flex-start;
@@ -13,7 +13,7 @@
 .column {
   display: flex;
   height: 100%;
-  width: 120px;
+  width: calc(calc(100% - 50px) / 6);
   flex-flow: column nowrap;
   margin: 0;
   padding: 0;
@@ -22,10 +22,13 @@
   background-color: white;
   margin: 0;
   padding: 0;
-  font-size: 15px;
+  font-size: 10px;
   text-align: center;
   box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000,
     2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+  p {
+    margin: 0px;
+  }
 }
 #time {
   width: 50px;

@@ -86,12 +86,12 @@
   ::-webkit-scrollbar-thumb:hover {
     background: $color_primary;
   }
-  &-info-title{
+  &-info-title {
     position: absolute;
     top: 30%;
     font-size: $font_size_xl;
   }
-  &-info-email-info{
+  &-info-email-info {
     font-size: $font_size_l;
     position: absolute;
     top: 40%;
@@ -99,7 +99,7 @@
     text-align: justify;
   }
 }
-#Error{
+#Error {
   position: absolute;
   top: 50%;
 }

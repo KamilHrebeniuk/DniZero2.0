@@ -27,7 +27,7 @@ function Navigation({ popUpState, openPopUp, closePopUp }) {
     }
   };
 
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return isLoggedIn ? (
     <nav className="navigation">

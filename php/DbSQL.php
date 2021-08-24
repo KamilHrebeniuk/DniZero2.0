@@ -1,114 +1,100 @@
 <?php
-    session_start();
     include "connection.php";
+    session_start();
 
-    interface SQL{
-        public static function select($what,$src,$opt,$key);
-        public static function insert($src,$what,$val,$key);
-        public static function delete($src,$what,$key);
-        public static function update($src,$what,$opt,$key);
-    }
-
-    class commands implements SQL{
-
-        private static array $status = Array(
+    class Commands{
+        private $status = Array(
             'result' => false,
             'message' => 'error',
         );
-
-        private function getData($what,$src,$opt){
+        private function getData($what, $src, $opt)
+        {
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("SELECT :what FROM :tbl :opt");
-                $sql ->bindParam(':what',$what,PDO::PARAM_STR);
-                $sql ->bindParam(':tbl',$src,PDO::PARAM_STR);
-                $sql ->bindParam(':opt',$opt,PDO::PARAM_STR);
+                $sql = $con->prepare("SELECT ".$what." FROM ".$src." ".$opt);
                 $sql ->execute();
                 return $sql -> fetchAll();
             }catch (PDOException $e){
-                $this->status['message'] = "Error".$e->getMessage();
+                $this->status['message'] = "Error: ".$e->getMessage();
                 return $this->status;
+
             }
         }
 
         private function sendData($src,$what,$val){
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("INSERT INTO :tbl (:col) value (:val)");
-                $sql ->bindParam(':tbl',$src,PDO::PARAM_STR);
-                $sql ->bindParam(':col',$what,PDO::PARAM_STR);
-                $sql ->bindParam(':val',$val,PDO::PARAM_STR);
+                $sql = $con->prepare("INSERT INTO ".$src." (".$what.") VALUES (".$val.")");
                 $sql ->execute();
-                return $sql -> fetchAll();
-            }catch (PDOException $e){
-                $this->status['message'] = "Error".$e->getMessage();
+                $this ->status['message'] = true;
+                $this ->status['message'] = "Poprawnie dodano do bazy";
                 return $this->status;
+            }catch (PDOException $e){
+                $this ->status['message'] = "Error: ".$e->getMessage();
+                return $this ->status;
             }
         }
 
         private function delData($src,$what){
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("DELETE FROM :tbl WHERE :con");
-                $sql ->bindParam(':tbl',$src,PDO::PARAM_STR);
-                $sql ->bindParam(':con',$what,PDO::PARAM_STR);
+                $sql = $con->prepare("DELETE FROM ".$src." WHERE ".$what);
                 $sql ->execute();
-                return $sql -> fetchAll();
+                $this ->status['message'] = true;
+                $this ->status['message'] = "Poprawnie usunieto z bazy";
+                return $this ->status;
             }catch (PDOException $e){
-                $this->status['message'] = "Error".$e->getMessage();
-                return $this->status;
+                $this ->status['message'] = "Error".$e->getMessage();
+                return $this ->status;
             }
         }
 
         private function upData($src,$what,$opt){
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("UPDATE :tbl SET :col WHERE :con");
-                $sql ->bindParam(':tbl',$src,PDO::PARAM_STR);
-                $sql ->bindParam(':col',$what,PDO::PARAM_STR);
-                $sql ->bindParam(':con',$opt,PDO::PARAM_STR);
+                $sql = $con->prepare("UPDATE ".$src." SET ".$what." WHERE ".$opt);
                 $sql ->execute();
-                return $sql -> fetchAll();
+                $this ->status['message'] = true;
+                $this ->status['message'] = "Poprawnie zmodyfikowano baze";
+                return $this ->status;
             }catch (PDOException $e){
-                $this->status['message'] = "Error".$e->getMessage();
+                $this ->status['message'] = "Error".$e->getMessage();
+                return $this ->status;
+            }
+        }
+
+
+        public function select($what, $src, $opt, $key){
+            if($key == $_SESSION['key']){
+                return $this->getData($what, $src, $opt);
+            }else{
+                return $this->status;
+            }
+
+        }
+
+        public function insert($src,$what,$val, $key){
+            if($key == $_SESSION['key']){
+                return $this->sendData($src,$what,$val);
+            }else{
+                return $this->status;
+            }
+        }
+        public function delete($src,$what, $key){
+            if($key == $_SESSION['key']){
+                return $this->delData($src,$what);
+            }else{
                 return $this->status;
             }
         }
 
-        public static function select($what, $src, $opt, $key){
+        public function update($src,$what,$opt, $key){
             if($key == $_SESSION['key']){
-                self::getData($what,$src,$opt);
+                return $this->upData($src,$what,$opt);
             }else{
-                self::$status['message'] = "Niepoprawny klucz";
-                return self::$status;
-            }
-        }
-
-        public static function insert($src,$what,$val,$key){
-            if($key == $_SESSION['key']){
-                self::sendData($src,$what,$val);
-            }else{
-                self::$status['message'] = "Niepoprawny klucz";
-                return self::$status;
-            }
-        }
-
-        public static function delete($src,$what,$key){
-            if($key == $_SESSION['key']){
-                self::delData($src,$what);
-            }else{
-                self::$status['message'] = "Niepoprawny klucz";
-                return self::$status;
-            }
-        }
-
-        public static function update($src,$what,$opt,$key){
-            if($key == $_SESSION['key']){
-                self::upData($src,$what,$opt);
-            }else{
-                self::$status['message'] = "Niepoprawny klucz";
-                return self::$status;
+                return $this->status;
             }
         }
     }
+
 

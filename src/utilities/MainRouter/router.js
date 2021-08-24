@@ -68,6 +68,16 @@ const MainRouter = () => {
           />
         )}
       </Route>
+      <Route path="/eventDescription/:id">
+        {isMobile ? (
+          <PopUp popUpContentType={PopUpTypes.popUpEventDescription} />
+        ) : (
+          <PopUp
+            popUpContentType={PopUpTypes.popUpEventDescription}
+            popUpWidth="1000px"
+          />
+        )}
+      </Route>
     </>
   );
 };

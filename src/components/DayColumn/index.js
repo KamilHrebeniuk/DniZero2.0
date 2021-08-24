@@ -1,1 +1,1 @@
-export {default} from "./dayColumn"
+export { DayCell } from "./dayCell";

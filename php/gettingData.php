@@ -1,24 +1,42 @@
 <?php
-    session_start();
-    include "DbSQL.php";
 
+include "DbSQL.php";
+session_start();
 
-    $response= Array(
+$result= Array(
     'result' => false,
     'message' => 'Niepoprawny URL',
-    );
-    ini_set('session.use_strict_mode', 1);
-    if(isset($_SERVER['HTTP_ORIGIN'])) {
-        if ($_SERVER['HTTP_ORIGIN'] == 'https://dev.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.dev.obozpwr.pl'||$_SERVER['HTTP_ORIGIN'] == 'https://obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.obozpwr.pl') {
-            $data = file_get_contents("php://input");
-            $DATA = json_decode($data, true);
-            $SID = ltrim($DATA['SID'],'PHPSESSID=');
-            $key = hash('sha256',time(),false);
-            $_SESSION['key'] = $key;
-            if ($SID == $_SESSION['SSID'] && time() - $_SESSION['time'] >= 60) {
-               $response = commands::select($DATA['what'],$DATA['src'],$DATA['opt'],$SID);
+);
+
+if(isset($_SERVER['HTTP_ORIGIN'])) {
+    if ($_SERVER['HTTP_ORIGIN'] == 'https://dev.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.dev.obozpwr.pl'||$_SERVER['HTTP_ORIGIN'] == 'https://obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'http://www.1z13.dnizero.pl') {
+        $data = file_get_contents("php://input");
+        $DATA = json_decode($data, true);
+        $key = hash('sha256',strtotime("now"),false);
+        $SID = ltrim($DATA['SID'],"PHPSESSID=");
+        $_SESSION['key'] = $key;
+        if ($SID == $_SESSION['SSID']) {
+            $com = new Commands();
+            switch ($DATA['ch']){
+                case 1:
+                    $response = $com->select($DATA['what'], $DATA['src'], $DATA['opt'], $key);
+                    break;
+                case 2:
+                    $response = $com->insert($DATA['src'], $DATA['col'], $DATA['val'], $key);
+                    break;
+                case 3:
+                    $response = $com->delete($DATA['src'], $DATA['what'], $key);
+                    break;
+                case 4:
+                    $response = $com->update($DATA['src'], $DATA['col'], $DATA['opt'], $key);
+                    break;
             }
+            echo json_encode($response,JSON_UNESCAPED_UNICODE);
         }
     }
-    echo json_encode($response,JSON_UNESCAPED_UNICODE);
+}
+
+
+
+
 

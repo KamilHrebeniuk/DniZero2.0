@@ -9,15 +9,15 @@ export default function Register() {
 
   const sendRegisterForm = (array) => {
     const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
       if (this.readyState === 4) {
         if (this.status === 200) {
           var resp = JSON.parse(this.response);
-          if(resp['result']){
+          if (resp["result"]) {
             history.push("/RegisterSuccess");
-          }else{
+          } else {
             history.push("/RegisterFail");
-            document.getElementById("Error").innerHTML = resp['message'];
+            document.getElementById("Error").innerHTML = resp["message"];
           }
         } else {
           history.push("/RegisterFail");
@@ -28,7 +28,6 @@ export default function Register() {
     xhttp.open("POST", "https://api.obozpwr.pl/register.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
-
   };
   return (
     <Formik
@@ -92,11 +91,7 @@ export default function Register() {
           .string()
           .min(4, "Imie i nazwisko musi zawierać co najmniej 4 litery!")
           .required("Wymagane"),
-        ICE_phone: yup
-            .string()
-            .min(5)
-            .max(14)
-            .required("Wymagane"),
+        ICE_phone: yup.string().min(5).max(14).required("Wymagane"),
         health: yup
           .boolean()
           .oneOf([true], "Musisz potwierdzić swój stan zdrowia")
@@ -156,7 +151,7 @@ export default function Register() {
                   Numer telefonu:
                 </label>
                 <Field
-                    type="text"
+                  type="text"
                   id="phone"
                   name="phone"
                   placeholder="123456789"
@@ -317,7 +312,11 @@ export default function Register() {
                   >
                     regulamin i politykę prywatności
                   </a>
-                  <span>, akceptuję ich postanowienia i wyrażam zgodę na prztwarzanie określonych w nich danych osobowych na potrzeby zrealizowania usługi.</span>
+                  <span>
+                    , akceptuję ich postanowienia i wyrażam zgodę na
+                    prztwarzanie określonych w nich danych osobowych na potrzeby
+                    zrealizowania usługi.
+                  </span>
                 </label>
 
                 <p className="profile">

@@ -8,4 +8,5 @@ export default {
   popUpInfo: "POP_UP_INFO",
   popUpRegisterSuccess: "POP_UP_REGISTER_SUCCESS",
   popUpRegisterFail: "POP_UP_REGISTER_FAIL",
+  popUpEventDescription: "POP_UP_EVENT_DESCRIPTION",
 };

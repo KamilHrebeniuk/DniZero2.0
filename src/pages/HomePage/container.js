@@ -3,7 +3,7 @@ import LandingPage from "./landingPage";
 import HomePage from "./homePage";
 
 const Container = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return <>{isLoggedIn ? <HomePage /> : <LandingPage />}</>;
 };
