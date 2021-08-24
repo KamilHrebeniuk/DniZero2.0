@@ -47,44 +47,5 @@ function horizontalScroll() {
   }
 }
 
-export let schedule;
-window.onload = function init() {
-  con();
-};
-function con() {
-  const xhttp = new XMLHttpRequest();
-  var url = "https://dev.obozpwr.pl/session.php";
-  xhttp.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      if (this.status === 200) {
-        array["SID"] = document.cookie;
-        getData();
-      }
-    }
-  };
-  xhttp.open("POST", url, true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send();
-}
-let array = {
-  what: "*",
-  src: "OBOZ_harmonogram",
-  opt: "",
-  ch: 1,
-  SID: "",
-};
-function getData() {
-  const xhtps = new XMLHttpRequest();
-  var url = "https://dev.obozpwr.pl/gettingData.php";
-  xhtps.onreadystatechange = function () {
-    if (this.readyState === 4) {
-      if (this.status === 200) {
-        schedule = JSON.parse(this.response);
-      }
-    }
-  };
-  xhtps.open("POST", url, true);
-  xhtps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhtps.send(JSON.stringify(array));
-}
+
 export default HomePage;

@@ -69,10 +69,10 @@
                 $sql->bindParam(':email', $email,PDO::PARAM_STR);
                 $sql -> execute();
                 $this ->status['result'] = true;
-                $this ->status['message'] = $sql->fetchAll();
+                $this ->status['message'] = $sql->fetch();
                 return $this->status;
             }catch (PDOException $e){
-                $this ->status['message'] = $sql->fetchAll();
+                $this ->status['message'] ="Error".$e->getMessage();
             }
         }
 

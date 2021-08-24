@@ -12,11 +12,12 @@ if(isset($_SERVER['HTTP_ORIGIN'])) {
         $key = hash('sha256',strtotime("now"),false);
         $_SESSION['key'] = $key;
         $com = new Commands();
-        $response = $com -> loginUser($DATA['email'],$key);
-        $result = false;
-        if($result[0]===$DATA['passwd']){
-            $result = true;
+        $response = $com -> loginUser($DATA['login'],$key);
+        if(strval($response['message']['password'])===$DATA['passwd'] && $response['result']===true){
+            $result=true;
+        }else{
+            $result=false;
         }
-        echo json_encode($result ,JSON_UNESCAPED_UNICODE);
+        echo json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 }

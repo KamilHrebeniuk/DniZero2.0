@@ -1,6 +1,6 @@
 import React from "react";
 import { DayCell } from "../../components/DayColumn";
-import { schedule } from "../HomePage/homePage";
+import { schedule } from "../../pages/LoginPage/loginPage";
 export default function TimeTable() {
   return (
     <div className="container">

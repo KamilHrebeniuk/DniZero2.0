@@ -4,6 +4,7 @@ import HomePage from "../../pages/HomePage";
 import PopUp from "../../components/PopUp/popUp";
 import PopUpTypes from "../../components/PopUp/types";
 import IsMobile from "../../hooks/isMobile";
+import {App} from "../../index";
 
 const MainRouter = () => {
   const isMobile = IsMobile();
@@ -78,6 +79,9 @@ const MainRouter = () => {
           />
         )}
       </Route>
+        <Route path="/HomePage">
+            
+        </Route>
     </>
   );
 };

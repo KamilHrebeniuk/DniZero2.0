@@ -1,7 +1,7 @@
 import React from "react";
 import back from "../../assets/placeholders/goback.png";
 import { useHistory, useParams } from "react-router-dom";
-import { schedule } from "../../pages/HomePage/homePage";
+import { schedule } from "../../pages/LoginPage/loginPage";
 import {DayCell} from "../DayColumn";
 
 const EventDescContent = ({title, hours, place, description}) => {

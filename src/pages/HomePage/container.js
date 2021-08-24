@@ -2,9 +2,9 @@ import React from "react";
 import LandingPage from "./landingPage";
 import HomePage from "./homePage";
 import LoginPage from "../LoginPage";
+import {isLoggedIn} from "../LoginPage/loginPage";
 
 const Container = () => {
-  const isLoggedIn = false;
 
   return <>{isLoggedIn ? <HomePage /> : <LoginPage />}</>;
 };
