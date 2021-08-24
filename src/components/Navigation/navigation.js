@@ -4,11 +4,11 @@ import { bindActionCreators } from "redux";
 import popUpActions from "../../actions/PopUp";
 import { Link, useHistory } from "react-router-dom";
 import PopUpStates from "../../actions/PopUp/types";
+import loginTypes from "../../actions/HomePage/types";
 import ico_home from "../../assets/icons/home.png";
 import ico_timetable from "../../assets/icons/timetable.png";
 import ico_account from "../../assets/icons/account.png";
-import {isLoggedIn} from "../../pages/LoginPage/loginPage";
-function Navigation({ popUpState, openPopUp, closePopUp }) {
+function Navigation({ popUpState, openPopUp, closePopUp, loginState }) {
   const history = useHistory();
 
   // eslint-disable-next-line no-unused-vars
@@ -27,7 +27,7 @@ function Navigation({ popUpState, openPopUp, closePopUp }) {
     }
   };
 
-  return isLoggedIn ? (
+  return loginState === loginTypes.logged ? (
     <nav className="navigation">
       <div className="navigation-element">
         {/*<img onClick={closePopUpHandler} className="navigation-icon" src={ico_home} alt="HomePage"/>*/}
@@ -63,6 +63,7 @@ const putActionsToProps = (dispatch) => {
 const putStateToProps = (state) => {
   return {
     popUpState: state.popUp.popUpState,
+    loginState: state.homePage.loginState,
   };
 };
 

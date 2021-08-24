@@ -273,10 +273,13 @@ export default function Register() {
                   <Field type="checkbox" id="health" name="health" required />
                   Wyrazam zgode na przetwarzanie przez Organizatora danych o
                   moim stanie zdrowia, w tym o spełnieniu wymogu dotyczącego
-                  <b style={{color: "#681a2b"}}> szczepienia określonego w pkt. 6. Regulaminu</b>. Podanie tych
-                  danych jest dobrowolne, ale niezbędne do zapewnienia
-                  bezpieczeństwa uczestnikowi, a więc i do wykonania usługi
-                  (uczestnictwa w Obozie).
+                  <b style={{ color: "#681a2b" }}>
+                    {" "}
+                    szczepienia określonego w pkt. 6. Regulaminu
+                  </b>
+                  . Podanie tych danych jest dobrowolne, ale niezbędne do
+                  zapewnienia bezpieczeństwa uczestnikowi, a więc i do wykonania
+                  usługi (uczestnictwa w Obozie).
                 </label>
                 <div className="back">
                   Dane będą przetwarzane zgodnie z Polityką Prywatności. Zgodnie

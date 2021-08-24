@@ -15,15 +15,14 @@ import IsMobile from "../../hooks/isMobile";
 
 const Sponsor = ({ logo, color, link }) => {
   return (
-      <a href={link} target="_blank" rel="noreferrer">
-        <div
-            className="sponsors_bar-sponsor-container"
-            style={{ backgroundColor: color }}
-        >
-          <img className="sponsors_bar-sponsor-logo" src={logo} alt={"Logo"} />
-        </div>
-      </a>
-
+    <a href={link} target="_blank" rel="noreferrer">
+      <div
+        className="sponsors_bar-sponsor-container"
+        style={{ backgroundColor: color }}
+      >
+        <img className="sponsors_bar-sponsor-logo" src={logo} alt={"Logo"} />
+      </div>
+    </a>
   );
 };
 
@@ -34,14 +33,26 @@ const SponsorsBar = ({ title, videoState }) => {
     // { image: PKO_logo, color: "#ffffff", link: "https://www.pkobp.pl" },
     { image: piast_logo, color: "#ffffff", link: "http://piwopiast.pl" },
     { image: C13_logo, color: "#ffffff", link: "https://c-13.pl" },
-    { image: Szamani_logo, color: "#ffffff", link: "https://www.facebook.com/SZAMAniTruck/" },
+    {
+      image: Szamani_logo,
+      color: "#ffffff",
+      link: "https://www.facebook.com/SZAMAniTruck/",
+    },
     { image: Neobab_logo, color: "#000000", link: "https://neobab.pl" },
-    { image: SMSapi_logo, color: "#ffffff", link: "http://idz.do/smsapiforstudents" },
+    {
+      image: SMSapi_logo,
+      color: "#ffffff",
+      link: "http://idz.do/smsapiforstudents",
+    },
     { image: fuga_logo, color: "#ffffff", link: "http://fugamundiclub.pl" },
-    { image: pizza_pany_logo, color: "#ffffff", link: "https://www.pizzapany.pl" },
+    {
+      image: pizza_pany_logo,
+      color: "#ffffff",
+      link: "https://www.pizzapany.pl",
+    },
   ];
 
-  const isMobile = IsMobile;
+  const isMobile = IsMobile();
   const [sponsorsOpacity, setSponsorsOpacity] = useState(0);
   const timeout = isMobile ? 0 : 1000;
 
@@ -59,16 +70,25 @@ const SponsorsBar = ({ title, videoState }) => {
       style={{ opacity: sponsorsOpacity }}
     >
       <h1 className="sponsors_bar-sponsors-title">{title}</h1>
-      <div className="sponsors_bar-sponsors-container" onLoad={horizontalScroll}>
+      <div
+        className="sponsors_bar-sponsors-container"
+        onLoad={horizontalScroll}
+      >
         {sponsors.map((sponsor) => (
-          <Sponsor logo={sponsor.image} color={sponsor.color} link={sponsor.link}/>
+          <Sponsor
+            logo={sponsor.image}
+            color={sponsor.color}
+            link={sponsor.link}
+          />
         ))}
       </div>
     </section>
   );
 };
 function horizontalScroll() {
-  const scrollContainer = document.querySelector(".sponsors_bar-sponsors-container");
+  const scrollContainer = document.querySelector(
+    ".sponsors_bar-sponsors-container"
+  );
   if (scrollContainer) {
     scrollContainer.addEventListener("wheel", (evt) => {
       evt.preventDefault();

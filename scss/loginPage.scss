@@ -22,18 +22,18 @@
     max-width: 60%;
     padding: 5px 10px;
     margin: 3px 0 10px 0;
-    display:block;
+    display: block;
     border: none;
     background: $color_white;
     font-size: $font_size_l;
   }
-  p{
+  p {
     margin-bottom: 0;
     margin-top: 20px;
     font-size: $font_size_xl;
     display: inline-block;
   }
-  input[type="submit"]{
+  input[type="submit"] {
     cursor: pointer;
     display: block;
   }

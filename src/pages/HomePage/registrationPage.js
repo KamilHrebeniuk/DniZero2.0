@@ -6,7 +6,7 @@ import ContactBar from "../../components/ContactBar";
 import SponsorsBar from "../../components/SponsorsBar";
 import IsMobile from "../../hooks/isMobile";
 
-const LandingPage = () => {
+const RegistrationPage = () => {
   const register_buttons = [
     { type: "primary", title: "Zapisz się!", to: "/Register" },
     { type: "secondary", title: "Więcej informacji", to: "/Info" },
@@ -37,4 +37,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default RegistrationPage;
