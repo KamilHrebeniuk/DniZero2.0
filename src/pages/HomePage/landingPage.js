@@ -8,7 +8,7 @@ import IsMobile from "../../hooks/isMobile";
 
 const LandingPage = () => {
   const register_buttons = [
-    { type: "primary", title: "Zapisz się na listę rezerwową!", to: "/Register" },
+    { type: "primary", title: "Zapisz się!", to: "/Register" },
     { type: "secondary", title: "Więcej informacji", to: "/Info" },
   ];
 
@@ -27,7 +27,7 @@ const LandingPage = () => {
             Cena: 699,99zł + 79,99zł dojazd (VAT marża)
           </p>
         }
-        additionalInfo={"Majtkowie zaciągnięci z rezerwy:\u00a010"}
+        // additionalInfo={"Majtkowie zaciągnięci z rezerwy:\u00a010"}
         buttons={register_buttons}
         movable
       />

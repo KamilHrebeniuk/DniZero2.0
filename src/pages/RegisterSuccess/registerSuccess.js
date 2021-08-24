@@ -5,14 +5,19 @@ import exit from "../../assets/placeholders/exit.jpg";
 const RegisterSuccess = () => {
   return (
       <div className="register">
-        <p className="title">Zostałeś dopisany do listy rezerwowej!</p>
+        <p className="title">Rejestracja udana!</p>
         <div className="register-close">
           <Link to="/">
             <img className="register-close-icon" src={exit} alt={"Exit"} />
           </Link>
         </div>
         <div className="register-content">
-            <p className="register-info-email-info">Zostałeś dopisany do listy rezerwowej. W przypadku zwolnienia się miejsca na Obozie poinformujemy Cię mailowo</p>
+            <p className="register-info-title">Już prawie gotowe...</p>
+            <p className="register-info-email-info">W przypadku braku powiadomienia o mailu w przeciągu 5 minut, sprawdź
+                zakładkę spam lub w przypadku urzytkowników Gmaila również kartę
+                "Oferty". Jeśli mail nie został dostarczony, skontaktuj się z nami na
+                oboz@samorzad.pwr.edu.pl lub za pośrednictwem portali
+                społecznościowych.</p>
         </div>
       </div>
   );
