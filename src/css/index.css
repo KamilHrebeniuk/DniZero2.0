@@ -1119,6 +1119,56 @@ input[type=email] {
     padding-top: 10px;
   }
 }
+.login-content {
+  position: absolute;
+  width: 500px;
+  left: 80px;
+  top: 40%;
+  transform: translate(0, -30%);
+  font-size: 18px;
+  text-shadow: 1px 1px 1px #808080;
+  transition: all 2s ease-out;
+}
+.login-content h1 {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 50px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.login-content input[type=password],
+.login-content input[type=email] {
+  max-width: 60%;
+  padding: 5px 10px;
+  margin: 3px 0 10px 0;
+  display: block;
+  border: none;
+  background: #ffffff;
+  font-size: 18px;
+}
+.login-content p {
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-size: 28px;
+  display: inline-block;
+}
+.login-content input[type=submit] {
+  cursor: pointer;
+  display: block;
+}
+
+@media only screen and (max-width: 767px) {
+  .login-content {
+    position: unset;
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    transform: unset;
+    margin-top: 40px;
+  }
+  .login-content h1 {
+    font-size: 36px;
+  }
+}
 * {
   box-sizing: border-box;
 }

@@ -83,7 +83,6 @@ function getData() {
       }
     }
   };
-
   xhtps.open("POST", url, true);
   xhtps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhtps.send(JSON.stringify(array));

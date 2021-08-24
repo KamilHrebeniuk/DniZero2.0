@@ -3,11 +3,6 @@
 include "DbSQL.php";
 session_start();
 
-$result= Array(
-    'result' => false,
-    'message' => 'Niepoprawny URL',
-);
-
 if(isset($_SERVER['HTTP_ORIGIN'])) {
     if ($_SERVER['HTTP_ORIGIN'] == 'https://dev.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.dev.obozpwr.pl'||$_SERVER['HTTP_ORIGIN'] == 'https://obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'https://www.obozpwr.pl' || $_SERVER['HTTP_ORIGIN'] == 'http://www.1z13.dnizero.pl') {
         $data = file_get_contents("php://input");
