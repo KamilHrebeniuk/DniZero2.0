@@ -4,34 +4,41 @@ import HomePage from "../../pages/HomePage";
 import PopUp from "../../components/PopUp/popUp";
 import PopUpTypes from "../../components/PopUp/types";
 import IsMobile from "../../hooks/isMobile";
-import {App} from "../../index";
+import loginTypes from "../../actions/HomePage/types";
+import { connect } from "react-redux";
 
-const MainRouter = () => {
+const MainRouter = ({ loginState }) => {
   const isMobile = IsMobile();
+
+  console.log(loginState);
 
   return (
     <>
       <HomePage />
-      <Route path="/TimeTable">
-        {isMobile ? (
-          <PopUp popUpContentType={PopUpTypes.popUpTimeTable} />
-        ) : (
-          <PopUp
-            popUpContentType={PopUpTypes.popUpTimeTable}
-            popUpWidth="1000px"
-          />
-        )}
-      </Route>
-      <Route path="/MyAccount">
-        {isMobile ? (
-          <PopUp popUpContentType={PopUpTypes.popUpMyAccount} />
-        ) : (
-          <PopUp
-            popUpContentType={PopUpTypes.popUpMyAccount}
-            popUpWidth="700px"
-          />
-        )}
-      </Route>
+      {loginState === loginTypes.logged ? (
+        <Route path="/TimeTable">
+          {isMobile ? (
+            <PopUp popUpContentType={PopUpTypes.popUpTimeTable} />
+          ) : (
+            <PopUp
+              popUpContentType={PopUpTypes.popUpTimeTable}
+              popUpWidth="1000px"
+            />
+          )}
+        </Route>
+      ) : null}
+      {loginState === loginTypes.logged ? (
+        <Route path="/MyAccount">
+          {isMobile ? (
+            <PopUp popUpContentType={PopUpTypes.popUpMyAccount} />
+          ) : (
+            <PopUp
+              popUpContentType={PopUpTypes.popUpMyAccount}
+              popUpWidth="700px"
+            />
+          )}
+        </Route>
+      ) : null}
       <Route path="/Register">
         {isMobile ? (
           <PopUp popUpContentType={PopUpTypes.popUpRegister} />
@@ -79,11 +86,14 @@ const MainRouter = () => {
           />
         )}
       </Route>
-        <Route path="/HomePage">
-            
-        </Route>
     </>
   );
 };
 
-export default MainRouter;
+const putStateToProps = (state) => {
+  return {
+    loginState: state.homePage.loginState,
+  };
+};
+
+export default connect(putStateToProps)(MainRouter);

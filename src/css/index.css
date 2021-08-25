@@ -59,7 +59,8 @@
   flex-wrap: wrap;
   padding: 10px 10px 0 10px;
 }
-.agenda_item_text_image-header, .agenda_item_text_image-content {
+.agenda_item_text_image-header,
+.agenda_item_text_image-content {
   width: calc(100% - 82px);
 }
 .agenda_item_text_image-content {
@@ -75,7 +76,7 @@
 
 @media only screen and (min-width: 768px) {
   .agenda_item_text,
-.agenda_item_text_image {
+  .agenda_item_text_image {
     margin-right: 20px;
     min-width: 400px;
     width: 400px;
@@ -84,7 +85,7 @@
 }
 @media only screen and (max-width: 767px) {
   .agenda_item_text,
-.agenda_item_text_image {
+  .agenda_item_text_image {
     margin-bottom: 20px;
   }
 }
@@ -213,10 +214,10 @@
 .register .year {
   display: inline-block;
 }
-.register input[type=text],
-.register input[type=password],
-.register input[type=tel],
-.register input[type=email] {
+.register input[type="text"],
+.register input[type="password"],
+.register input[type="tel"],
+.register input[type="email"] {
   width: 100%;
   padding: 5px 10px;
   margin: 3px 0 10px 0;
@@ -234,7 +235,7 @@
   color: #681a2b;
   font-family: "Crimson Pro";
 }
-.register input[type=submit] {
+.register input[type="submit"] {
   margin-left: calc((100% - 124px) / 2);
   margin-top: 20px;
   font-size: 28px;
@@ -243,27 +244,28 @@
   cursor: pointer;
   font-family: "Crimson Pro";
 }
-.register input[type=checkbox] {
+.register input[type="checkbox"] {
   -webkit-appearance: none;
   background-color: #fafafa;
   border: 1px solid #cacece;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
   padding: 6px;
   border-radius: 3px;
   display: inline-block;
   position: relative;
   vertical-align: bottom;
 }
-.register input[type=checkbox]:active,
-.register input[type=checkbox]:checked:active {
+.register input[type="checkbox"]:active,
+.register input[type="checkbox"]:checked:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-.register input[type=checkbox]:checked {
+.register input[type="checkbox"]:checked {
   background-color: #e4cf9f;
   border: 1px solid #adb8c0;
   color: #99a1a7;
 }
-.register input[type=checkbox]:checked:after {
+.register input[type="checkbox"]:checked:after {
   content: "✔";
   font-size: 12px;
   position: absolute;
@@ -276,10 +278,10 @@
   margin: 0 11px 10px 7px;
 }
 
-.ICE-content input[type=text],
-input[type=password],
-input[type=tel],
-input[type=email] {
+.ICE-content input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
   margin: 5px 0 5px 0;
 }
 
@@ -296,12 +298,12 @@ input[type=email] {
     font-size: 16px;
   }
   .register .shirt,
-.register .bus,
-.register .diet,
-.register .year {
+  .register .bus,
+  .register .diet,
+  .register .year {
     display: inline-block;
   }
-  .register input[type=checkbox] {
+  .register input[type="checkbox"] {
     height: 20px;
     width: 20px;
     margin-top: 10px;
@@ -310,33 +312,36 @@ input[type=email] {
   .register label {
     display: block;
   }
-  .register input[type=text],
-.register input[type=password],
-.register input[type=tel],
-.register input[type=email] {
+  .register input[type="text"],
+  .register input[type="password"],
+  .register input[type="tel"],
+  .register input[type="email"] {
     height: 45px;
     font-size: 18px;
   }
   .register .extra {
     font-size: 16px;
   }
-  .register input[type=checkbox]:checked:after {
+  .register input[type="checkbox"]:checked:after {
     font-size: 18px;
     top: -3px;
     left: 3px;
   }
 }
-.button-container-primary, .button-container-secondary {
+.button-container-primary,
+.button-container-secondary {
   padding: 9px 20px 9px 20px;
   border-radius: 7px;
   text-shadow: none;
 }
-.button-container-primary a, .button-container-secondary a {
+.button-container-primary a,
+.button-container-secondary a {
   text-decoration: none;
 }
 .button-container-primary a:link,
 .button-container-primary a:visited,
-.button-container-primary a:active, .button-container-secondary a:link,
+.button-container-primary a:active,
+.button-container-secondary a:link,
 .button-container-secondary a:visited,
 .button-container-secondary a:active {
   color: #ece9e4;
@@ -354,7 +359,8 @@ input[type=email] {
 }
 
 @media only screen and (max-width: 767px) {
-  .button-container-primary, .button-container-secondary {
+  .button-container-primary,
+  .button-container-secondary {
     padding: 7px 14px 7px 14px;
   }
 }
@@ -378,12 +384,14 @@ input[type=email] {
 .promoted_event_description-container p {
   margin-top: 0;
 }
-.promoted_event_description-container .promoted_event_description-buttons_container {
+.promoted_event_description-container
+  .promoted_event_description-buttons_container {
   display: flex;
   flex-flow: row nowrap;
   width: fit-content;
 }
-.promoted_event_description-container .promoted_event_description-buttons_container_helper {
+.promoted_event_description-container
+  .promoted_event_description-buttons_container_helper {
   width: fit-content;
 }
 .promoted_event_description-container .button-container-secondary {
@@ -610,11 +618,15 @@ input[type=email] {
     height: 150px;
     border-bottom: 1px solid grey;
   }
-  .eventDescription-content-register-team-title, .eventDescription-content-register-newteam-title, .eventDescription-content-register-solo-title {
+  .eventDescription-content-register-team-title,
+  .eventDescription-content-register-newteam-title,
+  .eventDescription-content-register-solo-title {
     height: 50px;
     border-bottom: 1px solid grey;
   }
-  .eventDescription-content-register-team-content, .eventDescription-content-register-newteam-content, .eventDescription-content-register-solo-content {
+  .eventDescription-content-register-team-content,
+  .eventDescription-content-register-newteam-content,
+  .eventDescription-content-register-solo-content {
     border-bottom: 1px solid grey;
   }
 }
@@ -751,7 +763,8 @@ input[type=email] {
   padding: 0;
   font-size: 10px;
   text-align: center;
-  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000,
+    2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
 }
 .cell p {
   margin: 0px;
@@ -915,7 +928,8 @@ input[type=email] {
   overflow-y: scroll;
   height: 500px;
 }
-.register-content-column-primary, .register-content-column-secondary {
+.register-content-column-primary,
+.register-content-column-secondary {
   padding-right: 8px;
   width: 100%;
   font-size: 18px;
@@ -929,7 +943,8 @@ input[type=email] {
 .register-content-column-secondary p {
   margin-top: 8px;
 }
-.register-content-column-primary p, .register-content-column-secondary p {
+.register-content-column-primary p,
+.register-content-column-secondary p {
   margin-bottom: 0;
   font-size: 28px;
 }
@@ -1148,8 +1163,8 @@ input[type=email] {
   margin-bottom: 0;
   margin-top: 0;
 }
-.login-content input[type=password],
-.login-content input[type=email] {
+.login-content input[type="password"],
+.login-content input[type="email"] {
   max-width: 60%;
   padding: 5px 10px;
   margin: 3px 0 10px 0;
@@ -1164,7 +1179,7 @@ input[type=email] {
   font-size: 28px;
   display: inline-block;
 }
-.login-content input[type=submit] {
+.login-content input[type="submit"] {
   cursor: pointer;
   display: block;
 }
