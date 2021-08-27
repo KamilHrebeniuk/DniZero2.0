@@ -1,5 +1,5 @@
 import {resp} from "../HomePage/loginPage";
-import {quitTeam, getTeams} from "../../actions/MyAccount/userActions"
+import {delTeam, quitTeam, getTeams} from "../../actions/MyAccount/userActions"
 import React from "react";
 
 
@@ -10,7 +10,7 @@ function Teams (){
 
 }
 
-const Team = ({id, name, type}) =>{
+const Team = ({id, name, type, role}) =>{
 
 
     return( type ===0 ?
@@ -25,6 +25,7 @@ const Team = ({id, name, type}) =>{
                 {name}
             </div>
             <button onClick={()=>quitTeam(id)}>Wypisz się</button>
+            {/*role === 0 ? <button onClick={()=> delTeam(id)}>Usun druzyne</button>:null*/}
         </>
     );
 }
@@ -34,7 +35,7 @@ const InTeams = ({array}) =>{
             <h1>Druzyny</h1>
             <div className="team">
                 {array.map((data)=>(
-                    <Team id={data.team_id} name={data.team_name} type={data.type} />
+                    <Team id={data.team_id} name={data.team_name} type={data.type} role={data.person_type} />
                 ))}
             </div>
         </>

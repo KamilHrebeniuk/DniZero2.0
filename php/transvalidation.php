@@ -13,7 +13,7 @@ function transvalid($data){
                     $data['what'] = "OBOZ_osoby.imie_i_nazwisko, OBOZ_osoby.phone";
                     break;
                 case 4:
-                    $data['what'] = "OBOZ_druzyny.team_id, OBOZ_druzyny.team_name ,OBOZ_druzyny.type";
+                    $data['what'] = "OBOZ_druzyny.team_id, OBOZ_druzyny.team_name ,OBOZ_druzyny.type , OBOZ_assign_to_team.person_type";
                     break;
             }
             switch ($data['src']){

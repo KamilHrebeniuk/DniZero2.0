@@ -23,7 +23,7 @@ export function signout(event_id,user_id) {
     };
     commandWithout(stmt,"Poprawnie wypisano sie");
 
-};
+}
 export function getCounselor(){
     const stmt = {
         what: 3,
@@ -63,6 +63,10 @@ export function getTeams(){
     commandWith(stmt)
 }
 export function quitTeam(team_id){
+
+}
+
+export function delTeam(team_id){
 
 }
 function commandWithout (array,message){
