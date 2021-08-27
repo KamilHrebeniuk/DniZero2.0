@@ -5,17 +5,20 @@ import * as yup from "yup";
 import SponsorsBar from "../../components/SponsorsBar/sponsorsBar";
 import ContactBar from "../../components/ContactBar";
 
-export let isLoggedIn = false;
-
+export let resp;
+export let schedule;
 const LoginPage = ({ logIn }) => {
   const login = (array) => {
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState === 4) {
         if (this.status === 200) {
-          var resp = JSON.parse(this.response);
-          if (resp) {
+           resp = JSON.parse(this.response);
+           console.log(this.response);
+          if (Object.keys(resp).length === 3) {
+
             con();
+            getData();
             logIn();
           } else {
             console.log("Niepoprawne dane do logowania");
@@ -87,7 +90,7 @@ const LoginPage = ({ logIn }) => {
   );
 };
 
-export let schedule;
+
 
 function con() {
   const xhttp = new XMLHttpRequest();
@@ -96,18 +99,18 @@ function con() {
     if (this.readyState === 4) {
       if (this.status === 200) {
         array["SID"] = document.cookie;
-        getData();
+
       }
     }
   };
-  xhttp.open("POST", url, true);
+  xhttp.open("POST", url, false);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send();
 }
 let array = {
-  what: "*",
-  src: "OBOZ_harmonogram",
-  opt: "",
+  what: 1,
+  src: 1,
+  opt: 1,
   ch: 1,
   SID: "",
 };
@@ -121,7 +124,7 @@ function getData() {
       }
     }
   };
-  xhtps.open("POST", url, true);
+  xhtps.open("POST", url, false);
   xhtps.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhtps.send(JSON.stringify(array));
 }

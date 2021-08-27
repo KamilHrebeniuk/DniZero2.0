@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import Counselor from "./counselor";
+import Classes from "./classes";
+import Teams from "./teams";
+import {getCounselor} from "../../actions/MyAccount/userActions"
 
-export default function MyAccount({ name, qr_code, user_code }) {
+export default function MyAccount({qr_code, user_code }) {
   const [currentTab, setCurrentTab] = useState("counselor");
 
   const accountContent = () => {
     switch (currentTab) {
       case "counselor": {
+
+        if(localStorage.getItem("counselor") === null ){
+          getCounselor();
+          console.log("Nie bylo w local storage");
+        }
         return <Counselor />;
       }
       case "classes": {
-        return <h1>Warsztaty</h1>;
+        return <Classes/>
       }
       case "teams": {
-        return <h1>Drużyny</h1>;
+        return <Teams/>;
       }
       case "actions": {
         return <h1>Historia Akcji</h1>;
@@ -63,3 +71,4 @@ export default function MyAccount({ name, qr_code, user_code }) {
     </div>
   );
 }
+

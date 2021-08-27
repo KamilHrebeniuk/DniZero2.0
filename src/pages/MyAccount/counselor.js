@@ -1,17 +1,20 @@
 import logo from "../../assets/logo.png";
+import {resp} from "../../pages/HomePage/loginPage";
 
 const Counselor = () => {
-  const name = "Imionko";
+  const counselor = JSON.parse(localStorage.getItem("counselor"));
+  const name = resp['name'];
   const picture = logo;
-  const number = "123 456 789";
+  const counselorName = counselor[0]["imie_i_nazwisko"];
+  const counselorNumber = counselor[0]["phone"];
 
   return (
     <>
       <h2>Witaj, {name}</h2>
       <p>Twój opiekun:</p>
       <img className="guardian-picture" src={picture} alt={name} />
-      <p>Imie i Nazwisko: {name}</p>
-      <span>Numer telefonu: {number}</span>
+      <p>Imie i Nazwisko: {counselorName}</p>
+      <span>Numer telefonu: {counselorNumber}</span>
       <div className="account-contact">
         <div className="contact">
           <p>Koordynator ds. Uczestników:</p>
