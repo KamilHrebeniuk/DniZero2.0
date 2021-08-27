@@ -25,7 +25,7 @@ export default function Register() {
       }
     };
     /* TO DO: Zmienic tylko link i dziala. Ogolnie wydaje mi sie ze cala ta funkcje daloby zrobic globalna ale nie do konca wiem jak*/
-    xhttp.open("POST", "https://api.obozpwr.pl/register.php", true);
+    xhttp.open("POST", "https://api.obozpwr.pl/register_reserve.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(array);
 

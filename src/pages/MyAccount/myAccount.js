@@ -1,58 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+//import Counselor from "./counselor";
 
-export default function MyAccount({
-  name,
-  guardian_picture,
-  guardian_name,
-  guardian_number,
-  qr_code,
-  user_code,
-}) {
+export default function MyAccount({ name, qr_code, user_code }) {
+  const [currentTab, setCurrentTab] = useState("counselor");
+
+  const accountContent = () => {
+    switch (currentTab) {
+      case "counselor": {
+        //return <Counselor />;
+      }
+      case "classes": {
+        return <h1>Warsztaty</h1>;
+      }
+      case "teams": {
+        return <h1>Drużyny</h1>;
+      }
+      case "actions": {
+        return <h1>Historia Akcji</h1>;
+      }
+      default: {
+        //return <Counselor />;
+      }
+    }
+  };
+
   return (
     <div className="account">
-      <div className="account-content">
-        <h2>Witaj, {name}</h2>
-        <p>Twój opiekun:</p>
-        <img
-          className="guardian-picture"
-          src={guardian_picture}
-          alt={guardian_name}
-        />
-        <p>Imie i Nazwisko: {guardian_name}</p>
-        <span>Numer telefonu: {guardian_number}</span>
-        <div className="account-contact">
-          <div className="contact">
-            <p>Koordynator ds. Uczestników:</p>
-            <span> 123456789</span>
-          </div>
-          <div className="contact">
-            <p>Koordynator ds. Programu: </p>
-            <span> 123456789</span>
-          </div>
-          <div className="contact">
-            <p>Koordynator ds. Ciężkich: </p>
-            <span> 123456789</span>
-          </div>
-          <div className="contact">
-            <p>Pogotowie (klinowe): </p>
-            <span> 123456789</span>
-          </div>
-        </div>
-        <div className="account-footer">
-          <p>Kliknij po za oknem by zamknąć</p>
-        </div>
-      </div>
+      <div className="account-content">{accountContent()}</div>
       <div className="account-menu">
-        <button className="account-button">
+        <button
+          className="account-button"
+          onClick={() => setCurrentTab("counselor")}
+        >
           <span>Opiekun i kontakt</span>
         </button>
-        <button className="account-button">
+        <button
+          className="account-button"
+          onClick={() => setCurrentTab("classes")}
+        >
           <span>Warsztaty</span>
         </button>
-        <button className="account-button">
+        <button
+          className="account-button"
+          onClick={() => setCurrentTab("teams")}
+        >
           <span>Drużyny</span>
         </button>
-        <button className="account-button">
+        <button
+          className="account-button"
+          onClick={() => setCurrentTab("actions")}
+        >
           <span>Historia akcji</span>
         </button>
         <button className="account-button" id="close">

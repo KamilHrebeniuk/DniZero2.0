@@ -34,7 +34,7 @@ const PromotedEventDescription = ({
             <Button type={button.type} to={button.to} title={button.title} />
           ))}
         </div>
-        {/*<div className="promoted_event_description-additional_info">{additionalInfo}</div>*/}
+        {<div className="promoted_event_description-additional_info">{additionalInfo}</div>}
       </div>
     </section>
   );

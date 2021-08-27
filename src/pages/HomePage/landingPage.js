@@ -27,7 +27,7 @@ const LandingPage = () => {
             Cena: 699,99zł + 79,99zł dojazd (VAT marża)
           </p>
         }
-        // additionalInfo={"Majtkowie zaciągnięci z rezerwy:\u00a010"}
+        additionalInfo={"Majtkowie zaciągnięci z rezerwy:\u00a016"}
         buttons={register_buttons}
         movable
       />

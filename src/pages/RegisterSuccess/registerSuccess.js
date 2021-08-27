@@ -12,12 +12,8 @@ const RegisterSuccess = () => {
           </Link>
         </div>
         <div className="register-content">
-            <p className="register-info-title">Już prawie gotowe...</p>
-            <p className="register-info-email-info">W przypadku braku powiadomienia o mailu w przeciągu 5 minut, sprawdź
-                zakładkę spam lub w przypadku urzytkowników Gmaila również kartę
-                "Oferty". Jeśli mail nie został dostarczony, skontaktuj się z nami na
-                oboz@samorzad.pwr.edu.pl lub za pośrednictwem portali
-                społecznościowych.</p>
+            <p className="register-info-title">Zapisałeś się na liste rezerwową</p>
+            <p className="register-info-email-info">Cześć! Niestety nasze statki są pełne i nie pomieszczą już więcej poszukiwaczy przygód. Ale nie martw się! Damy Ci znać, jeżeli ktoś wypadnie za burtę</p>
         </div>
       </div>
   );
