@@ -6,12 +6,13 @@ export default function TimeTable() {
     <div className="container">
       <div className="column" id="time">
         {hour.map((h) => (
-          <DayCell id={0} hours={""} place={" "} hei={1} title={h.hours} />
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={h.hours} />
         ))}
       </div>
 
       <div className="column">
-        <DayCell id={0} hours={""} place={""} hei={6} title={""} />
+          {console.log("next")}
+        <DayCell id={0} hours={""} place={""} description={""} hei={6} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-04")
           .map((filteredDay) => (
@@ -19,6 +20,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -28,6 +30,8 @@ export default function TimeTable() {
           ))}
       </div>
       <div className="column">
+          {console.log("next")}
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-05")
           .map((filteredDay) => (
@@ -35,6 +39,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -44,6 +49,8 @@ export default function TimeTable() {
           ))}
       </div>
       <div className="column">
+          {console.log("next")}
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-06")
           .map((filteredDay) => (
@@ -51,6 +58,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -60,6 +68,8 @@ export default function TimeTable() {
           ))}
       </div>
       <div className="column">
+          {console.log("next")}
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-07")
           .map((filteredDay) => (
@@ -67,6 +77,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -76,6 +87,8 @@ export default function TimeTable() {
           ))}
       </div>
       <div className="column">
+          {console.log("next")}
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-08")
           .map((filteredDay) => (
@@ -83,6 +96,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -92,6 +106,8 @@ export default function TimeTable() {
           ))}
       </div>
       <div className="column">
+          {console.log("next")}
+          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
         {schedule
           .filter((day) => day[1].split(" ")[0] === "2021-09-09")
           .map((filteredDay) => (
@@ -99,6 +115,7 @@ export default function TimeTable() {
               id={filteredDay.event_id}
               hours={filteredDay.start_datetime}
               title={filteredDay.title}
+              description={filteredDay.description}
               place={"oboz"}
               hei={calcTime(
                 filteredDay.start_datetime,
@@ -106,11 +123,13 @@ export default function TimeTable() {
               )}
             />
           ))}
+          <DayCell id={0} hours={""} place={""} description={""} hei={21} title={""} />
       </div>
     </div>
   );
 }
 const hour = [
+    { hours: "08:00" },
   { hours: "08:30" },
   { hours: "09:00" },
   { hours: "09:30" },
@@ -143,7 +162,8 @@ const hour = [
   { hours: "23:00" },
   { hours: "23:30" },
   { hours: "00:00" },
-  { hours: "00:30" },
+
+
 ];
 
 function calcTime(start, end) {
@@ -153,5 +173,6 @@ function calcTime(start, end) {
   if (sum < 0) {
     sum = 48 + sum;
   }
+  console.log(sum);
   return sum;
 }

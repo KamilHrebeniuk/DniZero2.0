@@ -19,7 +19,7 @@
   }
 
   &-content {
-    height: 600px;
+    height: 660px;
     background-color: $color_primary_background;
     position: fixed;
     z-index: 10;
@@ -27,7 +27,7 @@
     top: 100%;
     transform: translate(-50%, 0);
     transition: all 0.3s ease-out;
-
+    overflow-y: auto;
     &-active {
       top: 50%;
       transform: translate(-50%, -50%);

@@ -1,6 +1,10 @@
 <?php
+session_start();
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Origin: *");
     include "connection.php";
-    session_start();
+
 
     class Commands{
         private $status = Array(
@@ -24,7 +28,7 @@
         private function sendData($src,$what,$val){
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("INSERT INTO ".$src." (".$what.") VALUES (".$val.")");
+                $sql = $con->prepare("INSERT INTO ".$src." (".$what.") VALUES ".$val );
                 $sql ->execute();
                 $this ->status['result'] = true;
                 $this ->status['message'] = "Poprawnie dodano do bazy";
@@ -65,7 +69,7 @@
         private function log_in($email){
             $con = Database::getConnection();
             try{
-                $sql = $con->prepare("SELECT password FROM OBOZ_uczestnicy WHERE email = :email");
+                $sql = $con->prepare("SELECT password, imie_i_nazwisko, id_uczestnika, role FROM OBOZ_osoby WHERE email = :email");
                 $sql->bindParam(':email', $email,PDO::PARAM_STR);
                 $sql -> execute();
                 $this ->status['result'] = true;
