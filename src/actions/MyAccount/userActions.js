@@ -63,12 +63,41 @@ export function getTeams(){
     commandWith(stmt)
 }
 export function quitTeam(team_id){
-
+    const stmt = {
+        what: 2,
+        src: 2,
+        team_id: team_id,
+        id_person: resp['id'],
+        ch: 3,
+        SID: document.cookie,
+    };
+    commandWithout(stmt,"Poprawnie wypisano sie");
 }
 
-export function delTeam(team_id){
-
+export function createTeam(team_name){
+    const stmt = {
+        what: 2,
+        src: 2,
+        team_name: team_name,
+        ch: 2,
+        SID: document.cookie,
+    };
+    commandWithout(stmt,"Poprawnie stworzono druzyne");
 }
+
+export function addToTeam(team_name,teammates){
+    const stmt = {
+        what: 3,
+        src: 3,
+        team_name: team_name,
+        data: teammates,
+        ch: 2,
+        SID: document.cookie,
+    };
+    console.log(JSON.stringify(stmt));
+    commandWithout(stmt,"Poprawnie dodano do niej");
+}
+
 function commandWithout (array,message){
     const x = new XMLHttpRequest();
     var url = "https://dev.obozpwr.pl/gettingData.php";

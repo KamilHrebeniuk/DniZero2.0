@@ -28,7 +28,7 @@ header("Access-Control-Allow-Origin: *");
         private function sendData($src,$what,$val){
             $con = Database::getConnection();
             try {
-                $sql = $con->prepare("INSERT INTO ".$src." (".$what.") VALUES (".$val.")");
+                $sql = $con->prepare("INSERT INTO ".$src." (".$what.") VALUES ".$val );
                 $sql ->execute();
                 $this ->status['result'] = true;
                 $this ->status['message'] = "Poprawnie dodano do bazy";
