@@ -11,7 +11,7 @@ function Teams (){
 
 }
 
-const Team = ({id, name, type, role}) =>{
+const Team = ({id, name, type}) =>{
 
 
     return( type ===0 ?
@@ -36,7 +36,7 @@ const InTeams = ({array}) =>{
             <h1>Druzyny</h1>
             <div className="team">
                 {array.map((data)=>(
-                    <Team id={data.team_id} name={data.team_name} type={data.type} role={data.person_type} />
+                    <Team id={data.team_id} name={data.team_name} type={data.type} />
                 ))}
             </div>
             <div className="team-creation-content">

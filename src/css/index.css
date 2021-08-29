@@ -589,6 +589,8 @@ input[type=email] {
   .eventDescription-content-description-title {
     height: 70px;
     border-bottom: 1px solid grey;
+    text-align: center;
+    font-size: 50px;
   }
   .eventDescription-content-description-title p {
     margin: 0;
@@ -604,6 +606,24 @@ input[type=email] {
     width: 175px;
     margin: 0;
   }
+  .eventDescription-content-solo {
+    height: 100%;
+  }
+  .eventDescription-content-solo-title {
+    height: 70px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    font-size: 50px;
+  }
+  .eventDescription-content-solo-title p {
+    margin: 0;
+  }
+  .eventDescription-content-solo-description {
+    display: flex;
+    flex-flow: row nowrap;
+    height: calc(100% - 70px);
+    padding-bottom: 8px;
+  }
   .eventDescription-content-register {
     width: 45%;
   }
@@ -618,6 +638,18 @@ input[type=email] {
   .eventDescription-content-register-team-content, .eventDescription-content-register-newteam-content, .eventDescription-content-register-solo-content {
     border-bottom: 1px solid grey;
   }
+
+  .ClassDesc-content {
+    height: 100%;
+    margin: 0 8px 8px 8px;
+    flex: 1;
+  }
+  .ClassDesc-content-person {
+    position: relative;
+    bottom: -300px;
+    height: 260px;
+    overflow-y: scroll;
+  }
 }
 .cell {
   background-color: white;
@@ -628,8 +660,16 @@ input[type=email] {
   box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
   color: #303030;
 }
-.cell p {
+.cell-hour_place {
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 10px;
+}
+.cell-title {
+  font-size: 20px;
+  vertical-align: middle;
   margin: 0;
+  line-height: 20px;
 }
 .cell-content {
   background-color: white;
@@ -637,6 +677,25 @@ input[type=email] {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
+}
+.cell-empty {
+  background-color: lightgrey;
+  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+}
+.cell-time {
+  background-color: white;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+  color: #303030;
+}
+.cell-time-content {
+  margin: 5px 0;
+}
+
+.cell:hover {
+  background-color: #e4cf9f;
+  transition: 0.5s;
 }
 
 .home {
@@ -747,7 +806,7 @@ input[type=email] {
 }
 .container {
   display: flex;
-  height: 1320px;
+  height: 990px;
   width: 100%;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -755,6 +814,15 @@ input[type=email] {
   background-color: lightgray;
   margin: 0;
   padding: 0;
+}
+.container-baner {
+  position: sticky;
+  top: 0;
+  position: -webkit-sticky;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 30px;
 }
 
 .column {
@@ -765,9 +833,40 @@ input[type=email] {
   margin: 0;
   padding: 0;
 }
+.column-title {
+  font-size: 20px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+  color: #303030;
+}
+.column-title p {
+  margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 110, 110, 0.6);
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #681a2b;
+}
 
 #time {
   width: 50px;
+  background-color: lightgrey;
 }
 
 .account {

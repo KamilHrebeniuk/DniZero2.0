@@ -1,131 +1,161 @@
 import React from "react";
-import { DayCell } from "../../components/DayColumn";
+import {DayCell, ColumnTitle, EmptyCell, TimeCell} from "../../components/DayColumn";
 import { schedule } from "../HomePage/loginPage";
 export default function TimeTable() {
   return (
-    <div className="container">
-      <div className="column" id="time">
-        {hour.map((h) => (
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={h.hours} />
-        ))}
-      </div>
+      <>
+          <div className="container-baner">
+              <div className="column" id="time">
+                  <EmptyCell  hei={1}  />
+              </div>
 
-      <div className="column">
-          {console.log("next")}
-        <DayCell id={0} hours={""} place={""} description={""} hei={6} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-04")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-      </div>
-      <div className="column">
-          {console.log("next")}
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-05")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-      </div>
-      <div className="column">
-          {console.log("next")}
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-06")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-      </div>
-      <div className="column">
-          {console.log("next")}
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-07")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-      </div>
-      <div className="column">
-          {console.log("next")}
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-08")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-      </div>
-      <div className="column">
-          {console.log("next")}
-          <DayCell id={0} hours={""} place={""} description={""} hei={1} title={""} />
-        {schedule
-          .filter((day) => day[1].split(" ")[0] === "2021-09-09")
-          .map((filteredDay) => (
-            <DayCell
-              id={filteredDay.event_id}
-              hours={filteredDay.start_datetime}
-              title={filteredDay.title}
-              description={filteredDay.description}
-              place={"oboz"}
-              hei={calcTime(
-                filteredDay.start_datetime,
-                filteredDay.end_datetime
-              )}
-            />
-          ))}
-          <DayCell id={0} hours={""} place={""} description={""} hei={21} title={""} />
-      </div>
-    </div>
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Sobota 04.09"} />
+              </div>
+
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Niedziela 05.09"} />
+              </div>
+
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Poniedziałek 06.09"} />
+              </div>
+
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Wtorek 07.09"} />
+              </div>
+
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Środa 08.09"} />
+              </div>
+
+              <div className="column">
+                  <ColumnTitle hei={1} title={"Czwartek 09.09"} />
+              </div>
+          </div>
+          <div className="container">
+
+              <div className="column" id="time">
+                  {hour.map((h) => (
+                      <TimeCell hei={1} title={h.hours} />
+                  ))}
+              </div>
+
+              <div className="column">
+                  <EmptyCell  hei={6}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-04")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+              </div>
+              <div className="column">
+                  <EmptyCell  hei={1}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-05")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+              </div>
+              <div className="column">
+
+                  <EmptyCell  hei={1}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-06")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+              </div>
+              <div className="column">
+
+                  <EmptyCell  hei={1}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-07")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+              </div>
+              <div className="column">
+
+                  <EmptyCell  hei={1}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-08")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+              </div>
+              <div className="column">
+
+                  <EmptyCell  hei={1}  />
+                  {schedule
+                      .filter((day) => day[1].split(" ")[0] === "2021-09-09")
+                      .map((filteredDay) => (
+                          <DayCell
+                              id={filteredDay.event_id}
+                              hours={filteredDay.start_datetime}
+                              title={filteredDay.title}
+                              description={filteredDay.description}
+                              place={"oboz"}
+                              hei={calcTime(
+                                  filteredDay.start_datetime,
+                                  filteredDay.end_datetime
+                              )}
+                          />
+                      ))}
+                  <EmptyCell  hei={21}  />
+              </div>
+          </div>
+      </>
   );
 }
 const hour = [
@@ -173,6 +203,5 @@ function calcTime(start, end) {
   if (sum < 0) {
     sum = 48 + sum;
   }
-  console.log(sum);
   return sum;
 }
