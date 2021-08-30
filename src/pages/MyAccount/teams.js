@@ -16,16 +16,27 @@ const Team = ({id, name, type}) =>{
 
     return( type ===0 ?
         <>
+            <h2>Twój domek to:</h2>
             <div className="team-house">
-                Twój domek to: {name}
+                 <div className="team-house-title">
+                     {name}
+                 </div>
+                <div className="team-house-logo">
+                    logo
+                </div>
             </div>
 
         </> :
         <>
             <div className="team-created">
-                {name}
+                <div className="team-created-title">
+                   Drużyna: {name}
+                </div>
+                <div className="team-created-button">
+                    <button className="button-container-primary" onClick={()=>quitTeam(id)}>Wypisz się</button>
+                </div>
             </div>
-            <button onClick={()=>quitTeam(id)}>Wypisz się</button>
+
             {/*role === 0 ? <button onClick={()=> delTeam(id)}>Usun druzyne</button>:null*/}
         </>
     );
@@ -40,6 +51,9 @@ const InTeams = ({array}) =>{
                 ))}
             </div>
             <div className="team-creation-content">
+                <div className="team-creation-content-title">
+                    Stwórz swoją drużynę!
+                </div>
                 {teamCreation()}
             </div>
         </>

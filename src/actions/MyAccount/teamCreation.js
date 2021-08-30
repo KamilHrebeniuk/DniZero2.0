@@ -41,35 +41,39 @@ return(
             <Form>
                 <FieldArray name="teammates"
                             render={arrayHelpers =>(
-                                <div>
-                                    <label htmlFor="team_name">Nazwa drużyny</label>
-                                        <Field name="team_name"/>
+                                <div className="team-creation">
+                                    <label htmlFor="team_name">Nazwa drużyny: </label>
+                                        <Field name="team_name" />
+
                                         <Error name={"team_name"}/>
                                     {values.teammates && values.teammates.length >0 ?(
                                         values.teammates.map((teammate, index) =>(
 
-                                            <div key={index}>
+                                            <div className="team-creation-person" key={index}>
                                                 <label>{`Osoba ${index}: `}</label>
-                                                <Field name ={`teammates.${index}.id`}/>
+                                                <Field name ={`teammates.${index}.id`} placeholder="ID uczestnika"/>
                                                 <Error name={`teammates.${index}.id`}/>
+
                                                 <button
-                                                    type = "button"
-                                                    onClick={()=> arrayHelpers.remove(index)}
-                                                    >
-                                                    -
-                                                </button>
-                                                <button
+                                                    className="team-creation-add_person-small"
                                                     type = "button"
                                                     onClick={()=> arrayHelpers.push('')}
                                                 >
                                                     +
+                                                </button>
+                                                <button
+                                                    className="team-creation-add_person-small"
+                                                    type = "button"
+                                                    onClick={()=> arrayHelpers.remove(index)}
+                                                >
+                                                    -
                                                 </button>
 
                                             </div>
 
                                         ))
                                     ):(
-                                        <button type ="button" onClick={()=>arrayHelpers.push('')}>
+                                        <button type ="button" className="team-creation-add_person" onClick={()=>arrayHelpers.push('')}>
                                             Dodaj osobę
                                         </button>
                                     )}

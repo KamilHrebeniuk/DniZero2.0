@@ -3,8 +3,9 @@ import Counselor from "./counselor";
 import Classes from "./classes";
 import Teams from "./teams";
 import {getCounselor} from "../../actions/MyAccount/userActions"
+import {resp} from "../HomePage/loginPage";
 
-export default function MyAccount({qr_code, user_code }) {
+export default function MyAccount({qr_code}) {
   const [currentTab, setCurrentTab] = useState("counselor");
 
   const accountContent = () => {
@@ -23,15 +24,12 @@ export default function MyAccount({qr_code, user_code }) {
       case "teams": {
         return <Teams/>;
       }
-      case "actions": {
-        return <h1>Historia Akcji</h1>;
-      }
       default: {
         return <Counselor />;
       }
     }
   };
-
+  const user_code = resp['id'];
   return (
     <div className="account">
       <div className="account-content">{accountContent()}</div>

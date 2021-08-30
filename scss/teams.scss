@@ -1,0 +1,91 @@
+//********************* Default *********************//
+.team{
+  max-height: 380px;
+  overflow-y: scroll;
+
+  &-house{
+    margin: 10px auto;
+    width: 90%;
+    height: 75px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+    &-title{
+      font-size: 30px;
+      margin: auto;
+    }
+    &-logo{
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  &-created{
+    margin: 10px auto;
+    width: 90%;
+    height: 75px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row nowrap;
+
+    &-title{
+      font-size: 30px;
+      margin: auto;
+
+    }
+    &-button{
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 10px;
+    }
+  }
+  &-creation{
+    max-height: 200px;
+    overflow-y: scroll;
+    &-content{
+      border-top: 1px solid black;
+    }
+    label{
+      line-height: 20px;
+    }
+    input{
+      width: 170px;
+      height: 30px;
+    }
+    &-person{
+      margin: 10px auto;
+    }
+    &-add_person{
+      display: block;
+      margin: 7px auto;
+
+      &-small{
+        margin: 5px;
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}

@@ -611,7 +611,6 @@ input[type=email] {
   }
   .eventDescription-content-solo-title {
     height: 70px;
-    border-bottom: 1px solid grey;
     text-align: center;
     font-size: 50px;
   }
@@ -621,6 +620,21 @@ input[type=email] {
   .eventDescription-content-solo-description {
     display: flex;
     flex-flow: row nowrap;
+    height: calc(100% - 70px);
+    padding-bottom: 8px;
+  }
+  .eventDescription-content-none {
+    height: 100%;
+  }
+  .eventDescription-content-none-title {
+    height: 70px;
+    text-align: center;
+    font-size: 50px;
+  }
+  .eventDescription-content-none-title p {
+    margin: 0;
+  }
+  .eventDescription-content-none-description {
     height: calc(100% - 70px);
     padding-bottom: 8px;
   }
@@ -696,6 +710,96 @@ input[type=email] {
 .cell:hover {
   background-color: #e4cf9f;
   transition: 0.5s;
+}
+
+.classes {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.class {
+  margin: 10px auto;
+  width: 90%;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.class-title {
+  font-size: 30px;
+  margin: auto;
+}
+.class-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+}
+
+.team {
+  max-height: 380px;
+  overflow-y: scroll;
+}
+.team-house {
+  margin: 10px auto;
+  width: 90%;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.team-house-title {
+  font-size: 30px;
+  margin: auto;
+}
+.team-house-logo {
+  width: 75px;
+  height: 75px;
+}
+.team-created {
+  margin: 10px auto;
+  width: 90%;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.team-created-title {
+  font-size: 30px;
+  margin: auto;
+}
+.team-created-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+}
+.team-creation {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.team-creation-content {
+  border-top: 1px solid black;
+}
+.team-creation label {
+  line-height: 20px;
+}
+.team-creation input {
+  width: 170px;
+  height: 30px;
+}
+.team-creation-person {
+  margin: 10px auto;
+}
+.team-creation-add_person {
+  display: block;
+  margin: 7px auto;
+}
+.team-creation-add_person-small {
+  margin: 5px;
+  height: 30px;
+  width: 30px;
 }
 
 .home {
@@ -873,6 +977,7 @@ input[type=email] {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  color: black;
 }
 .account-content {
   position: relative;

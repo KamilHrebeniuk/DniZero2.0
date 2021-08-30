@@ -1,0 +1,43 @@
+//********************* Default *********************//
+.classes{
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.class{
+  margin: 10px auto;
+  width: 90%;
+  height: 75px;
+  border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row nowrap;
+  &-title{
+    font-size: 30px;
+    margin: auto;
+  }
+  &-button{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+  }
+}
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}

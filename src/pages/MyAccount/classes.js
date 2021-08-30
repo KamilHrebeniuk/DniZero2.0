@@ -13,22 +13,22 @@ function Classes (){
 
 const Class = ({id,title, description, place, hour}) =>{
     return(
-        <>
+        <div className="class">
             <div className="class-title">
-                {title}{place}{hour}
+                {title}
             </div>
-            <div className="class-content">
-                {description}
+            <div className="class-button">
+                <button className="button-container-primary" onClick={()=>signout(id,resp['id'])}>Wypisz się</button>
             </div>
-            <button onClick={()=>signout(id,resp['id'])}>wypisz sie</button>
-        </>
+
+        </div>
     );
 }
 const Enrolled = ({array}) =>{
     return(
         <>
             <h1>Warsztaty</h1>
-            <div className="class">
+            <div className="classes">
                 {schedule.filter((ev)=> array.some(r => ev[0]===r[0])).map((subject)=>(
                  <Class id={subject.event_id} title={subject.title} description={subject.description} place={subject.place} hour={subject.start_datetime}/>
                 ))}

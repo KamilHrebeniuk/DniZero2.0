@@ -1,5 +1,5 @@
 import logo from "../../assets/logo.png";
-import {resp} from "../../pages/HomePage/loginPage";
+import {resp} from "../HomePage/loginPage";
 
 const Counselor = () => {
   const counselor = JSON.parse(localStorage.getItem("counselor"));
@@ -32,6 +32,14 @@ const Counselor = () => {
           <p>Pogotowie (klinowe): </p>
           <span> 123456789</span>
         </div>
+          <div className="contact">
+              <p>Fotograf 1: </p>
+              <span> 123456789</span>
+          </div>
+          <div className="contact">
+              <p>Fotograf 2: </p>
+              <span> 123456789</span>
+          </div>
       </div>
       <div className="account-footer">
         <p>Kliknij po za oknem by zamknąć</p>

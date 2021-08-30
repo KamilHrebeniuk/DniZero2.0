@@ -138,37 +138,19 @@ const EventDescContentNone = ({ title, hours, place, description }) =>{
     history.goBack();
   }
   return (
-      <div className="eventDescription-content">
-        <div className="eventDescription-content-description">
-          <div className="eventDescription-content-description-title">
-            <p>{title}</p>
-          </div>
-          <div className="eventDescription-content-description-picture">
-            <div className="eventDescription-content-description-place">
-              {hours} {place}
-            </div>
-          </div>
-          <div className="eventDescription-content-description-info">
-            {description}
-          </div>
+      <div className="eventDescription-content-none">
+        <div className="eventDescription-content-none-title">
+          <p>{title}</p>
+          <img
+              className="eventDescription-content-close"
+              src={back}
+              alt={"Go back"}
+              onClick={() => clickHandle()}
+          />
         </div>
-        <div className="eventDescription-content-register">
-          <div className="eventDescription-content-description-title">
-            <img
-                className="eventDescription-content-close"
-                src={back}
-                alt={"Go back"}
-                onClick={() => clickHandle()}
-            />
-          </div>
-          <div className="eventDescription-content-register-required">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+        <div className="eventDescription-content-none-description">
+          <div className="eventDescription-content-description-place">
+            {hours} {place}
           </div>
         </div>
       </div>
