@@ -973,6 +973,61 @@ input[type=email] {
   background-color: lightgrey;
 }
 
+@media only screen and (max-width: 767px) {
+  .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .container-baner {
+    position: sticky;
+    top: 0;
+    position: -webkit-sticky;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 30px;
+  }
+  .container-baner .column {
+    display: flex;
+    height: 30px;
+    width: calc(100% - 50px);
+    user-select: none;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  .column {
+    display: flex;
+    height: 990px;
+    width: calc(100% - 50px);
+    user-select: none;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+  }
+  .column-title {
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 0 0 0 #000, 0 2px 0 0 #000, 2px 2px 0 0 #000, 2px 0 0 0 #000 inset, 0 2px 0 0 #000 inset;
+    color: #303030;
+  }
+  .column-title p {
+    margin: auto;
+  }
+
+  #time {
+    position: sticky;
+    left: 0;
+  }
+}
 .account {
   width: 100%;
   height: 100%;
@@ -1081,6 +1136,7 @@ input[type=email] {
   }
   .account-content {
     overflow: scroll;
+    width: 100%;
   }
   .account-menu {
     display: flex;
@@ -1092,9 +1148,9 @@ input[type=email] {
     display: none;
   }
   .account-button {
-    width: 100%;
+    width: 90%;
     align-items: center;
-    margin: 5px;
+    margin: 5px auto;
     padding: 10px;
     text-align: center;
   }
@@ -1102,6 +1158,9 @@ input[type=email] {
     content: "▽";
     font-size: 20px;
     top: -3px;
+  }
+  .account-number {
+    position: inherit;
   }
 
   #close {
@@ -1386,12 +1445,36 @@ input[type=email] {
   .login-content {
     position: unset;
     width: calc(100% - 40px);
-    margin-left: 20px;
     transform: unset;
-    margin-top: 40px;
+    margin: 20px 20px 0 20px;
   }
   .login-content h1 {
     font-size: 36px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .login-content input[type=password],
+.login-content input[type=email] {
+    min-width: 100%;
+    padding: 5px 10px;
+    margin: 0 0 3px;
+    display: block;
+    border: none;
+    background: #ffffff;
+    font-size: 18px;
+  }
+  .login-content p {
+    margin-bottom: 0;
+    margin-top: 8px;
+    font-size: 28px;
+    display: inline-block;
+  }
+  .login-content input[type=submit] {
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0;
   }
 }
 * {

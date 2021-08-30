@@ -1,7 +1,9 @@
 import React from "react";
 import {DayCell, ColumnTitle, EmptyCell, TimeCell} from "../../components/DayColumn";
 import { schedule } from "../HomePage/loginPage";
+
 export default function TimeTable() {
+
   return (
       <>
           <div className="container-baner">
@@ -155,9 +157,14 @@ export default function TimeTable() {
                   <EmptyCell  hei={21}  />
               </div>
           </div>
+
       </>
+
   );
 }
+
+
+
 const hour = [
     { hours: "08:00" },
   { hours: "08:30" },

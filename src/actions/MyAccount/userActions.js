@@ -98,6 +98,20 @@ export function addToTeam(team_name,teammates){
     commandWithout(stmt,"Poprawnie dodano do niej");
 }
 
+export function addingPoints(team_name,teammates, points){
+    const stmt = {
+        what: 4,
+        src: 4,
+        team_id: team_name,
+        id_person: teammates,
+        points: points,
+        ch: 2,
+        SID: document.cookie,
+    };
+    console.log(JSON.stringify(stmt));
+    commandWithout(stmt,"Poprawnie dodano do niej");
+}
+
 function commandWithout (array,message){
     const x = new XMLHttpRequest();
     var url = "https://dev.obozpwr.pl/gettingData.php";

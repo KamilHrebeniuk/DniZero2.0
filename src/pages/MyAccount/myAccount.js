@@ -4,6 +4,7 @@ import Classes from "./classes";
 import Teams from "./teams";
 import {getCounselor} from "../../actions/MyAccount/userActions"
 import {resp} from "../HomePage/loginPage";
+import {useHistory} from "react-router-dom";
 
 export default function MyAccount({qr_code}) {
   const [currentTab, setCurrentTab] = useState("counselor");
@@ -29,6 +30,10 @@ export default function MyAccount({qr_code}) {
       }
     }
   };
+  let history = useHistory();
+  function clickHandle() {
+    history.goBack();
+  }
   const user_code = resp['id'];
   return (
     <div className="account">
@@ -52,13 +57,7 @@ export default function MyAccount({qr_code}) {
         >
           <span>Drużyny</span>
         </button>
-        <button
-          className="account-button"
-          onClick={() => setCurrentTab("actions")}
-        >
-          <span>Historia akcji</span>
-        </button>
-        <button className="account-button" id="close">
+        <button className="account-button" onClick={clickHandle} id="close">
           <span>Zamknij</span>
         </button>
         <img className="qr-code" src={qr_code} alt={user_code} />

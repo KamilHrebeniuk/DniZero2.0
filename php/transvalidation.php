@@ -71,6 +71,10 @@ function transvalid($data){
                     }
                     $data['val'] = rtrim($data['val'],",");
                     break;
+                case 4:
+                    $data['what'] = "team_id, person_id, points";
+                    $data['val'] = "('".$data["team_id"]."', '".$data["id_person"]."','".$data["points"]."')";
+                    break;
             }
             switch ($data['src']){
                 case 1:
@@ -81,6 +85,9 @@ function transvalid($data){
                     break;
                 case 3:
                     $data['src']= "OBOZ_assign_to_teams";
+                    break;
+                case 4:
+                    $data['src'] = "OBOZ_adding_point";
                     break;
             }
 

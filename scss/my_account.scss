@@ -119,6 +119,7 @@
 
     &-content {
       overflow: scroll;
+      width: 100%;
     }
 
     &-menu {
@@ -133,9 +134,9 @@
     }
 
     &-button {
-      width: 100%;
+      width: 90%;
       align-items: center;
-      margin: 5px;
+      margin: 5px auto;
       padding: 10px;
       text-align: center;
     }
@@ -144,10 +145,14 @@
       font-size: 20px;
       top: -3px;
     }
+    &-number {
+      position: inherit;
+    }
   }
   #close {
     display: block;
   }
+
 }
 
 //********************** Mobile *********************//
