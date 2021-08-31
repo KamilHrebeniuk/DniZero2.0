@@ -12,6 +12,7 @@
     width: 70%;
     height: 100%;
     text-align: center;
+    padding: 10px;
   }
 
   &-menu {
@@ -79,10 +80,24 @@
     display: flex;
     flex-flow: row wrap;
     clear: both;
+    margin-top: 10px;
+    p{
+      margin-bottom: 5px;
+      margin-top: 0;
+      text-align: left;
+      font-size: $font_size_s;
+    }
+    span{
+      font-size: $font_size_xl;
+    }
+
   }
   .contact {
     flex-grow: 1;
-    flex-basis: 50%;
+    flex-basis: calc(50% - 10px);
+    border: 1px solid lightgrey;
+    padding: 5px;
+    margin: 5px;
   }
 }
 #close {
@@ -93,6 +108,7 @@
   height: 200px;
   float: left;
   margin-left: 50px;
+  margin-bottom: 10px;
 }
 .qr-code {
   width: 207px;
@@ -147,10 +163,17 @@
     }
     &-number {
       position: inherit;
+      padding-left: 10px;
     }
   }
   #close {
     display: block;
+  }
+  .guardian-picture {
+    margin-left: 5px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
   }
 
 }

@@ -6,6 +6,7 @@ export default function TimeTable() {
 
   return (
       <>
+
           <div className="container-baner">
               <div className="column" id="time">
                   <EmptyCell  hei={1}  />

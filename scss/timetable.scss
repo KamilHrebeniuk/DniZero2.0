@@ -79,7 +79,7 @@
 
     display: flex;
     height: 100%  ;
-    width: 100%;
+    width: 1000px;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-content: flex-start;
@@ -93,13 +93,12 @@
       position: -webkit-sticky;
       display: flex;
       flex-flow: row nowrap;
-      width: 100%;
+      width: 1000px;
       height: 30px;
       .column {
         display: flex;
         height: 30px;
-        width: calc(100% - 50px);
-        user-select: none;
+        width: calc(100vw - 50px);
         flex-flow: column nowrap;
         margin: 0;
         padding: 0;
@@ -130,6 +129,7 @@
     position: sticky;
     left: 0;
   }
+
 
 }
 

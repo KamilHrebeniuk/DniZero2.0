@@ -2,11 +2,13 @@
 
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
+
+
   .eventDescription-content {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 70px);
     &-close {
       position: absolute;
       top: 0;
@@ -15,20 +17,22 @@
       max-height: 50px;
       padding-top: 10px;
     }
+    &-title  {
+      width: 100%;
+      height: 70px;
+      border-bottom: 1px solid grey;
+      text-align: center;
+      font-size: 50px;
+      p {
+        margin: 0;
+      }
+
+    }
     &-description {
       width: 55%;
       border-right: 1px solid grey;
-      &-title  {
-        height: 70px;
-        border-bottom: 1px solid grey;
-        text-align: center;
-        font-size: 50px;
-        p {
-          margin: 0;
-        }
-      }
       &-picture {
-        height: 250px;
+        height: 300px;
         border-bottom: 1px solid grey;
       }
       &-place {
@@ -39,6 +43,7 @@
         margin: 0;
       }
     }
+
     &-solo{
       height: 100%;
       &-title{
@@ -55,6 +60,7 @@
         height: calc(100% - 70px);
         padding-bottom: 8px;
       }
+
     }
     &-none{
       height: 100%;
@@ -65,10 +71,18 @@
         p {
           margin: 0;
         }
+
       }
       &-description{
         height: calc(100% - 70px);
         padding-bottom: 8px;
+        &-place {
+          position: relative;
+          bottom: -85%;
+          right: -65%;
+          width: 175px;
+          margin: 0;
+        }
       }
     }
     &-register {
@@ -101,6 +115,7 @@
       overflow-y: scroll;
     }
   }
+
 }
 
 //********************* Desktop *********************//
@@ -113,6 +128,131 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
+
+  .eventDescription-content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    &-close {
+      position: absolute;
+      top: 0;
+      left: 5px;
+      max-width: 40px;
+      max-height: 40px;
+      padding-top: 0;
+    }
+    &-title  {
+      height: 40px;
+      border-bottom: 1px solid grey;
+      text-align: center;
+      font-size: 30px;
+      p {
+        margin: 0;
+      }
+    }
+    &-description {
+      width: 100%;
+      &-title  {
+        height: 40px;
+        border-bottom: 1px solid grey;
+        text-align: center;
+        font-size: 30px;
+        p {
+          margin: 0;
+        }
+      }
+      &-place {
+        position: relative;
+        bottom: -75%;
+        right: -35%;
+        width: 190px;
+        margin: 0;
+        text-align: right;
+      }
+      &-picture {
+        height: 250px;
+        border-bottom: 1px solid grey;
+      }
+
+    }
+    &-solo{
+      height: 100%;
+      &-title{
+        height: 40px;
+        text-align: center;
+        font-size: 30px;
+        p {
+          margin: 0;
+        }
+      }
+      &-description{
+        display: flex;
+        flex-flow: column nowrap;
+        height: calc(100% - 70px);
+        padding-bottom: 8px;
+      }
+    }
+
+    &-none{
+      height: 100%;
+      width: 100%;
+      margin: auto;
+      padding: 5px;
+      &-title{
+        height: 40px;
+        width: calc(100% - 10px);
+        text-align: center;
+        font-size: 30px;
+        p {
+          margin: 0;
+        }
+      }
+      &-description{
+        height: calc(100% - 70px);
+        padding-bottom: 8px;
+        &-place {
+          position: relative;
+          bottom: -85%;
+          right: -50%;
+          width: 175px;
+          margin: 0;
+        }
+      }
+    }
+
+    &-register {
+      width: 100%;
+
+      &-required {
+        height: 150px;
+        border-bottom: 1px solid grey;
+      }
+      &-team-title,
+      &-newteam-title,
+      &-solo-title {
+        height: 50px;
+        border-bottom: 1px solid grey;
+      }
+      &-team-content,
+      &-newteam-content,
+      &-solo-content {
+        border-bottom: 1px solid grey;
+      }
+    }
+  }
+  .ClassDesc-content{
+    margin: 8px;
+    height: 300px;
+    padding: 5px;
+    overflow-y: scroll;
+    &-person{
+
+    }
+  }
+
 }
 //********************** Mobile *********************//
 @include resTo($res_xs) {

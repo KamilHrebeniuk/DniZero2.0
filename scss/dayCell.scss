@@ -65,7 +65,16 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
-
+.cell{
+  &-empty{
+    min-width: 50px;
+    min-height: 30px;
+  }
+  &-time{
+    min-width: 50px;
+    min-height: 30px;
+  }
+}
 }
 
 //********************** Mobile *********************//

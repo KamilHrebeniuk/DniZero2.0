@@ -62,7 +62,7 @@ export default function MyAccount({qr_code}) {
         </button>
         <img className="qr-code" src={qr_code} alt={user_code} />
         <div className="account-number">
-          <p>Uczestnik: {user_code}</p>
+          <p>ID uczestnika: {user_code}</p>
         </div>
       </div>
     </div>

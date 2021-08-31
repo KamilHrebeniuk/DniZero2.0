@@ -127,8 +127,12 @@
   .popup-content {
     position: fixed;
     width: 100%;
-    height: 100%;
-    overflow: scroll;
+    height: calc(100% - 48px);
+    overflow: auto;
+  }
+  .popup-content-active {
+    top: calc(50% - 24px);
+    transform: translate(-50%, -50%);
   }
   .popup-menu {
     display: flex;
@@ -572,7 +576,7 @@ input[type=email] {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 70px);
   }
   .eventDescription-content-close {
     position: absolute;
@@ -582,21 +586,22 @@ input[type=email] {
     max-height: 50px;
     padding-top: 10px;
   }
-  .eventDescription-content-description {
-    width: 55%;
-    border-right: 1px solid grey;
-  }
-  .eventDescription-content-description-title {
+  .eventDescription-content-title {
+    width: 100%;
     height: 70px;
     border-bottom: 1px solid grey;
     text-align: center;
     font-size: 50px;
   }
-  .eventDescription-content-description-title p {
+  .eventDescription-content-title p {
     margin: 0;
   }
+  .eventDescription-content-description {
+    width: 55%;
+    border-right: 1px solid grey;
+  }
   .eventDescription-content-description-picture {
-    height: 250px;
+    height: 300px;
     border-bottom: 1px solid grey;
   }
   .eventDescription-content-description-place {
@@ -638,6 +643,13 @@ input[type=email] {
     height: calc(100% - 70px);
     padding-bottom: 8px;
   }
+  .eventDescription-content-none-description-place {
+    position: relative;
+    bottom: -85%;
+    right: -65%;
+    width: 175px;
+    margin: 0;
+  }
   .eventDescription-content-register {
     width: 45%;
   }
@@ -662,6 +674,121 @@ input[type=email] {
     position: relative;
     bottom: -300px;
     height: 260px;
+    overflow-y: scroll;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .eventDescription-content {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .eventDescription-content-close {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    max-width: 40px;
+    max-height: 40px;
+    padding-top: 0;
+  }
+  .eventDescription-content-title {
+    height: 40px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    font-size: 30px;
+  }
+  .eventDescription-content-title p {
+    margin: 0;
+  }
+  .eventDescription-content-description {
+    width: 100%;
+  }
+  .eventDescription-content-description-title {
+    height: 40px;
+    border-bottom: 1px solid grey;
+    text-align: center;
+    font-size: 30px;
+  }
+  .eventDescription-content-description-title p {
+    margin: 0;
+  }
+  .eventDescription-content-description-place {
+    position: relative;
+    bottom: -75%;
+    right: -35%;
+    width: 190px;
+    margin: 0;
+    text-align: right;
+  }
+  .eventDescription-content-description-picture {
+    height: 250px;
+    border-bottom: 1px solid grey;
+  }
+  .eventDescription-content-solo {
+    height: 100%;
+  }
+  .eventDescription-content-solo-title {
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+  }
+  .eventDescription-content-solo-title p {
+    margin: 0;
+  }
+  .eventDescription-content-solo-description {
+    display: flex;
+    flex-flow: column nowrap;
+    height: calc(100% - 70px);
+    padding-bottom: 8px;
+  }
+  .eventDescription-content-none {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+  }
+  .eventDescription-content-none-title {
+    height: 40px;
+    width: calc(100% - 10px);
+    text-align: center;
+    font-size: 30px;
+  }
+  .eventDescription-content-none-title p {
+    margin: 0;
+  }
+  .eventDescription-content-none-description {
+    height: calc(100% - 70px);
+    padding-bottom: 8px;
+  }
+  .eventDescription-content-none-description-place {
+    position: relative;
+    bottom: -85%;
+    right: -50%;
+    width: 175px;
+    margin: 0;
+  }
+  .eventDescription-content-register {
+    width: 100%;
+  }
+  .eventDescription-content-register-required {
+    height: 150px;
+    border-bottom: 1px solid grey;
+  }
+  .eventDescription-content-register-team-title, .eventDescription-content-register-newteam-title, .eventDescription-content-register-solo-title {
+    height: 50px;
+    border-bottom: 1px solid grey;
+  }
+  .eventDescription-content-register-team-content, .eventDescription-content-register-newteam-content, .eventDescription-content-register-solo-content {
+    border-bottom: 1px solid grey;
+  }
+
+  .ClassDesc-content {
+    margin: 8px;
+    height: 300px;
+    padding: 5px;
     overflow-y: scroll;
   }
 }
@@ -712,6 +839,16 @@ input[type=email] {
   transition: 0.5s;
 }
 
+@media only screen and (max-width: 767px) {
+  .cell-empty {
+    min-width: 50px;
+    min-height: 30px;
+  }
+  .cell-time {
+    min-width: 50px;
+    min-height: 30px;
+  }
+}
 .classes {
   max-height: 500px;
   overflow-y: scroll;
@@ -781,6 +918,7 @@ input[type=email] {
 }
 .team-creation-content {
   border-top: 1px solid black;
+  padding: 10px;
 }
 .team-creation label {
   line-height: 20px;
@@ -977,7 +1115,7 @@ input[type=email] {
   .container {
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 1000px;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-content: flex-start;
@@ -990,14 +1128,13 @@ input[type=email] {
     position: -webkit-sticky;
     display: flex;
     flex-flow: row nowrap;
-    width: 100%;
+    width: 1000px;
     height: 30px;
   }
   .container-baner .column {
     display: flex;
     height: 30px;
-    width: calc(100% - 50px);
-    user-select: none;
+    width: calc(100vw - 50px);
     flex-flow: column nowrap;
     margin: 0;
     padding: 0;
@@ -1042,6 +1179,7 @@ input[type=email] {
   width: 70%;
   height: 100%;
   text-align: center;
+  padding: 10px;
 }
 .account-menu {
   display: flex;
@@ -1107,10 +1245,23 @@ input[type=email] {
   display: flex;
   flex-flow: row wrap;
   clear: both;
+  margin-top: 10px;
+}
+.account-contact p {
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: left;
+  font-size: 14px;
+}
+.account-contact span {
+  font-size: 28px;
 }
 .account .contact {
   flex-grow: 1;
-  flex-basis: 50%;
+  flex-basis: calc(50% - 10px);
+  border: 1px solid lightgrey;
+  padding: 5px;
+  margin: 5px;
 }
 
 #close {
@@ -1122,6 +1273,7 @@ input[type=email] {
   height: 200px;
   float: left;
   margin-left: 50px;
+  margin-bottom: 10px;
 }
 
 .qr-code {
@@ -1161,10 +1313,18 @@ input[type=email] {
   }
   .account-number {
     position: inherit;
+    padding-left: 10px;
   }
 
   #close {
     display: block;
+  }
+
+  .guardian-picture {
+    margin-left: 5px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
   }
 }
 .register {

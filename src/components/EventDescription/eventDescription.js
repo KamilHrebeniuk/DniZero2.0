@@ -9,94 +9,94 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
     history.goBack();
   }
   return (
-    <div className="eventDescription-content">
-      <div className="eventDescription-content-description">
-        <div className="eventDescription-content-description-title">
-          <p>{title}</p>
-        </div>
-        <div className="eventDescription-content-description-picture">
-          <div className="eventDescription-content-description-place">
-            {hours} {place}
-          </div>
-        </div>
-        <div className="eventDescription-content-description-info">
-          {description}
-        </div>
-      </div>
-      <div className="eventDescription-content-register">
-        <div className="eventDescription-content-description-title">
-          <img
+    <div className="eventDescription">
+      <div className="eventDescription-content-title">
+        <p>{title}</p>
+        <img
             className="eventDescription-content-close"
             src={back}
             alt={"Go back"}
             onClick={() => clickHandle()}
-          />
-        </div>
-        <div className="eventDescription-content-register-required">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div className="eventDescription-content-register-option">
-          <div className="eventDescription-content-register-participant">
-            <div
-              id="team"
-              onClick={() => content("team-content")}
-              className="eventDescription-content-register-team-title"
-            >
-              Zapisz swoją drużynę
-            </div>
-            <div
-              id="team-content"
-              style={{ display: "none" }}
-              className="eventDescription-content-register-team-content"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+        />
+      </div>
+      <div className="eventDescription-content">
+        <div className="eventDescription-content-description">
+          <div className="eventDescription-content-description-picture">
+            <div className="eventDescription-content-description-place">
+              {hours} {place}
             </div>
           </div>
-          <div className="eventDescription-content-register-participant">
-            <div
-              id="newteam"
-              onClick={() => content("newteam-content")}
-              className="eventDescription-content-register-newteam-title"
-            >
-              Stwórz nową drużynę
-            </div>
-            <div
-              id="newteam-content"
-              style={{ display: "none" }}
-              className="eventDescription-content-register-newteam-content"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </div>
+          <div className="eventDescription-content-description-info">
+            {description}
           </div>
-          <div className="eventDescription-content-register-participant">
-            <div
-              id="solo"
-              onClick={() => content("solo-content")}
-              className="eventDescription-content-register-solo-title"
-            >
-              Znajdzcie mi druzyne
+        </div>
+        <div className="eventDescription-content-register">
+          <div className="eventDescription-content-register-required">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div className="eventDescription-content-register-option">
+            <div className="eventDescription-content-register-participant">
+              <div
+                  id="team"
+                  onClick={() => content("team-content")}
+                  className="eventDescription-content-register-team-title"
+              >
+                Zapisz swoją drużynę
+              </div>
+              <div
+                  id="team-content"
+                  style={{ display: "none" }}
+                  className="eventDescription-content-register-team-content"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </div>
             </div>
-            <div
-              id="solo-content"
-              style={{ display: "none" }}
-              className="eventDescription-content-register-solo-content"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <div className="eventDescription-content-register-participant">
+              <div
+                  id="newteam"
+                  onClick={() => content("newteam-content")}
+                  className="eventDescription-content-register-newteam-title"
+              >
+                Stwórz nową drużynę
+              </div>
+              <div
+                  id="newteam-content"
+                  style={{ display: "none" }}
+                  className="eventDescription-content-register-newteam-content"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </div>
+            </div>
+            <div className="eventDescription-content-register-participant">
+              <div
+                  id="solo"
+                  onClick={() => content("solo-content")}
+                  className="eventDescription-content-register-solo-title"
+              >
+                Znajdzcie mi druzyne
+              </div>
+              <div
+                  id="solo-content"
+                  style={{ display: "none" }}
+                  className="eventDescription-content-register-solo-content"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </div>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const EventDescContentNone = ({ title, hours, place, description }) =>{
           />
         </div>
         <div className="eventDescription-content-none-description">
-          <div className="eventDescription-content-description-place">
+          <div className="eventDescription-content-none-description-place">
             {hours} {place}
           </div>
         </div>

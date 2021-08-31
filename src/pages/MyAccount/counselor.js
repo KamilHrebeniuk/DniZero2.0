@@ -11,10 +11,12 @@ const Counselor = () => {
   return (
     <>
       <h2>Witaj, {name}</h2>
-      <p>Twój opiekun:</p>
-      <img className="guardian-picture" src={picture} alt={name} />
-      <p>Imie i Nazwisko: {counselorName}</p>
-      <span>Numer telefonu: {counselorNumber}</span>
+      <div className="guardian">
+         <p>Twój opiekun:</p>
+         <img className="guardian-picture" src={picture} alt={name} />
+         <p>Imie i Nazwisko: {counselorName}</p>
+         <span>Numer telefonu: {counselorNumber}</span>
+      </div>
       <div className="account-contact">
         <div className="contact">
           <p>Koordynator ds. Uczestników:</p>
