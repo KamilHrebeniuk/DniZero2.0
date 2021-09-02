@@ -1,11 +1,12 @@
 import {resp} from "../../pages/HomePage/loginPage";
 
-export function signup (event_id,user_id){
+export function signup (event_id,user_id, type){
     const stmt = {
         what: 1,
         src: 1,
         id_event: event_id,
         id_person: user_id,
+        participant_type: type,
         ch: 2,
         SID: document.cookie,
     };
@@ -94,22 +95,59 @@ export function addToTeam(team_name,teammates){
         ch: 2,
         SID: document.cookie,
     };
-    console.log(JSON.stringify(stmt));
+
     commandWithout(stmt,"Poprawnie dodano do niej");
 }
 
-export function addingPoints(team_name,teammates, points){
+export function addingPoints(team, points){
     const stmt = {
         what: 4,
         src: 4,
-        team_id: team_name,
-        id_person: teammates,
+        team_id: team,
+        id_person: resp['id'],
         points: points,
         ch: 2,
         SID: document.cookie,
     };
-    console.log(JSON.stringify(stmt));
+
     commandWithout(stmt,"Poprawnie dodano do niej");
+}
+
+export function searchingTeam(){
+    const stmt = {
+        what: 5,
+        src: 5,
+        person_id: resp['id'],
+        ch: 2,
+        SID: document.cookie,
+    };
+    console.log(resp['id']);
+    commandWithout(stmt, "Poprawnie zapisano sie");
+}
+
+export function getAllTeams(){
+    const stmt = {
+        what: 5,
+        src: 4,
+        opt: 1,
+        ch: 1,
+        SID: document.cookie,
+        name: "AllTeams",
+    };
+    commandWith(stmt)
+}
+
+export function getStation(){
+    const stmt = {
+        what: 6,
+        src: 5,
+        opt: 5,
+        id: resp['id'],
+        ch: 1,
+        SID: document.cookie,
+        name: "station",
+    };
+    commandWith(stmt)
 }
 
 function commandWithout (array,message){

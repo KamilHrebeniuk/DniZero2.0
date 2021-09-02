@@ -11,6 +11,21 @@ function Teams (){
 
 }
 
+function registerTeam(){
+    getTeams();
+    const teams =  JSON.parse(localStorage.getItem("teams"));
+    return(
+        <>
+            <h1>Druzyny</h1>
+            <div className="team">
+                {teams.filter((team) => team[3] === 0).map((data)=>(
+                    <Team id={data.team_id} name={data.team_name} type={data.type} />
+                ))}
+            </div>
+        </>
+    );
+}
+
 const Team = ({id, name, type}) =>{
 
 

@@ -96,11 +96,17 @@
       &-solo-title {
         height: 50px;
         border-bottom: 1px solid grey;
+        text-align: center;
+        font-size: 30px;
+        padding: 5px;
       }
       &-team-content,
       &-newteam-content,
       &-solo-content {
         border-bottom: 1px solid grey;
+        padding: 10px;
+        overflow-y: auto;
+        text-align: center;
       }
     }
   }
@@ -155,6 +161,7 @@
     }
     &-description {
       width: 100%;
+      margin-bottom: 10px;
       &-title  {
         height: 40px;
         border-bottom: 1px solid grey;
@@ -227,19 +234,24 @@
       width: 100%;
 
       &-required {
-        height: 150px;
+        height: 170px;
         border-bottom: 1px solid grey;
+        margin-bottom: 10px;
       }
       &-team-title,
       &-newteam-title,
       &-solo-title {
         height: 50px;
         border-bottom: 1px solid grey;
+        text-align: center;
+        font-size: 30px;
       }
       &-team-content,
       &-newteam-content,
       &-solo-content {
         border-bottom: 1px solid grey;
+        padding: 5px;
+        text-align: center;
       }
     }
   }

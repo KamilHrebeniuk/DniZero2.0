@@ -15,6 +15,12 @@ function transvalid($data){
                 case 4:
                     $data['what'] = "OBOZ_druzyny.team_id, OBOZ_druzyny.team_name ,OBOZ_druzyny.type , OBOZ_assign_to_teams.person_type";
                     break;
+                case 5:
+                    $data['what'] = "team_id, team_name ,type";
+                    break;
+                case 6:
+                    $data['what'] = "`OBOZ_gra_nocna`.* ";
+                    break;
             }
             switch ($data['src']){
                 case 1:
@@ -28,6 +34,9 @@ function transvalid($data){
                     break;
                 case 4:
                     $data['src'] = "OBOZ_druzyny";
+                    break;
+                case 5:
+                    $data['src'] = "OBOZ_gra_nocna";
                     break;
             }
             switch ($data['opt']){
@@ -47,6 +56,10 @@ function transvalid($data){
                     $data['opt'] = "LEFT JOIN OBOZ_assign_to_teams ON OBOZ_druzyny.team_id = OBOZ_assign_to_teams.team_id
                     WHERE OBOZ_assign_to_teams.person_id = ".$data['id'];
                     break;
+                case 5:
+                    $data['opt'] = "JOIN OBOZ_osoby ON OBOZ_gra_nocna.id_stacji = OBOZ_osoby.station 
+                    WHERE `OBOZ_gra_nocna`.`id_stacji` = OBOZ_osoby.station && OBOZ_osoby.id_uczestnika =".$data['id'];
+                    break;
                 default:
                     if(!is_numeric($data['opt'])){
                         $data['opt']="";
@@ -56,8 +69,8 @@ function transvalid($data){
         case 2:
             switch ($data['what']){
                 case 1:
-                    $data['what'] = "id_event, id_participant";
-                    $data['val'] = "('".$data['id_event']."', '".$data["id_person"]."')";
+                    $data['what'] = "id_event, id_participant, participant_type";
+                    $data['val'] = "('".$data['id_event']."', '".$data["id_person"]."', '".$data["participant_type"]."')";
                     break;
                 case 2:
                     $data['what'] = "team_id, team_name, type, points";
@@ -75,6 +88,10 @@ function transvalid($data){
                     $data['what'] = "team_id, person_id, points";
                     $data['val'] = "('".$data["team_id"]."', '".$data["id_person"]."','".$data["points"]."')";
                     break;
+                case 5:
+                    $data['what'] = "id, person_id";
+                    $data['val'] = "(NULL, '".$data["person_id"]."')";
+                    break;
             }
             switch ($data['src']){
                 case 1:
@@ -88,6 +105,9 @@ function transvalid($data){
                     break;
                 case 4:
                     $data['src'] = "OBOZ_adding_point";
+                    break;
+                case 5:
+                    $data['src'] = "OBOZ_looking_for_team";
                     break;
             }
 

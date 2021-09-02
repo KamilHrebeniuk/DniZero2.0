@@ -30,8 +30,6 @@ return(
         })}
         onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
-                console.log(JSON.stringify(values));
-                console.log(JSON.stringify(values['teammates']));
                 createTeam(values['team_name']);
                 addToTeam(values['team_name'],values['teammates']);
                 setSubmitting(false);

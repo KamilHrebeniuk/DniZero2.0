@@ -1,0 +1,31 @@
+//********************* Default *********************//
+.addingPoints{
+
+  select, .house_id, .team_id, #points{
+    display: block;
+    height: 20px;
+    margin: 5px auto 10px;
+  }
+}
+
+//******************* Large Tablet ******************//
+@include resFrom($res_m) {
+
+}
+
+//********************* Desktop *********************//
+@include resFrom($res_l) {
+}
+
+//****************** Large Desktop ******************//
+@include resFrom($res_xl) {
+}
+
+//********************** Tablet *********************//
+@include resTo($res_m) {
+
+}
+
+//********************** Mobile *********************//
+@include resTo($res_xs) {
+}
