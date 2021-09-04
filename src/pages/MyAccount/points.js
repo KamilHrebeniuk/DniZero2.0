@@ -18,7 +18,7 @@ function Points(){
                     })}
                     onSubmit={(values, {setSubmitting}) =>{
                         setTimeout(() => {
-                            addingPoints(parseInt(values["team_id"]), values["points"])
+                            addingPoints(parseInt(values["team_id"]), values["points"]);
                             setSubmitting(false);
                         }, 400);
                     }}>
@@ -49,6 +49,7 @@ function Points(){
                     })}
                     onSubmit={(values, {setSubmitting}) =>{
                         setTimeout(() => {
+                            addingPoints(parseInt(values["team_id"]), values["points"]);
                             setSubmitting(false);
                         }, 400);
                     }}>

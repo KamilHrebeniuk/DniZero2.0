@@ -78,11 +78,15 @@
   .container {
 
     display: flex;
+    display: -webkit-flex;
     height: 100%  ;
     width: 1000px;
     flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
     justify-content: space-around;
+    -webkit-justify-content: space-around;
     align-content: flex-start;
+    -webkit-align-content: flex-start;
     margin: 0;
     padding: 0;
 
@@ -92,14 +96,18 @@
       top:0;
       position: -webkit-sticky;
       display: flex;
+      display: -webkit-flex;
       flex-flow: row nowrap;
+      -webkit-flex-flow: row nowrap;
       width: 1000px;
       height: 30px;
       .column {
         display: flex;
+        display: -webkit-flex;
         height: 30px;
         width: calc(100vw - 50px);
         flex-flow: column nowrap;
+        -webkit-flex-flow: column nowrap;
         margin: 0;
         padding: 0;
       }
@@ -107,10 +115,12 @@
   }
   .column {
     display: flex;
+    display: -webkit-flex;
     height: 990px;
     width:  calc(100% - 50px);
     user-select: none;
     flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
     margin: 0;
     padding: 0;
     &-title{

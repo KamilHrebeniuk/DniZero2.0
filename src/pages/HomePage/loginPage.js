@@ -14,17 +14,17 @@ const LoginPage = ({ logIn }) => {
       if (this.readyState === 4) {
         if (this.status === 200) {
            resp = JSON.parse(this.response);
-           console.log(this.response);
+
           if (Object.keys(resp).length === 3) {
 
             con();
             getData();
             logIn();
           } else {
-            console.log("Niepoprawne dane do logowania");
+            alert("Niepoprawne dane do logowania");
           }
         } else {
-          console.log("Brak połączenia");
+          alert("Brak połączenia");
         }
       }
     };

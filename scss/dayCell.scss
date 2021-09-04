@@ -45,7 +45,7 @@
   }
 }
 .cell:hover{
-    background-color: $color_primary_logo;
+    background-color: $color_primary_text;
     transition: 0.5s;
 }
 
@@ -69,6 +69,7 @@
   &-empty{
     min-width: 50px;
     min-height: 30px;
+    
   }
   &-time{
     min-width: 50px;

@@ -155,7 +155,7 @@ export default function TimeTable() {
                               )}
                           />
                       ))}
-                  <EmptyCell  hei={21}  />
+                  <EmptyCell  hei={19}  />
               </div>
           </div>
 

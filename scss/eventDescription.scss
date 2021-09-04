@@ -1,8 +1,12 @@
 //********************* Default *********************//
-
+.eventDescription-content-solo, .eventDescription, .eventDescription-content-none{
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
 //******************* Large Tablet ******************//
 @include resFrom($res_m) {
-
 
   .eventDescription-content {
     display: flex;
@@ -20,7 +24,7 @@
     &-title  {
       width: 100%;
       height: 70px;
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid $color_primary_text;
       text-align: center;
       font-size: 50px;
       p {
@@ -30,17 +34,24 @@
     }
     &-description {
       width: 55%;
-      border-right: 1px solid grey;
+      border-right: 1px solid $color_primary_text;
       &-picture {
-        height: 300px;
-        border-bottom: 1px solid grey;
+        height: 390px;
+        border-bottom: 1px solid $color_primary_text;
       }
       &-place {
-        position: relative;
-        bottom: -85%;
-        right: -65%;
-        width: 175px;
+        color: $color_primary_text;
+        position: absolute;
+        bottom: 37%;
+        right: 49%;
+        width: 150px;
+        padding: 5px;
+        border-radius: 10px;
         margin: 0;
+        background-color: $color_secondary_background;
+      }
+      &-info{
+        padding: 7px;
       }
     }
 
@@ -77,25 +88,45 @@
         height: calc(100% - 70px);
         padding-bottom: 8px;
         &-place {
-          position: relative;
-          bottom: -85%;
-          right: -65%;
+          position: absolute;
+          bottom: 10%;
+          right: 8%;
           width: 175px;
           margin: 0;
+          background-color: $color_secondary_background;
+          padding: 5px;
+          border-radius: 10px;
         }
+        &-desc{
+          position: absolute;
+          bottom: 10%;
+          left: 8%;
+          background-color: $color_secondary_background;
+          padding: 5px;
+          border-radius: 10px;
+        }
+      }
+      &-picture{
+        position: inherit;
+        width: 100%;
+        height: 100%
       }
     }
     &-register {
       width: 45%;
       &-required {
         height: 150px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
+        font-size: $font_size_l;
+        h3{
+          text-align: center;
+        }
       }
       &-team-title,
       &-newteam-title,
       &-solo-title {
         height: 50px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         text-align: center;
         font-size: 30px;
         padding: 5px;
@@ -103,10 +134,11 @@
       &-team-content,
       &-newteam-content,
       &-solo-content {
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         padding: 10px;
         overflow-y: auto;
         text-align: center;
+        max-height: 200px;
       }
     }
   }
@@ -116,9 +148,13 @@
     flex: 1;
     &-person{
       position: relative;
-      bottom: -300px;
-      height: 260px;
+      color: $color_primary_text;
+      height: 160px;
       overflow-y: scroll;
+      padding: 5px;
+      &-picture{
+        max-width: 100%;
+      }
     }
   }
 
@@ -139,8 +175,8 @@
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    height: 100%;
-    overflow-y: hidden;
+    height: calc(100% - 70px);
+    overflow-y: auto;
     overflow-x: hidden;
     &-close {
       position: absolute;
@@ -152,7 +188,7 @@
     }
     &-title  {
       height: 40px;
-      border-bottom: 1px solid grey;
+      border-bottom: 1px solid $color_primary_text;
       text-align: center;
       font-size: 30px;
       p {
@@ -164,7 +200,7 @@
       margin-bottom: 10px;
       &-title  {
         height: 40px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         text-align: center;
         font-size: 30px;
         p {
@@ -172,21 +208,29 @@
         }
       }
       &-place {
-        position: relative;
-        bottom: -75%;
-        right: -35%;
-        width: 190px;
+        color: $color_primary_text;
+        position: absolute;
+        bottom: 10%;
+        right: 7%;
         margin: 0;
         text-align: right;
+        width: 150px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: $color_secondary_background;
       }
       &-picture {
         height: 250px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
+        position: relative;
+      }
+      &-info{
+        padding: 7px;
       }
 
     }
     &-solo{
-      height: 100%;
+      height: auto;
       &-title{
         height: 40px;
         text-align: center;
@@ -218,15 +262,22 @@
         }
       }
       &-description{
-        height: calc(100% - 70px);
+        max-width: 100%;
         padding-bottom: 8px;
         &-place {
-          position: relative;
-          bottom: -85%;
-          right: -50%;
+          padding: 10px;
           width: 175px;
           margin: 0;
         }
+        &-desc{
+
+          padding: 10px;
+        }
+      }
+      &-picture{
+        position: inherit;
+        width: 100%;
+        height: 100%
       }
     }
 
@@ -235,33 +286,42 @@
 
       &-required {
         height: 170px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         margin-bottom: 10px;
       }
       &-team-title,
       &-newteam-title,
       &-solo-title {
         height: 50px;
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         text-align: center;
         font-size: 30px;
       }
       &-team-content,
       &-newteam-content,
       &-solo-content {
-        border-bottom: 1px solid grey;
+        border-bottom: 1px solid $color_primary_text;
         padding: 5px;
         text-align: center;
       }
     }
   }
   .ClassDesc-content{
-    margin: 8px;
-    height: 300px;
+    margin: 8px auto;
     padding: 5px;
-    overflow-y: scroll;
+    height: 436px;
+    position: relative;
     &-person{
-
+      position: absolute;
+      top: 5px;
+      color: $color_primary_text;
+      background-color: $color_secondary_background;
+      padding: 7px;
+      height: 436px;
+      width: 327px;
+      &-picture{
+        max-width: 100%;
+      }
     }
   }
 

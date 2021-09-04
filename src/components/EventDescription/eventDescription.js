@@ -3,18 +3,20 @@ import back from "../../assets/placeholders/goback.png";
 import { useHistory, useParams } from "react-router-dom";
 import {resp, schedule} from "../../pages/HomePage/loginPage";
 import {teamCreation} from "../../actions/MyAccount/teamCreation";
-import {getTeams, searchingTeam, signup} from "../../actions/MyAccount/userActions";
+import {getTeamsNotRegistered, searchingTeam, signup} from "../../actions/MyAccount/userActions";
+import mapka from "../../assets/placeholders/mapka.jpg";
+import placeholder from "../../assets/placeholders/background.png"
 
 const EventDescContentTeams = ({ title, hours, place, description }) => {
   let history = useHistory();
   function clickHandle() {
     history.goBack();
   }
-  getTeams();
-  const teams = JSON.parse(localStorage.getItem("teams"));
+  getTeamsNotRegistered();
+  const teams = JSON.parse(localStorage.getItem("teamsnotreg"));
   return (
     <div className="eventDescription">
-      <div className="eventDescription-content-title">
+      <div className="eventDescription-content-title" >
         <p>{title}</p>
         <img
             className="eventDescription-content-close"
@@ -26,8 +28,15 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
       <div className="eventDescription-content">
         <div className="eventDescription-content-description">
           <div className="eventDescription-content-description-picture">
+              <img
+                  className="ClassDesc-content-person-picture"
+                  src={mapka}
+                  alt={"Mapka"}
+              />
             <div className="eventDescription-content-description-place">
-              {hours} {place}
+                <div>
+                    {hours} {place}
+                </div>
             </div>
           </div>
           <div className="eventDescription-content-description-info">
@@ -36,13 +45,12 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
         </div>
         <div className="eventDescription-content-register">
           <div className="eventDescription-content-register-required">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+           <h3>Potrzebne rzeczy: </h3>
+              <ol>
+                  <li>Alkohol</li>
+                  <li>Dobry humor</li>
+                  <li>... i więcej alkoholu</li>
+              </ol>
           </div>
           <div className="eventDescription-content-register-option">
             <div className="eventDescription-content-register-participant">
@@ -53,7 +61,8 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
               <div id="team-content" style={{ display: "none" }}
                   className="eventDescription-content-register-team-content"
               >
-                {teams.filter((team) => team[3] === 0).map((data)=>(
+                  {Array.isArray(teams) && teams.length !== 0 ?
+                teams.filter((team) => team[3] === 0).map((data)=>(
                     <div className="team-created">
                       <div className="team-created-title">
                         Drużyna: {data.team_name}
@@ -62,7 +71,7 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
                         <button className="button-container-primary" onClick={()=>signup(35, data.team_id, 0)}>Zapisz drużynę</button>
                       </div>
                     </div>
-                ))}
+                )) : <p>Jeszcze nie założyłeś swojej drużyny, pamiętaj by podać swoje ID jako pierwsze</p>}
               </div>
             </div>
             <div className="eventDescription-content-register-participant">
@@ -95,7 +104,7 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
                   className="eventDescription-content-register-solo-content"
               >
                 <p>Jeśli szukasz drużyny możemy Ci pomóc, wystarczy że naciśniesz ten przycisk</p>
-                <button className="eventDescription-content-register-solo-content-button" onClick={()=> searchingTeam()}>Nie mam przyjaciol</button>
+                <button className="eventDescription-content-register-solo-content-button" onClick={()=> searchingTeam()}>Znajdzcie mi druzyne</button>
               </div>
             </div>
           </div>
@@ -137,6 +146,8 @@ const EventDescContentNone = ({ title, hours, place, description }) =>{
   function clickHandle() {
     history.goBack();
   }
+
+  const img = require(`../../assets/places/${place}.png`).default;
   return (
       <div className="eventDescription-content-none">
         <div className="eventDescription-content-none-title">
@@ -149,8 +160,16 @@ const EventDescContentNone = ({ title, hours, place, description }) =>{
           />
         </div>
         <div className="eventDescription-content-none-description">
+          <img
+              className="eventDescription-content-none-picture"
+              src={img}
+              alt={place}
+          />
+            <div className="eventDescription-content-none-description-desc">
+                {description}
+            </div>
           <div className="eventDescription-content-none-description-place">
-            {hours} {place}
+            {hours}<br/>{place}
           </div>
         </div>
       </div>
@@ -158,17 +177,22 @@ const EventDescContentNone = ({ title, hours, place, description }) =>{
 }
 
 const ClassDesc = ({id, title, description, hour, place,  person, count}) =>{
+    const img = require(`../../assets/classes/${person}.jpg`).default;
 
-   const bck ={backgroundImage: `url(/static/media/trzyjeziora.2f3b4b14.png)`};
     return(
-        <div className="ClassDesc-content" style={bck}>
+        <div className="ClassDesc-content" style={{flex: 1}}>
+          <img
+              className="ClassDesc-content-person-picture"
+              src={img}
+              alt={person}
+          />
           <div className="ClassDesc-content-person">
-            <h2>{title}</h2>
-            <h4>Miejsce: {place}</h4>
-            <h4>Godzina: {hour}</h4>
-            <h4>Prowadzący: {person}</h4>
-            <p>{description}</p>
-            <button onClick={() => signup(id,resp['id'],1) }>Zapisz się!</button>
+              <h2>{title}</h2>
+              <h4>Miejsce: {place}</h4>
+              <h4>Godzina: {hour}</h4>
+              <h4>Prowadzący: {person}</h4>
+              <p>{description}</p>
+              <button className="button-container-primary" onClick={() => signup(id,resp['id'],1) }>Zapisz się!</button>
           </div>
         </div>
     );
@@ -189,7 +213,7 @@ export default function EventDescription() {
       var classes = schedule[id-1]['classes'];
       var classArray = classes.split(',');
       classArray = classArray.map(Number);
-      console.log(JSON.stringify(classArray));
+
       return schedule.filter((eventDesc) => eventDesc[0] === number).map((filteredEvent) => (
           <EventDescContentSolo title={filteredEvent.title} hours={filteredEvent.start_datetime} place={filteredEvent.place} classes={classArray}/>
       ));

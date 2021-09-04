@@ -8,14 +8,18 @@ import {useHistory} from "react-router-dom";
 import Contact from "./contact";
 import Points from "./points";
 import NightGame from "./NightGame";
+import IsMobile from "../../hooks/isMobile";
 
-export default function MyAccount({qr_code}) {
+export default function MyAccount() {
   const [currentTab, setCurrentTab] = useState("counselor");
+  const isMobile = IsMobile();
+
 
   const accountContentUser = () => {
+
     switch (currentTab) {
       case "counselor": {
-
+        getCounselor();
         if(localStorage.getItem("counselor") === null ){
           getCounselor();
         }
@@ -33,6 +37,7 @@ export default function MyAccount({qr_code}) {
     }
   };
   const accountContentAdmin = () =>{
+
     switch (currentTab) {
       case "night": {
         return <NightGame />;
@@ -127,7 +132,7 @@ export default function MyAccount({qr_code}) {
           <button className="account-button" onClick={clickHandle} id="close">
             <span>Zamknij</span>
           </button>
-          <img className="qr-code" src={qr_code} alt={user_code} />
+          <img className="qr-code" src={`https://chart.googleapis.com/chart?cht=qr&chl=${user_code}&chs=207x207&choe=UTF-8&chld=L|2`} alt={user_code} />
           <div className="account-number">
             <p>ID uczestnika: {user_code}</p>
           </div>

@@ -63,6 +63,20 @@ export function getTeams(){
     };
     commandWith(stmt)
 }
+
+export function getTeamsNotRegistered(){
+    const stmt = {
+        what: 4,
+        src: 4,
+        opt: 6,
+        id: resp['id'],
+        ch: 1,
+        SID: document.cookie,
+        name: "teamsnotreg",
+    };
+    commandWith(stmt)
+}
+
 export function quitTeam(team_id){
     const stmt = {
         what: 2,
@@ -72,7 +86,7 @@ export function quitTeam(team_id){
         ch: 3,
         SID: document.cookie,
     };
-    commandWithout(stmt,"Poprawnie wypisano sie");
+    commandWithout(stmt,"Poprawnie wypisano się z drużyny");
 }
 
 export function createTeam(team_name){
@@ -83,7 +97,7 @@ export function createTeam(team_name){
         ch: 2,
         SID: document.cookie,
     };
-    commandWithout(stmt,"Poprawnie stworzono druzyne");
+    commandWithout(stmt,"Poprawnie stworzono drużyne");
 }
 
 export function addToTeam(team_name,teammates){
@@ -96,7 +110,7 @@ export function addToTeam(team_name,teammates){
         SID: document.cookie,
     };
 
-    commandWithout(stmt,"Poprawnie dodano do niej");
+    commandWithout(stmt,"Poprawnie dodano do druzyny");
 }
 
 export function addingPoints(team, points){
@@ -110,7 +124,7 @@ export function addingPoints(team, points){
         SID: document.cookie,
     };
 
-    commandWithout(stmt,"Poprawnie dodano do niej");
+    commandWithout(stmt,"Poprawnie dodano punkty");
 }
 
 export function searchingTeam(){
@@ -121,8 +135,7 @@ export function searchingTeam(){
         ch: 2,
         SID: document.cookie,
     };
-    console.log(resp['id']);
-    commandWithout(stmt, "Poprawnie zapisano sie");
+    commandWithout(stmt, "Jak znajdziemy Ci drużynę, powiadomimy Cię");
 }
 
 export function getAllTeams(){
@@ -160,7 +173,7 @@ function commandWithout (array,message){
             }
         }
     };
-    x.open("POST", url, true);
+    x.open("POST", url, false);
     x.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     x.send(JSON.stringify(array));
 }

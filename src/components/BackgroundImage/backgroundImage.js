@@ -11,8 +11,7 @@ const BackgroundImage = ({ videoFinished }) => {
   videoFinished();
   const isMobile = IsMobile();
 
-  console.log("Mobile");
-  console.log(isMobile);
+
 
   return (
     <>
@@ -27,7 +26,7 @@ const BackgroundImage = ({ videoFinished }) => {
           />
         ) : (
           <>
-            {console.log("No desktop jak hui")}
+
             {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img
               className="backgroundImage-image"

@@ -16,7 +16,7 @@ const HomePage = ({ logOut }) => {
     <>
       <BackgroundImage />
       <section className="home">
-        <p onClick={() => logOut()}> Log Out </p>
+
         <div className="home-main">
           <p>{schedule[34][3]}</p>
           <span>

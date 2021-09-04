@@ -7,7 +7,7 @@ import React from "react";
 function Classes (){
     getClasses();
     const classes = JSON.parse(localStorage.getItem("classes"));
-    return (classes != null ?   <Enrolled array={classes}/> : <NotEnrolled/> );
+    return (Array.isArray(classes) && classes.length !== 0 ?   <Enrolled array={classes}/> : <NotEnrolled/> );
 
 }
 
@@ -40,7 +40,7 @@ const NotEnrolled = () =>{
         return(
             <>
                 <h1>Warsztaty</h1>
-                <div className="class">
+                <div className="notenrolled">
                     <p>Nie zapisano sie na zadne zajęcia</p>
                 </div>
             </>

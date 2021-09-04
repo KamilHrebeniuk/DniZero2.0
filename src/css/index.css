@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  background-color: #681a2b;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
   z-index: 10;
 }
 .navigation-element {
@@ -22,22 +24,24 @@
     top: 0;
     right: 0;
     width: 300px;
-    border-bottom: solid 1px #ee954a;
-    border-left: solid 1px #ee954a;
+    border-bottom: solid 1px #681a2b;
+    border-left: solid 1px #681a2b;
   }
 }
 @media only screen and (max-width: 767px) {
   .navigation {
     bottom: 0;
     width: 100%;
-    border-top: solid 1px #ee954a;
+    border-top: solid 1px #681a2b;
   }
 }
 .agenda_item_text,
 .agenda_item_text_image {
   width: 100%;
-  border: solid 1px #ee954a;
-  background-color: #681a2b;
+  border: solid 1px #681a2b;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
 }
 .agenda_item_text-header,
 .agenda_item_text_image-header {
@@ -47,7 +51,7 @@
 }
 .agenda_item_text-content,
 .agenda_item_text_image-content {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .agenda_item_text {
@@ -571,6 +575,13 @@ input[type=email] {
     transform: translate(-50%, 0);
   }
 }
+.eventDescription-content-solo, .eventDescription, .eventDescription-content-none {
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
 @media only screen and (min-width: 768px) {
   .eventDescription-content {
     display: flex;
@@ -589,7 +600,7 @@ input[type=email] {
   .eventDescription-content-title {
     width: 100%;
     height: 70px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     text-align: center;
     font-size: 50px;
   }
@@ -598,18 +609,25 @@ input[type=email] {
   }
   .eventDescription-content-description {
     width: 55%;
-    border-right: 1px solid grey;
+    border-right: 1px solid #ece9e4;
   }
   .eventDescription-content-description-picture {
-    height: 300px;
-    border-bottom: 1px solid grey;
+    height: 390px;
+    border-bottom: 1px solid #ece9e4;
   }
   .eventDescription-content-description-place {
-    position: relative;
-    bottom: -85%;
-    right: -65%;
-    width: 175px;
+    color: #ece9e4;
+    position: absolute;
+    bottom: 37%;
+    right: 49%;
+    width: 150px;
+    padding: 5px;
+    border-radius: 10px;
     margin: 0;
+    background-color: rgba(110, 110, 110, 0.6);
+  }
+  .eventDescription-content-description-info {
+    padding: 7px;
   }
   .eventDescription-content-solo {
     height: 100%;
@@ -644,31 +662,52 @@ input[type=email] {
     padding-bottom: 8px;
   }
   .eventDescription-content-none-description-place {
-    position: relative;
-    bottom: -85%;
-    right: -65%;
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
     width: 175px;
     margin: 0;
+    background-color: rgba(110, 110, 110, 0.6);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .eventDescription-content-none-description-desc {
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    background-color: rgba(110, 110, 110, 0.6);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .eventDescription-content-none-picture {
+    position: inherit;
+    width: 100%;
+    height: 100%;
   }
   .eventDescription-content-register {
     width: 45%;
   }
   .eventDescription-content-register-required {
     height: 150px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
+    font-size: 18px;
+  }
+  .eventDescription-content-register-required h3 {
+    text-align: center;
   }
   .eventDescription-content-register-team-title, .eventDescription-content-register-newteam-title, .eventDescription-content-register-solo-title {
     height: 50px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     text-align: center;
     font-size: 30px;
     padding: 5px;
   }
   .eventDescription-content-register-team-content, .eventDescription-content-register-newteam-content, .eventDescription-content-register-solo-content {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     padding: 10px;
     overflow-y: auto;
     text-align: center;
+    max-height: 200px;
   }
 
   .ClassDesc-content {
@@ -678,9 +717,13 @@ input[type=email] {
   }
   .ClassDesc-content-person {
     position: relative;
-    bottom: -300px;
-    height: 260px;
+    color: #ece9e4;
+    height: 160px;
     overflow-y: scroll;
+    padding: 5px;
+  }
+  .ClassDesc-content-person-picture {
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -688,8 +731,8 @@ input[type=email] {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
-    height: 100%;
-    overflow-y: hidden;
+    height: calc(100% - 70px);
+    overflow-y: auto;
     overflow-x: hidden;
   }
   .eventDescription-content-close {
@@ -702,7 +745,7 @@ input[type=email] {
   }
   .eventDescription-content-title {
     height: 40px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     text-align: center;
     font-size: 30px;
   }
@@ -715,7 +758,7 @@ input[type=email] {
   }
   .eventDescription-content-description-title {
     height: 40px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     text-align: center;
     font-size: 30px;
   }
@@ -723,19 +766,27 @@ input[type=email] {
     margin: 0;
   }
   .eventDescription-content-description-place {
-    position: relative;
-    bottom: -75%;
-    right: -35%;
-    width: 190px;
+    color: #ece9e4;
+    position: absolute;
+    bottom: 10%;
+    right: 7%;
     margin: 0;
     text-align: right;
+    width: 150px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(110, 110, 110, 0.6);
   }
   .eventDescription-content-description-picture {
     height: 250px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
+    position: relative;
+  }
+  .eventDescription-content-description-info {
+    padding: 7px;
   }
   .eventDescription-content-solo {
-    height: 100%;
+    height: auto;
   }
   .eventDescription-content-solo-title {
     height: 40px;
@@ -767,41 +818,59 @@ input[type=email] {
     margin: 0;
   }
   .eventDescription-content-none-description {
-    height: calc(100% - 70px);
+    max-width: 100%;
     padding-bottom: 8px;
   }
   .eventDescription-content-none-description-place {
-    position: relative;
-    bottom: -85%;
-    right: -50%;
+    padding: 10px;
     width: 175px;
     margin: 0;
+  }
+  .eventDescription-content-none-description-desc {
+    padding: 10px;
+  }
+  .eventDescription-content-none-picture {
+    position: inherit;
+    width: 100%;
+    height: 100%;
   }
   .eventDescription-content-register {
     width: 100%;
   }
   .eventDescription-content-register-required {
     height: 170px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     margin-bottom: 10px;
   }
   .eventDescription-content-register-team-title, .eventDescription-content-register-newteam-title, .eventDescription-content-register-solo-title {
     height: 50px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     text-align: center;
     font-size: 30px;
   }
   .eventDescription-content-register-team-content, .eventDescription-content-register-newteam-content, .eventDescription-content-register-solo-content {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #ece9e4;
     padding: 5px;
     text-align: center;
   }
 
   .ClassDesc-content {
-    margin: 8px;
-    height: 300px;
+    margin: 8px auto;
     padding: 5px;
-    overflow-y: scroll;
+    height: 436px;
+    position: relative;
+  }
+  .ClassDesc-content-person {
+    position: absolute;
+    top: 5px;
+    color: #ece9e4;
+    background-color: rgba(110, 110, 110, 0.6);
+    padding: 7px;
+    height: 436px;
+    width: 327px;
+  }
+  .ClassDesc-content-person-picture {
+    max-width: 100%;
   }
 }
 .cell {
@@ -847,7 +916,7 @@ input[type=email] {
 }
 
 .cell:hover {
-  background-color: #e4cf9f;
+  background-color: #ece9e4;
   transition: 0.5s;
 }
 
@@ -863,7 +932,7 @@ input[type=email] {
 }
 .classes {
   max-height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .class {
@@ -871,7 +940,7 @@ input[type=email] {
   width: 90%;
   height: 75px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -885,16 +954,23 @@ input[type=email] {
   margin-right: 10px;
 }
 
+.notenrolled {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .team {
   max-height: 380px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .team-house {
   margin: 10px auto;
   width: 90%;
   height: 75px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -911,7 +987,7 @@ input[type=email] {
   width: 90%;
   height: 75px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -926,10 +1002,11 @@ input[type=email] {
 }
 .team-creation {
   max-height: 200px;
-  overflow-y: scroll;
 }
 .team-creation-content {
   border-top: 1px solid black;
+  padding: 10px;
+  overflow-y: scroll;
   padding: 10px;
 }
 .team-creation label {
@@ -949,15 +1026,34 @@ input[type=email] {
 .team-creation-add_person-small {
   margin: 5px;
   height: 30px;
-  width: 30px;
+  width: 120px;
 }
 
 .addingPoints select, .addingPoints .house_id, .addingPoints .team_id, .addingPoints #points {
   display: block;
-  height: 20px;
+  height: 30px;
   margin: 5px auto 10px;
 }
 
+.gameNight {
+  height: 600px;
+  overflow-y: auto;
+  font-size: 18px;
+}
+.gameNight div {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .gameNight {
+    height: 90%;
+    overflow-y: auto;
+    font-size: 18px;
+  }
+  .gameNight div {
+    margin-bottom: 10px;
+  }
+}
 .home {
   width: 100%;
 }
@@ -1133,11 +1229,15 @@ input[type=email] {
 @media only screen and (max-width: 767px) {
   .container {
     display: flex;
+    display: -webkit-flex;
     height: 100%;
     width: 1000px;
     flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
     justify-content: space-around;
+    -webkit-justify-content: space-around;
     align-content: flex-start;
+    -webkit-align-content: flex-start;
     margin: 0;
     padding: 0;
   }
@@ -1146,25 +1246,31 @@ input[type=email] {
     top: 0;
     position: -webkit-sticky;
     display: flex;
+    display: -webkit-flex;
     flex-flow: row nowrap;
+    -webkit-flex-flow: row nowrap;
     width: 1000px;
     height: 30px;
   }
   .container-baner .column {
     display: flex;
+    display: -webkit-flex;
     height: 30px;
     width: calc(100vw - 50px);
     flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
     margin: 0;
     padding: 0;
   }
 
   .column {
     display: flex;
+    display: -webkit-flex;
     height: 990px;
     width: calc(100% - 50px);
     user-select: none;
     flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
     margin: 0;
     padding: 0;
   }
@@ -1187,12 +1293,13 @@ input[type=email] {
 .account {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: black;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
+  color: #ece9e4;
 }
 .account-content {
   position: relative;
-  background-color: #fefefe;
   border-left: 1px solid lightgray;
   float: right;
   width: 70%;
@@ -1204,28 +1311,33 @@ input[type=email] {
   display: flex;
   width: 30%;
   height: 100%;
-  background: white;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
   flex-direction: column;
   justify-content: center;
 }
 .account-button {
   display: block;
+  color: #ece9e4;
   width: 100%;
   padding: 17px;
-  margin: 0px;
+  margin: 0;
   height: 60px;
-  background-color: white;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
   font-size: 17px;
   text-align: left;
   border: 1px solid lightgray;
 }
 .account-button:focus {
   background-color: lightgray;
-  border: 1px solid gray;
+  border: 1px solid #681a2b;
 }
 .account-button:hover {
   background-color: lightgray;
-  border: 1px solid gray;
+  border: 1px solid #681a2b;
   transition: all 0.25s;
 }
 .account-button span {
@@ -1259,6 +1371,9 @@ input[type=email] {
 .account-number {
   position: absolute;
   bottom: 5px;
+  margin: auto;
+  font-size: 28px;
+  left: 10px;
 }
 .account-contact {
   display: flex;
@@ -1278,7 +1393,7 @@ input[type=email] {
 .account .contact {
   flex-grow: 1;
   flex-basis: calc(50% - 10px);
-  border: 1px solid lightgrey;
+  border: 1px solid white;
   padding: 5px;
   margin: 5px;
 }
@@ -1290,9 +1405,11 @@ input[type=email] {
 .guardian-picture {
   width: 200px;
   height: 200px;
-  float: left;
-  margin-left: 50px;
-  margin-bottom: 10px;
+  margin: 0 20px;
+}
+
+.guardians {
+  display: flex;
 }
 
 .qr-code {
@@ -1306,14 +1423,17 @@ input[type=email] {
     padding-top: 0;
   }
   .account-content {
-    overflow: scroll;
+    overflow: auto;
     width: 100%;
+    border-left: none;
   }
   .account-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: flex-start;
+    height: auto;
+    padding-top: 15px;
   }
   .account-footer {
     display: none;
@@ -1326,13 +1446,18 @@ input[type=email] {
     text-align: center;
   }
   .account-button span:after {
-    content: "▽";
+    content: "⮝";
     font-size: 20px;
     top: -3px;
   }
   .account-number {
     position: inherit;
-    padding-left: 10px;
+    margin: auto;
+    font-size: 28px;
+  }
+  .account-number p {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   #close {
@@ -1344,6 +1469,10 @@ input[type=email] {
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+  }
+
+  .qr-code {
+    margin: auto;
   }
 }
 .register {

@@ -2,12 +2,13 @@ import {resp} from "../HomePage/loginPage";
 import {quitTeam, getTeams} from "../../actions/MyAccount/userActions";
 import {teamCreation} from "../../actions/MyAccount/teamCreation";
 import React from "react";
+import back from "../../assets/placeholders/goback.png";
 
 
 function Teams (){
     getTeams();
     const teams = JSON.parse(localStorage.getItem("teams"));
-    return (teams != null ?   <InTeams array={teams}/> : <WithoutTeam/> );
+    return (Array.isArray(teams) && teams.length !== 0 ?   <InTeams array={teams}/> : <WithoutTeam/> );
 
 }
 
@@ -27,7 +28,10 @@ function registerTeam(){
 }
 
 const Team = ({id, name, type}) =>{
-
+    let logo = "";
+    if(type === 0){
+        logo = require(`../../assets/logos/${name}.png`).default;
+    }
 
     return( type ===0 ?
         <>
@@ -37,7 +41,11 @@ const Team = ({id, name, type}) =>{
                      {name}
                  </div>
                 <div className="team-house-logo">
-                    logo
+                    <img
+                        className="team-house-logo-img"
+                        src={logo}
+                        alt={name}
+                    />
                 </div>
             </div>
 
@@ -83,9 +91,11 @@ const WithoutTeam = () =>{
             </div>
             <div className="team-creation">
                 <div className="team-creation-title">
-                    <p>Stworz druzyne!</p>
+                    <p>Stworz drużyne!</p>
                 </div>
-
+                <div className="team-creation-content">
+                    {teamCreation()}
+                </div>
             </div>
         </>
     );

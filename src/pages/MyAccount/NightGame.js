@@ -4,10 +4,10 @@ import {getStation} from "../../actions/MyAccount/userActions";
 function NightGame(){
     getStation();
     const NightGame = JSON.parse(localStorage.getItem("station"));
-    return (NightGame != null ? <Game station={NightGame[0]}/> : null);
+    return (Array.isArray(NightGame) && NightGame.length !== 0 ? <Game station={NightGame[0]}/> : null);
 }
 const Game = ({station}) =>{
-    console.log(JSON.stringify(station))
+
         return(
             <div className="gameNight">
                 <div className="gameNight-number">

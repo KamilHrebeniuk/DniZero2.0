@@ -1,14 +1,14 @@
 //********************* Default *********************//
 .team{
   max-height: 380px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &-house{
     margin: 10px auto;
     width: 90%;
     height: 75px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     display: flex;
     flex-flow: row nowrap;
     &-title{
@@ -26,7 +26,7 @@
     width: 90%;
     height: 75px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     display: flex;
     flex-flow: row nowrap;
 
@@ -43,9 +43,11 @@
   }
   &-creation{
     max-height: 200px;
-    overflow-y: scroll;
+
     &-content{
       border-top: 1px solid black;
+      padding: 10px;
+      overflow-y: scroll;
       padding: 10px;
     }
     label{
@@ -65,7 +67,7 @@
       &-small{
         margin: 5px;
         height: 30px;
-        width: 30px;
+        width: 120px;
       }
     }
   }

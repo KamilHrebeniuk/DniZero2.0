@@ -2,9 +2,12 @@
 .agenda_item_text,
 .agenda_item_text_image {
   width: 100%;
-  border: solid 1px $color_secondary;
-  background-color: $color_primary;
-
+  border: solid 1px $color_primary;
+  //background-color: $color_primary_background;
+  //color: $color_secondary_text;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
   &-header {
     font-size: $font_size_l;
     line-height: 20px;
@@ -12,7 +15,7 @@
   }
 
   &-content {
-    font-size: $font_size_s;
+    font-size: $font_size_m;
   }
 }
 

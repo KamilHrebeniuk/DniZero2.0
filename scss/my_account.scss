@@ -2,11 +2,14 @@
 .account {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: black;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
+
+  color: $color_primary_text;
   &-content {
     position: relative;
-    background-color: #fefefe;
+
     border-left: 1px solid lightgray;
     float: right;
     width: 70%;
@@ -19,29 +22,34 @@
     display: flex;
     width: 30%;
     height: 100%;
-    background: white;
+    background-image: url("../assets/placeholders/tlo.png");
+    background-size: cover;
+    background-position: center;
     flex-direction: column;
     justify-content: center;
   }
 
   &-button {
     display: block;
+    color: $color_primary_text;
     width: 100%;
     padding: 17px;
-    margin: 0px;
+    margin: 0;
     height: 60px;
-    background-color: white;
+    background-image: url("../assets/placeholders/tlo.png");
+    background-size: cover;
+    background-position: center;
     font-size: 17px;
     text-align: left;
     border: 1px solid lightgray;
   }
   &-button:focus {
     background-color: lightgray;
-    border: 1px solid gray;
+    border: 1px solid $color_primary;
   }
   &-button:hover {
     background-color: lightgray;
-    border: 1px solid gray;
+    border: 1px solid $color_primary;
     transition: all 0.25s;
   }
   &-button span {
@@ -75,6 +83,9 @@
   &-number {
     position: absolute;
     bottom: 5px;
+    margin: auto;
+    font-size: $font_size_xl;
+    left: 10px;
   }
   &-contact {
     display: flex;
@@ -95,7 +106,7 @@
   .contact {
     flex-grow: 1;
     flex-basis: calc(50% - 10px);
-    border: 1px solid lightgrey;
+    border: 1px solid white;
     padding: 5px;
     margin: 5px;
   }
@@ -106,9 +117,10 @@
 .guardian-picture {
   width: 200px;
   height: 200px;
-  float: left;
-  margin-left: 50px;
-  margin-bottom: 10px;
+  margin: 0 20px;
+}
+.guardians{
+  display: flex;
 }
 .qr-code {
   width: 207px;
@@ -134,8 +146,9 @@
     padding-top: 0;
 
     &-content {
-      overflow: scroll;
+      overflow: auto;
       width: 100%;
+      border-left: none;
     }
 
     &-menu {
@@ -143,6 +156,8 @@
       flex-direction: column;
       width: 100%;
       justify-content: flex-start;
+      height: auto;
+      padding-top: 15px;
     }
 
     &-footer {
@@ -157,13 +172,18 @@
       text-align: center;
     }
     &-button span:after {
-      content: "\25bd";
+      content: "\2b9d";
       font-size: 20px;
       top: -3px;
     }
     &-number {
       position: inherit;
-      padding-left: 10px;
+      margin: auto;
+      font-size: $font_size_xl;
+      p{
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
   #close {
@@ -175,7 +195,9 @@
     height: 150px;
     margin-bottom: 10px;
   }
-
+  .qr-code {
+    margin: auto;
+  }
 }
 
 //********************** Mobile *********************//

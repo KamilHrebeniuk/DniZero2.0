@@ -48,25 +48,24 @@ return(
                                         values.teammates.map((teammate, index) =>(
 
                                             <div className="team-creation-person" key={index}>
-                                                <label>{`Osoba ${index}: `}</label>
+                                                {index === 0 ? <label>Wpisz swoje id: </label> : <label>{`Osoba ${index}: `}</label>}
                                                 <Field name ={`teammates.${index}.id`} placeholder="ID uczestnika"/>
                                                 <Error name={`teammates.${index}.id`}/>
-
+                                                <br/>
                                                 <button
                                                     className="team-creation-add_person-small"
                                                     type = "button"
                                                     onClick={()=> arrayHelpers.push('')}
                                                 >
-                                                    +
+                                                    Dodaj osobę
                                                 </button>
                                                 <button
                                                     className="team-creation-add_person-small"
                                                     type = "button"
                                                     onClick={()=> arrayHelpers.remove(index)}
                                                 >
-                                                    -
+                                                    Usuń osobę
                                                 </button>
-
                                             </div>
 
                                         ))
@@ -76,7 +75,7 @@ return(
                                         </button>
                                     )}
                                     <div>
-                                        <button type="submit">Stworz druzyne</button>
+                                        <button className="button-container-primary" type="submit">Stworz drużyne i dodaj osoby</button>
                                     </div>
                                 </div>
                             )}

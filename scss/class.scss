@@ -1,14 +1,14 @@
 //********************* Default *********************//
 .classes{
   max-height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .class{
   margin: 10px auto;
   width: 90%;
   height: 75px;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   flex-flow: row nowrap;
   &-title{
@@ -20,6 +20,12 @@
     margin-bottom: auto;
     margin-right: 10px;
   }
+}
+.notenrolled{
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 //******************* Large Tablet ******************//

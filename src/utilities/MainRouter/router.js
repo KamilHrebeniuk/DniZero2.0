@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 const MainRouter = ({ loginState }) => {
   const isMobile = IsMobile();
 
-  console.log(loginState);
+
 
   return (
     <>
