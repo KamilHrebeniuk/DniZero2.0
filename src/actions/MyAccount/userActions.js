@@ -1,11 +1,12 @@
 import {resp} from "../../pages/HomePage/loginPage";
 
-export function signup (event_id,user_id){
+export function signup (event_id,user_id, type){
     const stmt = {
         what: 1,
         src: 1,
         id_event: event_id,
         id_person: user_id,
+        participant_type: type,
         ch: 2,
         SID: document.cookie,
     };
@@ -62,6 +63,20 @@ export function getTeams(){
     };
     commandWith(stmt)
 }
+
+export function getTeamsNotRegistered(){
+    const stmt = {
+        what: 4,
+        src: 4,
+        opt: 6,
+        id: resp['id'],
+        ch: 1,
+        SID: document.cookie,
+        name: "teamsnotreg",
+    };
+    commandWith(stmt)
+}
+
 export function quitTeam(team_id){
     const stmt = {
         what: 2,
@@ -71,7 +86,7 @@ export function quitTeam(team_id){
         ch: 3,
         SID: document.cookie,
     };
-    commandWithout(stmt,"Poprawnie wypisano sie");
+    commandWithout(stmt,"Poprawnie wypisano się z drużyny");
 }
 
 export function createTeam(team_name){
@@ -82,7 +97,7 @@ export function createTeam(team_name){
         ch: 2,
         SID: document.cookie,
     };
-    commandWithout(stmt,"Poprawnie stworzono druzyne");
+    commandWithout(stmt,"Poprawnie stworzono drużyne");
 }
 
 export function addToTeam(team_name,teammates){
@@ -94,8 +109,58 @@ export function addToTeam(team_name,teammates){
         ch: 2,
         SID: document.cookie,
     };
-    console.log(JSON.stringify(stmt));
-    commandWithout(stmt,"Poprawnie dodano do niej");
+
+    commandWithout(stmt,"Poprawnie dodano do druzyny");
+}
+
+export function addingPoints(team, points){
+    const stmt = {
+        what: 4,
+        src: 4,
+        team_id: team,
+        id_person: resp['id'],
+        points: points,
+        ch: 2,
+        SID: document.cookie,
+    };
+
+    commandWithout(stmt,"Poprawnie dodano punkty");
+}
+
+export function searchingTeam(){
+    const stmt = {
+        what: 5,
+        src: 5,
+        person_id: resp['id'],
+        ch: 2,
+        SID: document.cookie,
+    };
+    commandWithout(stmt, "Jak znajdziemy Ci drużynę, powiadomimy Cię");
+}
+
+export function getAllTeams(){
+    const stmt = {
+        what: 5,
+        src: 4,
+        opt: 1,
+        ch: 1,
+        SID: document.cookie,
+        name: "AllTeams",
+    };
+    commandWith(stmt)
+}
+
+export function getStation(){
+    const stmt = {
+        what: 6,
+        src: 5,
+        opt: 5,
+        id: resp['id'],
+        ch: 1,
+        SID: document.cookie,
+        name: "station",
+    };
+    commandWith(stmt)
 }
 
 function commandWithout (array,message){
@@ -108,7 +173,7 @@ function commandWithout (array,message){
             }
         }
     };
-    x.open("POST", url, true);
+    x.open("POST", url, false);
     x.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     x.send(JSON.stringify(array));
 }

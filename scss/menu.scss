@@ -3,7 +3,10 @@
   display: flex;
   flex-direction: row;
   position: fixed;
-  background-color: $color_primary;
+  //background-color: $color_primary_background;
+  background-image: url("../assets/placeholders/tlo.png");
+  background-size: cover;
+  background-position: center;
   z-index: 10;
 
   &-element {
@@ -24,8 +27,8 @@
     top: 0;
     right: 0;
     width: 300px;
-    border-bottom: solid 1px $color_secondary;
-    border-left: solid 1px $color_secondary;
+    border-bottom: solid 1px $color_primary;
+    border-left: solid 1px $color_primary;
   }
 }
 
@@ -42,7 +45,7 @@
   .navigation {
     bottom: 0;
     width: 100%;
-    border-top: solid 1px $color_secondary;
+    border-top: solid 1px $color_primary;
   }
 }
 

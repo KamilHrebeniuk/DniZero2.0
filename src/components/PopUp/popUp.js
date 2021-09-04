@@ -52,7 +52,7 @@ function PopUp({
       case PopUpTypes.popUpTimeTable:
         return <TimeTable />;
       case PopUpTypes.popUpMyAccount:
-        return <MyAccount />;
+        return <MyAccount  />;
       case PopUpTypes.popUpRegister:
         return <Register />;
       case PopUpTypes.popUpInfo:

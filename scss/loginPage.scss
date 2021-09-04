@@ -56,11 +56,36 @@
   .login-content {
     position: unset;
     width: calc(100% - 40px);
-    margin-left: 20px;
     transform: unset;
-    margin-top: 40px;
+    margin: 20px 20px 0 20px;
     h1 {
       font-size: $font_size_xxl;
+      font-weight: 400;
+      line-height: 50px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    input[type="password"],
+    input[type="email"] {
+      min-width: 100%;
+      padding: 5px 10px;
+      margin: 0 0 3px;
+      display: block;
+      border: none;
+      background: $color_white;
+      font-size: $font_size_l;
+    }
+    p {
+      margin-bottom: 0;
+      margin-top: 8px;
+      font-size: $font_size_xl;
+      display: inline-block;
+    }
+    input[type="submit"] {
+      cursor: pointer;
+      display: block;
+      margin: 10px auto 0;
     }
   }
 }
