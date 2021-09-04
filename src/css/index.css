@@ -1029,6 +1029,12 @@ input[type=email] {
   width: 120px;
 }
 
+@media only screen and (max-width: 767px) {
+  .team-creation {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
 .addingPoints select, .addingPoints .house_id, .addingPoints .team_id, .addingPoints #points {
   display: block;
   height: 30px;

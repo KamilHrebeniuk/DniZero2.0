@@ -86,7 +86,12 @@
 
 //********************** Tablet *********************//
 @include resTo($res_m) {
-
+  .team {
+    &-creation {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  }
 }
 
 //********************** Mobile *********************//

@@ -56,7 +56,7 @@ const EventDescContentTeams = ({ title, hours, place, description }) => {
             <div className="eventDescription-content-register-participant">
               <div id="team" onClick={() => content("team-content")}
                   className="eventDescription-content-register-team-title">
-                Zapisz swoją drużynę
+                Zgłoś swoją drużynę
               </div>
               <div id="team-content" style={{ display: "none" }}
                   className="eventDescription-content-register-team-content"
