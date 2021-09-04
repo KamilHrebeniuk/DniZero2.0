@@ -9,6 +9,7 @@ import SMSapi_logo from "../../assets/sponsors/smsapi.png";
 import fuga_logo from "../../assets/sponsors/fuga_mundi.png";
 import piast_logo from "../../assets/sponsors/Piast.png";
 import pizza_pany_logo from "../../assets/sponsors/pizza_pany.png";
+import remont_logo from "../../assets/sponsors/remont.png"
 import { connect } from "react-redux";
 import videoStateTypes from "../../actions/BackgroundVideo/types";
 import IsMobile from "../../hooks/isMobile";
@@ -50,6 +51,7 @@ const SponsorsBar = ({ title, videoState }) => {
       color: "#ffffff",
       link: "https://www.pizzapany.pl",
     },
+    { image: remont_logo, color: "#ffffff", link: "https://www.facebook.com/Bar.Remont/" },
   ];
 
   const isMobile = IsMobile();
